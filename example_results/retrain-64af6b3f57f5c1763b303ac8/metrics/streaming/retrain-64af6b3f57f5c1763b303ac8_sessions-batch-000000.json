@@ -1,0 +1,62 @@
+{
+  "id": "dac07ed1-7852-4604-8393-83ccdb1f1f87",
+  "runId": "23937343-7e9d-450b-bdef-077e1de87030",
+  "name": "retrain-64af6b3f57f5c1763b303ac8_sessions",
+  "timestamp": "2026-10-21T13:04:09.235Z",
+  "batchId": 0,
+  "numInputRows": 9999,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 638.5873036147657,
+  "durationMs": {
+    "addBatch": 10174,
+    "commitOffsets": 724,
+    "getBatch": 566,
+    "latestOffset": 1587,
+    "queryPlanning": 310,
+    "triggerExecution": 15658,
+    "walCommit": 2216
+  },
+  "eventTime": {
+    "avg": "2015-05-03T12:35:28.269Z",
+    "max": "2015-05-03T20:39:24.308Z",
+    "min": "2015-05-03T03:00:04.384Z",
+    "watermark": "1970-01-01T00:00:00.000Z"
+  },
+  "stateOperators": [
+    {
+      "operatorName": "defaultName",
+      "numRowsTotal": 6170,
+      "numRowsUpdated": 6170,
+      "allUpdatesTimeMs": 1441,
+      "numRowsRemoved": 0,
+      "allRemovalsTimeMs": 22,
+      "commitTimeMs": 2085,
+      "memoryUsedBytes": 5978064,
+      "numRowsDroppedByWatermark": 0,
+      "numShufflePartitions": 4,
+      "numStateStoreInstances": 4,
+      "customMetrics": {
+        "loadedMapCacheHitCount": 0,
+        "loadedMapCacheMissCount": 0,
+        "stateOnCurrentVersionSizeBytes": 5977488
+      }
+    }
+  ],
+  "sources": [
+    {
+      "description": "FileStreamSource[file:/app/outputs/runs/retrain-64af6b3f57f5c1763b303ac8/clean]",
+      "startOffset": null,
+      "endOffset": {
+        "logOffset": 0
+      },
+      "latestOffset": null,
+      "numInputRows": 9999,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 638.5873036147657
+    }
+  ],
+  "sink": {
+    "description": "ForeachBatchSink",
+    "numOutputRows": -1
+  }
+}

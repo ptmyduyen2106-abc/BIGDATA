@@ -1,0 +1,126 @@
+{
+  "id": "f06897a2-b3b9-4788-882f-af077283a32a",
+  "runId": "cc5b957f-75c1-46bd-8374-bb5746dd5fe4",
+  "name": "verified-20261021c_clean",
+  "timestamp": "2026-10-21T13:10:58.770Z",
+  "batchId": 3,
+  "numInputRows": 0,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 0.0,
+  "durationMs": {
+    "addBatch": 5464,
+    "commitOffsets": 914,
+    "getBatch": 1,
+    "latestOffset": 15,
+    "queryPlanning": 134,
+    "triggerExecution": 7745,
+    "walCommit": 1207
+  },
+  "eventTime": {
+    "watermark": "2015-05-04T01:48:38.752Z"
+  },
+  "stateOperators": [
+    {
+      "operatorName": "dedupeWithinWatermark",
+      "numRowsTotal": 1,
+      "numRowsUpdated": 0,
+      "allUpdatesTimeMs": 230,
+      "numRowsRemoved": 314,
+      "allRemovalsTimeMs": 1059,
+      "commitTimeMs": 3486,
+      "memoryUsedBytes": 85552,
+      "numRowsDroppedByWatermark": 0,
+      "numShufflePartitions": 4,
+      "numStateStoreInstances": 4,
+      "customMetrics": {
+        "loadedMapCacheHitCount": 4,
+        "loadedMapCacheMissCount": 4,
+        "numDroppedDuplicateRows": 0,
+        "stateOnCurrentVersionSizeBytes": 4784
+      }
+    }
+  ],
+  "sources": [
+    {
+      "description": "KafkaV2[Subscribe[page_view, add_to_cart, purchase, review]]",
+      "startOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3299,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "endOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3299,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "latestOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3299,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "numInputRows": 0,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 0.0,
+      "metrics": {
+        "avgOffsetsBehindLatest": "0.0",
+        "maxOffsetsBehindLatest": "0",
+        "minOffsetsBehindLatest": "0"
+      }
+    }
+  ],
+  "sink": {
+    "description": "FileSink[outputs/runs/verified-20261021c/clean]",
+    "numOutputRows": -1
+  }
+}

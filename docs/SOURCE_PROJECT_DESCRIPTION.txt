@@ -1,0 +1,35 @@
+BÀI TẬP NHÓM – TUẦN 2
+TỰ CHỌN MỘT HỆ THỐNG BIG DATA & PHÂN TÍCH 5V
+Hệ thống đã chọn: Phân tích hành vi người dùng thương mại điện tử & Hệ thống gợi ý sản phẩm
+
+1. Giới thiệu hệ thống được chọn
+Nhóm lựa chọn hệ thống “Phân tích hành vi người dùng thương mại điện tử & Hệ thống gợi ý sản phẩm”. Hệ thống theo dõi liên tục hành vi duyệt web/ứng dụng của người dùng (xem sản phẩm, thêm giỏ hàng, đặt mua, đánh giá) để sinh ra gợi ý sản phẩm cá nhân hóa gần thời gian thực, đồng thời phục vụ báo cáo phân tích hành vi cho đội ngũ vận hành.
+2. Kiến trúc Pipeline tổng thể
+Pipeline được thiết kế theo 4 tầng cốt lõi (Ingestion → Xử lý → Lưu trữ → Phân tích/Phục vụ), điều phối xuyên suốt bởi Apache Airflow:
+
+
+3. Bảng phân tích 5V
+
+
+Nhóm thực hiện | Nhóm: 
+Thành viên | 1. Phan Khắc Hùng
+2. Bùi Minh Anh Kha 
+3. Dương Minh Trí
+4. Nguyễn Trương Minh Quân
+5. Phan Thị Mỹ Duyên – 23139008 – 23139008@student.hcmute.edu.vn
+Hệ thống tự chọn | E-commerce User Behavior Analytics & Recommendation System
+Kiến trúc pipeline tham khảo | 
+Ngày nộp | 
+Tầng | Công nghệ | Vai trò / Chức năng chính
+Ingestion | Apache Kafka | Producer ghi sự kiện clickstream (page_view, add_to_cart, purchase, review) vào các Topic; phân vùng (partition) để mở rộng thông lượng; decouple hệ thống sinh dữ liệu và hệ thống xử lý.
+Xử lý (Streaming) | Spark Structured Streaming | Đọc micro-batch từ Kafka; tính đặc trưng theo phiên/cửa sổ thời gian (số lượt xem, số lần thêm giỏ hàng trong 5 phút gần nhất); xử lý dữ liệu đến trễ bằng watermark.
+Lưu trữ | Delta Lake (batch) + NoSQL (Redis / MongoDB) | Delta Lake lưu lịch sử hành vi có ACID, time travel phục vụ huấn luyện offline; Redis lưu feature/session tốc độ cao phục vụ dự đoán online; MongoDB lưu hồ sơ sản phẩm phi cấu trúc.
+Phân tích / Huấn luyện | Spark MLlib | Pipeline (VectorAssembler + ALS Collaborative Filtering hoặc Random Forest) huấn luyện định kỳ trên toàn bộ lịch sử trong Delta Lake; đánh giá bằng cross-validation phân tán.
+Phục vụ | Recommendation API + Dashboard | API trả danh sách gợi ý theo thời gian thực cho ứng dụng/website; Dashboard BI giám sát KPI vận hành (CTR, tỉ lệ chuyển đổi, doanh thu).
+Điều phối | Apache Airflow | Định nghĩa DAG lập lịch huấn luyện lại mô hình hằng ngày/hằng tuần; giám sát, cảnh báo khi một bước trong pipeline lỗi.
+Đặc trưng | Mô tả cụ thể cho hệ thống | Số liệu / Ghi chú minh họa
+Volume (Khối lượng) | Dữ liệu hành vi (page view, click, add-to-cart, order) phát sinh liên tục từ hàng triệu người dùng hoạt động trên sàn. | Ước lượng ~20–50 triệu sự kiện/ngày với sàn quy mô vừa; tích lũy hàng chục TB dữ liệu lịch sử mỗi năm.
+Velocity (Tốc độ) | Cần cập nhật gợi ý gần thời gian thực khi người dùng tiếp tục duyệt web/app; ingest liên tục 24/7 qua Kafka. | Yêu cầu độ trễ pipeline dưới 1–2 giây từ khi có hành vi mới đến khi gợi ý được cập nhật (phù hợp micro-batch Spark Structured Streaming).
+Variety (Đa dạng) | Kết hợp nhiều loại dữ liệu: có cấu trúc (đơn hàng, giao dịch), bán cấu trúc (log clickstream JSON, session), phi cấu trúc (review văn bản, ảnh sản phẩm). | ≥ 3 định dạng chính; có thể mở rộng NLP cho review, CV cho ảnh sản phẩm ở giai đoạn nâng cao.
+Veracity (Độ tin cậy) | Rủi ro từ traffic bot/crawler tạo click giả, sự kiện đến trễ/mất do lỗi mạng, dữ liệu trùng lặp khi retry. | Cần lọc bot, khử trùng (dedupe), xử lý watermark cho dữ liệu trễ trước khi đưa vào huấn luyện — “garbage in, garbage out”.
+Value (Giá trị) | Tăng tỉ lệ chuyển đổi (conversion rate) và giá trị đơn hàng trung bình (AOV) nhờ gợi ý sản phẩm liên quan/cross-sell; cá nhân hóa trang chủ & email marketing. | Quyết định cụ thể: xếp hạng sản phẩm hiển thị, giảm churn qua phát hiện sớm hành vi bất thường, tối ưu chi phí marketing.

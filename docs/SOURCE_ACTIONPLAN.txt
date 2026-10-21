@@ -1,0 +1,105 @@
+
+SHEET Action Plan
+1: ACTION PLAN — HỆ THỐNG PHÂN TÍCH HÀNH VI NGƯỜI DÙNG TMĐT & GỢI Ý SẢN PHẨM |  |  |  |  |  | 
+2: Pipeline: Kafka  →  Spark Structured Streaming  →  Delta Lake / NoSQL  →  Spark MLlib  →  Recommendation API / Dashboard  (điều phối bởi Apache Airflow) |  |  |  |  |  | 
+4: STT | TASK | Owner | Deadline | Status | % Complete | Note / Deliverable
+5: PHASE 1 – KHỞI ĐỘNG & THIẾT KẾ HỆ THỐNG |  |  |  |  |  | 
+6: 1.0 | Lập kế hoạch & phân công công việc | Cả nhóm |  | Done | 1 | Action plan này (ví dụ mẫu)
+7: 2.0 | Nghiên cứu pipeline tham khảo (Kafka, Spark Streaming, Delta Lake, MLlib) |  |  | Not Started | 0 | 
+8: 3.0 | Chọn & thu thập bộ dữ liệu (vd: Retailrocket / E-commerce Events History – Kaggle) | Quân |  | Done | 1 | 
+9: 4.0 | Thiết kế kiến trúc hệ thống (5 tầng: Ingestion–Xử lý–Lưu trữ–ML–Phục vụ) |  |  | Not Started | 0 | 
+10: 5.0 | Setup môi trường: Python, Spark, Kafka (Docker) | Quân |  | Done | 1 | 
+11: PHASE 2 – TẦNG INGESTION (KAFKA) |  |  |  |  |  | 
+12: 6.0 | Cài đặt Kafka Broker qua Docker | Trí |  | Done | 1 | 
+13: 7.0 | Tạo Topic: page_view, add_to_cart, purchase, review | Trí |  | Done | 1 | 
+14: 8.0 | Viết Producer mô phỏng luồng clickstream từ dataset | Trí |  | Done | 1 | 
+15: 9.0 | Test gửi/nhận message qua Kafka CLI (producer/consumer) | Trí |  | Blocked | -1 | 
+16: PHASE 3 – TẦNG XỬ LÝ (SPARK STRUCTURED STREAMING) |  |  |  |  |  | 
+17: 10.0 | Kết nối Spark Structured Streaming đọc dữ liệu từ Kafka | Hùng |  | Done | 1 | 
+18: 11.0 | Feature engineering theo session/window thời gian | Hùng  |  | Done | 1 | 
+19: 12.0 | Xử lý dữ liệu đến trễ (watermark) & khử trùng lặp | Hùng  |  | Done | 1 | 
+20: PHASE 4 – TẦNG LƯU TRỮ (DELTA LAKE / NOSQL) |  |  |  |  |  | 
+21: 13.0 | Thiết lập Delta Lake table lưu lịch sử hành vi (batch) | Kha |  | Done | 1 | 
+22: 14.0 | Thiết lập Redis/MongoDB lưu feature & session real-time | Kha |  | Done | 1 | Chưa phải realtime-session hoàn chỉnh
+23: 15.0 | Kiểm thử ACID, time travel trên Delta Lake | Kha |  | Done | 1 | 
+24: PHASE 5 – TẦNG PHÂN TÍCH / ML (SPARK MLLIB) |  |  |  |  |  | 
+25: 16.0 | Xây dựng Pipeline MLlib (VectorAssembler + ALS/Random Forest) | Duyên |  | Not Started | 0 | 
+26: 17.0 | Huấn luyện mô hình gợi ý sản phẩm (offline, trên Delta Lake) | Duyên |  | Not Started | 0 | 
+27: 18.0 | Đánh giá mô hình (RMSE / Precision@K, cross-validation) | Duyên |  | Not Started | 0 | 
+28: PHASE 6 – TẦNG PHỤC VỤ (API / DASHBOARD) |  |  |  |  |  | 
+29: 19.0 | Xây dựng Recommendation API (FastAPI/Flask) phục vụ gợi ý |  |  | Not Started | 0 | 
+30: 20.0 | Xây dựng Dashboard giám sát KPI (CTR, conversion, doanh thu) |  |  | Not Started | 0 | 
+31: 21.0 | Tích hợp Airflow điều phối huấn luyện lại mô hình định kỳ |  |  | Not Started | 0 | 
+32: PHASE 7 – TÍCH HỢP & KIỂM THỬ TOÀN HỆ THỐNG |  |  |  |  |  | 
+33: 22.0 | Tích hợp end-to-end: Kafka→Spark→Delta/NoSQL→MLlib→API/Dashboard |  |  | Not Started | 0 | 
+34: 23.0 | Kiểm thử chức năng (đúng luồng dữ liệu end-to-end) |  |  | Not Started | 0 | 
+35: 24.0 | Kiểm thử hiệu năng (độ trễ, thông lượng) |  |  | Not Started | 0 | 
+36: 25.0 | Fix bugs & tối ưu hệ thống |  |  | Not Started | 0 | 
+38: PHASE 8 – TÀI LIỆU & BÁO CÁO CUỐI KÌ |  |  |  |  |  | 
+39: 26.0 | Viết báo cáo Word (kiến trúc pipeline, bảng 5V, kết quả) |  |  | Not Started | 0 | 
+40: 27.0 | Làm slide trình bày cuối kì |  |  | Not Started | 0 | 
+41: 28.0 | Quay video demo toàn hệ thống |  |  | Not Started | 0 | 
+42: 29.0 | Báo cáo & demo cuối kì |  |  | Not Started | 0 | 
+
+SHEET Gantt Chart
+1: TIẾN ĐỘ TỪNG TUẦN — HỆ THỐNG GỢI Ý SẢN PHẨM TMĐT |  |  |  |  |  |  |  |  | 
+3: STT | Hạng mục công việc | T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9
+4: PHASE 1 – KHỞI ĐỘNG & THIẾT KẾ HỆ THỐNG |  |  |  |  |  |  |  |  | 
+5: 1.0 | Lập kế hoạch & phân công công việc | █ |  |  |  |  |  |  | 
+6: 2.0 | Nghiên cứu pipeline tham khảo (Kafka, Spark Streaming, Delta Lake, MLlib) | █ | █ |  |  |  |  |  | 
+7: 3.0 | Chọn & thu thập bộ dữ liệu (vd: Retailrocket / E-commerce Events History – Kaggle) | █ | █ |  |  |  |  |  | 
+8: 4.0 | Thiết kế kiến trúc hệ thống (5 tầng: Ingestion–Xử lý–Lưu trữ–ML–Phục vụ) |  | █ |  |  |  |  |  | 
+9: 5.0 | Setup môi trường: Python, Spark, Kafka (Docker) | █ | █ |  |  |  |  |  | 
+10: PHASE 2 – TẦNG INGESTION (KAFKA) |  |  |  |  |  |  |  |  | 
+11: 6.0 | Cài đặt Kafka Broker qua Docker |  |  | █ |  |  |  |  | 
+12: 7.0 | Tạo Topic: page_view, add_to_cart, purchase, review |  |  | █ |  |  |  |  | 
+13: 8.0 | Viết Producer mô phỏng luồng clickstream từ dataset |  |  | █ | █ |  |  |  | 
+14: 9.0 | Test gửi/nhận message qua Kafka CLI (producer/consumer) |  |  |  | █ |  |  |  | 
+15: PHASE 3 – TẦNG XỬ LÝ (SPARK STRUCTURED STREAMING) |  |  |  |  |  |  |  |  | 
+16: 10.0 | Kết nối Spark Structured Streaming đọc dữ liệu từ Kafka |  |  |  | █ |  |  |  | 
+17: 11.0 | Feature engineering theo session/window thời gian |  |  |  | █ | █ |  |  | 
+18: 12.0 | Xử lý dữ liệu đến trễ (watermark) & khử trùng lặp |  |  |  |  | █ |  |  | 
+19: PHASE 4 – TẦNG LƯU TRỮ (DELTA LAKE / NOSQL) |  |  |  |  |  |  |  |  | 
+20: 13.0 | Thiết lập Delta Lake table lưu lịch sử hành vi (batch) |  |  |  |  | █ |  |  | 
+21: 14.0 | Thiết lập Redis/MongoDB lưu feature & session real-time |  |  |  |  | █ |  |  | 
+22: 15.0 | Kiểm thử ACID, time travel trên Delta Lake |  |  |  |  | █ | █ |  | 
+23: PHASE 5 – TẦNG PHÂN TÍCH / ML (SPARK MLLIB) |  |  |  |  |  |  |  |  | 
+24: 16.0 | Xây dựng Pipeline MLlib (VectorAssembler + ALS/Random Forest) |  |  |  |  |  | █ |  | 
+25: 17.0 | Huấn luyện mô hình gợi ý sản phẩm (offline, trên Delta Lake) |  |  |  |  |  | █ |  | 
+26: 18.0 | Đánh giá mô hình (RMSE / Precision@K, cross-validation) |  |  |  |  |  | █ |  | 
+27: PHASE 6 – TẦNG PHỤC VỤ (API / DASHBOARD) |  |  |  |  |  |  |  |  | 
+28: 19.0 | Xây dựng Recommendation API (FastAPI/Flask) phục vụ gợi ý |  |  |  |  |  | █ | █ | 
+29: 20.0 | Xây dựng Dashboard giám sát KPI (CTR, conversion, doanh thu) |  |  |  |  |  |  | █ | 
+30: 21.0 | Tích hợp Airflow điều phối huấn luyện lại mô hình định kỳ |  |  |  |  |  |  | █ | 
+31: PHASE 7 – TÍCH HỢP & KIỂM THỬ TOÀN HỆ THỐNG |  |  |  |  |  |  |  |  | 
+32: 22.0 | Tích hợp end-to-end: Kafka→Spark→Delta/NoSQL→MLlib→API/Dashboard |  |  |  |  |  |  | █ | 
+33: 23.0 | Kiểm thử chức năng (đúng luồng dữ liệu end-to-end) |  |  |  |  |  |  | █ | 
+34: 24.0 | Kiểm thử hiệu năng (độ trễ, thông lượng) |  |  |  |  |  |  | █ | 
+35: 25.0 | Fix bugs & tối ưu hệ thống |  |  |  |  |  |  | █ | 
+36: PHASE 8 – TÀI LIỆU & BÁO CÁO CUỐI KÌ |  |  |  |  |  |  |  |  | 
+37: 26.0 | Viết báo cáo Word (kiến trúc pipeline, bảng 5V, kết quả) |  |  |  |  |  |  | █ | █
+38: 27.0 | Làm slide trình bày cuối kì |  |  |  |  |  |  |  | █
+39: 28.0 | Quay video demo toàn hệ thống |  |  |  |  |  |  |  | █
+40: 29.0 | Báo cáo & demo cuối kì |  |  |  |  |  |  |  | █
+
+SHEET Theo dõi tuần
+1: THEO DÕI TIẾN ĐỘ HÀNG TUẦN – BÁO CÁO SYNC GITHUB |  |  |  |  | 
+3: Tuần | Ngày BH | Công việc đã hoàn thành | Công việc tuần tới | Vấn đề / Ghi chú | Link GitHub
+4: Tuần 2 | ../.. |  |  |  | 
+5: Tuần 3 | ../.. |  |  |  | 
+6: Tuần 4 | ../.. |  |  |  | 
+7: Tuần 5 | ../.. |  |  |  | 
+8: Tuần 6 | ../.. |  |  |  | 
+9: Tuần 7 | ../.. |  |  |  | 
+10: Tuần 8 | ../.. |  |  |  | 
+11: Tuần 9 | ../.. |  |  |  | 
+
+SHEET Phân công
+1: PHÂN CÔNG NHIỆM VỤ CÁC THÀNH VIÊN |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+3: STT | Thành viên | Vai trò | Nhiệm vụ chính | Kỹ năng cần có | Ghi chú |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+4: 1.0 |  | Data Engineer (Ingestion + Streaming) | Setup Kafka Broker/Topic, viết Producer mô phỏng clickstream, xây dựng Spark Structured Streaming (feature engineering theo window, watermark) | Python, Apache Kafka, Spark Structured Streaming | Phụ trách Phase 2–3 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+5: 2.0 |  | Data/ML Engineer (Lưu trữ + MLlib) | Thiết lập Delta Lake & NoSQL (Redis/MongoDB), xây dựng Pipeline MLlib, huấn luyện & đánh giá mô hình gợi ý | PySpark, Spark MLlib, Delta Lake, SQL | Phụ trách Phase 4–5 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+6: 3.0 |  | Backend Dev (API + Điều phối) | Xây dựng Recommendation API phục vụ gợi ý thời gian thực, tích hợp Airflow điều phối huấn luyện lại định kỳ | Python (FastAPI/Flask), REST API, Apache Airflow | Phụ trách Phase 6 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+7: 4.0 |  | Frontend / Dashboard | Xây dựng Dashboard giám sát KPI (Streamlit/PowerBI), tích hợp giao diện hiển thị kết quả gợi ý từ API | Dashboard (Streamlit/PowerBI), Frontend, REST API | Phụ trách Phase 7 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+8: 5.0 |  | QA / Báo cáo (PM) | Kiểm thử tích hợp toàn hệ thống, viết báo cáo Word, làm slide thuyết trình, quay video demo, theo dõi tiến độ dự án | Kiểm thử phần mềm, Word, PowerPoint, quản lý dự án | Phụ trách Phase 7–8, PM theo dõi tiến độ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+10: Ghi chú: ô nền vàng ("Thành viên") là ô nhóm cần tự điền tên thành viên phụ trách. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 

@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "run_id": "verified-20261021c",
+  "source_csv": "data/raw/events.csv",
+  "source_line_including_header": 1466186,
+  "real_source_row": {
+    "timestamp": "1430704718752",
+    "visitorid": "556819",
+    "event": "view",
+    "itemid": "198209",
+    "transactionid": ""
+  },
+  "event_csv": "data/sample/live_check.csv",
+  "before": {
+    "run_id": "verified-20261021c",
+    "model_version": "verified-20261021c:als-serving-v1",
+    "trained_at_utc": "2026-10-21T13:02:20+00:00",
+    "algorithm": "als_implicit",
+    "metric_model_version": "verified-20261021c:als-evaluation-v1",
+    "visitorid": 556819,
+    "requested_k": 10,
+    "returned": 10,
+    "items": [
+      {
+        "itemid": 198209,
+        "score": 0.8759596943855286
+      },
+      {
+        "itemid": 306086,
+        "score": 0.8452298045158386
+      },
+      {
+        "itemid": 40685,
+        "score": 0.8317247033119202
+      },
+      {
+        "itemid": 86439,
+        "score": 0.8218252062797546
+      },
+      {
+        "itemid": 61273,
+        "score": 0.7062065005302429
+      },
+      {
+        "itemid": 203248,
+        "score": 0.6993705034255981
+      },
+      {
+        "itemid": 436056,
+        "score": 0.6967417001724243
+      },
+      {
+        "itemid": 462376,
+        "score": 0.6434458494186401
+      },
+      {
+        "itemid": 371485,
+        "score": 0.6425966024398804
+      },
+      {
+        "itemid": 210087,
+        "score": 0.6271348595619202
+      }
+    ],
+    "source": "als_bundle",
+    "cache_hit": false,
+    "history_sources": [
+      "bundle",
+      "sqlite",
+      "redis",
+      "mongodb"
+    ],
+    "seen_items_excluded": 14,
+    "model_stale": false,
+    "reload_error": null,
+    "warnings": [],
+    "generated_at_utc": "2026-10-21T13:09:26.949557+00:00",
+    "request_ms": 59.355
+  },
+  "prepared_at_utc": "2026-10-21T13:09:26.966+00:00",
+  "mongo_matching_facts": 1,
+  "after": {
+    "run_id": "verified-20261021c",
+    "model_version": "verified-20261021c:als-serving-v1",
+    "trained_at_utc": "2026-10-21T13:02:20+00:00",
+    "algorithm": "als_implicit",
+    "metric_model_version": "verified-20261021c:als-evaluation-v1",
+    "visitorid": 556819,
+    "requested_k": 10,
+    "returned": 10,
+    "items": [
+      {
+        "itemid": 306086,
+        "score": 0.8452298045158386
+      },
+      {
+        "itemid": 40685,
+        "score": 0.8317247033119202
+      },
+      {
+        "itemid": 86439,
+        "score": 0.8218252062797546
+      },
+      {
+        "itemid": 61273,
+        "score": 0.7062065005302429
+      },
+      {
+        "itemid": 203248,
+        "score": 0.6993705034255981
+      },
+      {
+        "itemid": 436056,
+        "score": 0.6967417001724243
+      },
+      {
+        "itemid": 462376,
+        "score": 0.6434458494186401
+      },
+      {
+        "itemid": 371485,
+        "score": 0.6425966024398804
+      },
+      {
+        "itemid": 210087,
+        "score": 0.6271348595619202
+      },
+      {
+        "itemid": 259357,
+        "score": 35.0
+      }
+    ],
+    "source": "als_bundle",
+    "cache_hit": true,
+    "history_sources": [
+      "bundle",
+      "sqlite",
+      "redis",
+      "mongodb"
+    ],
+    "seen_items_excluded": 15,
+    "model_stale": false,
+    "reload_error": null,
+    "warnings": [],
+    "generated_at_utc": "2026-10-21T13:11:57.391902+00:00",
+    "request_ms": 36.16
+  },
+  "redis_seen_item": true,
+  "verified_at_utc": "2026-10-21T13:11:57.462+00:00"
+}

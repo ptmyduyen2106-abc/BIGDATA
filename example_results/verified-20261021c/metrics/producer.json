@@ -1,0 +1,22 @@
+{
+  "run_id": "verified-20261021c",
+  "input": "data/sample/events_10000.csv",
+  "started_at": "2026-10-21T12:54:23.676+00:00",
+  "mode": "kafka",
+  "status": "success",
+  "sent": 10000,
+  "acknowledged": 10000,
+  "topic_counts": {
+    "add_to_cart": 211,
+    "page_view": 9728,
+    "purchase": 61
+  },
+  "acknowledged_topic_counts": {
+    "add_to_cart": 211,
+    "page_view": 9728,
+    "purchase": 61
+  },
+  "elapsed_seconds": 2.749,
+  "events_per_second": 3637.871,
+  "finished_at": "2026-10-21T12:54:26.431+00:00"
+}

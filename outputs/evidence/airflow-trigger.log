@@ -1,0 +1,7 @@
+[2026-10-21T13:03:36.302+0000] {__init__.py:43} INFO - Loaded API auth backend: airflow.api.auth.backend.session
+     |                     |                     |                     |                     |          |                  | last_scheduling_deci |                     |          |            |       
+conf | dag_id              | dag_run_id          | data_interval_start | data_interval_end   | end_date | external_trigger | sion                 | logical_date        | run_type | start_date | state 
+=====+=====================+=====================+=====================+=====================+==========+==================+======================+=====================+==========+============+=======
+{}   | retailrocket_daily_ | verified-phase17-20 | 2026-10-19          | 2026-10-20          | None     | True             | None                 | 2026-10-21          | manual   | None       | queued
+     | retrain             | 261021              | 19:00:00+00:00      | 19:00:00+00:00      |          |                  |                      | 13:03:37+00:00      |          |            |       
+                                                                                                                                                                                                        

@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-21T12:51:02.970+00:00",
+  "files": {
+    "events.csv": {
+      "bytes": 94237913,
+      "sha256": "3745aa83238b1e6d44d8fda209807899f420084398f94ddf745f3cbcfecbf9e7",
+      "source": "https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset"
+    },
+    "category_tree.csv": {
+      "bytes": 14454,
+      "sha256": "94e865eb0a3d48cbbfe3b79079018dd92509315c88f5fd8d00d0b4b5af434f5b",
+      "source": "https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset"
+    }
+  },
+  "rows": 2756101,
+  "event_counts": {
+    "view": 2664312,
+    "addtocart": 69332,
+    "transaction": 22457
+  },
+  "missing_transaction_ids_on_purchase": 0,
+  "timestamp_decreases": 1377377,
+  "minimum_epoch_ms": 1430622004384,
+  "maximum_epoch_ms": 1442545187788,
+  "limitations": [
+    "No real reviews",
+    "No product prices or impression denominator",
+    "No item-to-category mapping"
+  ]
+}

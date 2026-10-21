@@ -1,0 +1,167 @@
+{
+  "observed_at_utc": "2026-10-21T13:11:17.028203+00:00",
+  "status": "passed",
+  "checks": {
+    "job_completed": true,
+    "airflow_dag_success": true,
+    "airflow_all_tasks_success": true,
+    "latest_pointer_matches": true,
+    "api_ready": true,
+    "api_reloaded_new_model": true,
+    "mongo_registry_matches": true,
+    "redis_registry_matches": true,
+    "recommendation_version_matches": true,
+    "recommendation_excludes_observed_seen": true
+  },
+  "job": {
+    "job_id": "64af6b3f57f5c1763b303ac8",
+    "request_id": "verified-phase17-20261021",
+    "source_run_id": "verified-20261021c",
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "quick": true,
+    "status": "completed",
+    "created_at_utc": "2026-10-21T13:03:44.806+00:00",
+    "started_at_utc": "2026-10-21T13:03:44.829+00:00",
+    "result": {
+      "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+      "elapsed_seconds": 358.692
+    },
+    "finished_at_utc": "2026-10-21T13:09:44.108+00:00"
+  },
+  "airflow": {
+    "dag_runs": [
+      {
+        "dag_id": "retailrocket_daily_retrain",
+        "run_id": "verified-phase17-20261021",
+        "state": "success",
+        "start_date": "2026-10-21 13:03:38.804358",
+        "end_date": "2026-10-21 13:10:10.443745"
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "submit_retraining",
+        "state": "success",
+        "start_date": "2026-10-21 13:03:44.425283",
+        "end_date": "2026-10-21 13:03:44.855421"
+      },
+      {
+        "task_id": "wait_for_evaluated_model",
+        "state": "success",
+        "start_date": "2026-10-21 13:10:07.803522",
+        "end_date": "2026-10-21 13:10:08.569708"
+      }
+    ]
+  },
+  "latest_pointer": {
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "activated_at_utc": "2026-10-21T13:09:43.581+00:00",
+    "model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1"
+  },
+  "api_readiness": {
+    "status": "ready",
+    "model": {
+      "ready": true,
+      "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+      "model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1",
+      "trained_at_utc": "2026-10-21T13:09:22+00:00",
+      "algorithm": "als_implicit",
+      "stale": false
+    },
+    "dependencies": {
+      "redis": {
+        "enabled": true,
+        "status": "ok",
+        "required_for_ready": false
+      },
+      "mongodb": {
+        "enabled": true,
+        "status": "ok",
+        "required_for_ready": false
+      }
+    }
+  },
+  "api_model": {
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1",
+    "trained_at_utc": "2026-10-21T13:09:22+00:00",
+    "metric_model_version": "retrain-64af6b3f57f5c1763b303ac8:als-evaluation-v1",
+    "algorithm": "als_implicit"
+  },
+  "heldout_metrics": {
+    "k": 10,
+    "eligible_users": 912,
+    "heldout_unique_pairs": 1288,
+    "novel_heldout_pairs": 1223,
+    "excluded_repeat_pairs": 65,
+    "training_catalog_size": 5913,
+    "precision_at_k": 0.0,
+    "recall_at_k": 0.0,
+    "ndcg_at_k": 0.0,
+    "catalog_coverage": 0.034838491459496024,
+    "user_coverage": 0.044956140350877194,
+    "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+    "cold_users": 871,
+    "cold_item_pairs": 881,
+    "status": "evaluated"
+  },
+  "mongo_registry": {
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1",
+    "trained_at_utc": "2026-10-21T13:09:22+00:00",
+    "algorithm": "als_implicit"
+  },
+  "redis_registry": {
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1",
+    "trained_at_utc": "2026-10-21T13:09:22+00:00",
+    "algorithm": "als_implicit"
+  },
+  "api_recommendation": {
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1",
+    "trained_at_utc": "2026-10-21T13:09:22+00:00",
+    "algorithm": "als_implicit",
+    "metric_model_version": "retrain-64af6b3f57f5c1763b303ac8:als-evaluation-v1",
+    "visitorid": 12,
+    "requested_k": 5,
+    "returned": 5,
+    "items": [
+      {
+        "itemid": 203248,
+        "score": 0.00016964456881396472
+      },
+      {
+        "itemid": 128051,
+        "score": 6.703172402922064e-05
+      },
+      {
+        "itemid": 408139,
+        "score": 6.47623892291449e-05
+      },
+      {
+        "itemid": 396445,
+        "score": 6.328408198896796e-05
+      },
+      {
+        "itemid": 450082,
+        "score": 5.7603640016168356e-05
+      }
+    ],
+    "source": "als_bundle",
+    "cache_hit": false,
+    "history_sources": [
+      "bundle",
+      "sqlite",
+      "redis",
+      "mongodb"
+    ],
+    "seen_items_excluded": 1,
+    "model_stale": false,
+    "reload_error": null,
+    "warnings": [],
+    "generated_at_utc": "2026-10-21T13:11:16.920525+00:00",
+    "request_ms": 87.462
+  },
+  "note": "Manual Airflow run completed genuine retraining; ranking scores are retained as observed, including zero accuracy on sparse sample. No retrigger performed by verifier."
+}

@@ -1,0 +1,63 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 876B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.11.13-slim-bookworm
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11.13-slim-bookworm
+#2 DONE 2.5s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 103B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 26.06kB 0.0s done
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/library/python:3.11.13-slim-bookworm@sha256:86adf8dbadc3d6e82ee5dd2c74bec2e1c2467cdad47886280501df722372d2e1
+#6 resolve docker.io/library/python:3.11.13-slim-bookworm@sha256:86adf8dbadc3d6e82ee5dd2c74bec2e1c2467cdad47886280501df722372d2e1 0.1s done
+#6 DONE 0.1s
+
+#7 [4/9] COPY requirements.txt .
+#7 CACHED
+
+#8 [5/9] RUN python -m pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [6/9] COPY requirements-ml.txt .
+#9 CACHED
+
+#10 [7/9] COPY vendor_wheels /opt/wheels
+#10 CACHED
+
+#11 [2/9] RUN apt-get update && apt-get install -y --no-install-recommends openjdk-17-jre-headless procps     && rm -rf /var/lib/apt/lists/*     && ln -s /usr/lib/jvm/java-17-openjdk-$(dpkg --print-architecture) /opt/java
+#11 CACHED
+
+#12 [3/9] WORKDIR /app
+#12 CACHED
+
+#13 [8/9] RUN if find /opt/wheels -name '*.whl' -print -quit | grep -q .; then       python -m pip install --no-index --find-links /opt/wheels -r requirements-ml.txt;     else python -m pip install --no-cache-dir -r requirements-ml.txt; fi
+#13 CACHED
+
+#14 [9/9] COPY . /app
+#14 DONE 1.1s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 2.9s done
+#15 exporting manifest sha256:85778d3684cb0ab3bff34a1519810c305af4e52614c4676090736f9ce37b4977 0.0s done
+#15 exporting config sha256:a00efd6b0f0910eff9d325b68cb7485bb4a79120e9f03ec1eb2e76f9e93357b3 0.0s done
+#15 exporting attestation manifest sha256:8af6a6b11cfbe3b4c78b2d12a6a365e66d78183149cbc2013b7cd666284a917b 0.0s done
+#15 exporting manifest list sha256:e0cb51b828b4202dcac3dc01ec81806158b12155d3e019900c76433430d44f50 0.0s done
+#15 naming to docker.io/library/retailrocket-phase17:1.0
+#15 naming to docker.io/library/retailrocket-phase17:1.0 done
+#15 unpacking to docker.io/library/retailrocket-phase17:1.0
+#15 unpacking to docker.io/library/retailrocket-phase17:1.0 0.5s done
+#15 DONE 3.6s

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79",
+  "before_version": 0,
+  "after_update_version": 1,
+  "rollback_baseline_version": 2,
+  "checks": {
+    "update_commit": true,
+    "time_travel": true,
+    "constraint_rejection": true,
+    "no_partial_append": true
+  },
+  "rejection_exception_type": "Py4JJavaError",
+  "scope": "Actual per-table Delta operations; no concurrent-writer or distributed-transaction claim",
+  "created_at": "2026-10-21T13:02:45.760544+00:00"
+}

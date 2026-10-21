@@ -1,0 +1,16 @@
+{
+  "events.csv": {
+    "source_url": "https://www.kaggle.com/api/v1/datasets/download/retailrocket/ecommerce-dataset/events.csv",
+    "source_page": "https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset",
+    "bytes": 94237913,
+    "sha256": "3745aa83238b1e6d44d8fda209807899f420084398f94ddf745f3cbcfecbf9e7",
+    "verified_at_utc": "2026-09-20T16:16:41.776385+00:00"
+  },
+  "category_tree.csv": {
+    "source_url": "https://www.kaggle.com/api/v1/datasets/download/retailrocket/ecommerce-dataset/category_tree.csv",
+    "source_page": "https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset",
+    "bytes": 14454,
+    "sha256": "94e865eb0a3d48cbbfe3b79079018dd92509315c88f5fd8d00d0b4b5af434f5b",
+    "verified_at_utc": "2026-09-20T16:16:43.777430+00:00"
+  }
+}

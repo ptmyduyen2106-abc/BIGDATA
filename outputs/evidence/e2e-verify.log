@@ -1,0 +1,41 @@
+ Container retailrocket17-app-run-cf956803d228 Creating 
+ Container retailrocket17-app-run-cf956803d228 Created 
+{
+  "run_id": "verified-20261021c",
+  "checked_at_utc": "2026-10-21T13:03:29.602+00:00",
+  "status": "passed",
+  "checks": {
+    "pipeline_completed": true,
+    "api_model_and_kpis": true,
+    "known_and_cold_users_no_seen_items": [
+      {
+        "visitorid": 12,
+        "returned": 10,
+        "source": "als_bundle"
+      },
+      {
+        "visitorid": 385,
+        "returned": 10,
+        "source": "als_bundle"
+      },
+      {
+        "visitorid": 1250,
+        "returned": 10,
+        "source": "als_bundle"
+      },
+      {
+        "visitorid": 1186759,
+        "returned": 10,
+        "source": "popular_fallback"
+      },
+      {
+        "visitorid": 2147483647,
+        "returned": 10,
+        "source": "popular_fallback"
+      }
+    ],
+    "mongo_event_count_and_model_registry": 9999,
+    "redis_features_and_model_registry": true,
+    "delta_time_travel_and_atomic_rejection": true
+  }
+}

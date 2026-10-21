@@ -1,0 +1,652 @@
+job-worker-1  | INFO:     172.21.0.8:44316 - "POST /jobs/retrain HTTP/1.1" 202 Accepted
+job-worker-1  | [2026-10-21T13:03:44.918+00:00] source_and_ingestion
+job-worker-1  | [2026-10-21T13:03:45.562+00:00] spark_startup_and_ingestion
+job-worker-1  | :: loading settings :: url = jar:file:/usr/local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+job-worker-1  | Ivy Default Cache set to: /root/.ivy2/cache
+job-worker-1  | The jars for the packages stored in: /root/.ivy2/jars
+job-worker-1  | io.delta#delta-spark_2.12 added as a dependency
+job-worker-1  | :: resolving dependencies :: org.apache.spark#spark-submit-parent-5d979d4b-75f8-40e9-9391-3803280aa4f8;1.0
+job-worker-1  | 	confs: [default]
+job-worker-1  | INFO:     127.0.0.1:53584 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | 	found io.delta#delta-spark_2.12;3.3.3 in central
+job-worker-1  | 	found io.delta#delta-storage;3.3.3 in central
+job-worker-1  | 	found org.antlr#antlr4-runtime;4.9.3 in central
+job-worker-1  | :: resolution report :: resolve 550ms :: artifacts dl 23ms
+job-worker-1  | 	:: modules in use:
+job-worker-1  | 	io.delta#delta-spark_2.12;3.3.3 from central in [default]
+job-worker-1  | 	io.delta#delta-storage;3.3.3 from central in [default]
+job-worker-1  | 	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+job-worker-1  | 	---------------------------------------------------------------------
+job-worker-1  | 	|                  |            modules            ||   artifacts   |
+job-worker-1  | 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+job-worker-1  | 	---------------------------------------------------------------------
+job-worker-1  | 	|      default     |   3   |   0   |   0   |   0   ||   3   |   0   |
+job-worker-1  | 	---------------------------------------------------------------------
+job-worker-1  | :: retrieving :: org.apache.spark#spark-submit-parent-5d979d4b-75f8-40e9-9391-3803280aa4f8
+job-worker-1  | 	confs: [default]
+job-worker-1  | 	0 artifacts copied, 3 already retrieved (0kB/18ms)
+job-worker-1  | 26/10/21 13:03:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+job-worker-1  | Setting default log level to "WARN".
+job-worker-1  | To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+job-worker-1  | INFO:     172.21.0.8:45506 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:46590 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | [2026-10-21T13:04:06.394+00:00] windows_sessions_and_snapshot
+job-worker-1  | 
+[Stage 0:>                                                          (0 + 2) / 2]
+
+[Stage 0:=============================>                             (1 + 1) / 2]
+
+                                                                                
+26/10/21 13:04:07 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+job-worker-1  | 26/10/21 13:04:08 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+job-worker-1  | INFO:     127.0.0.1:57448 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | 26/10/21 13:04:11 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+job-worker-1  | INFO:     127.0.0.1:51166 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:51632 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:35006 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:46200 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | [2026-10-21T13:04:50.122+00:00] delta_hdfs_lake
+job-worker-1  | INFO:     127.0.0.1:35858 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:33156 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:34340 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | [2026-10-21T13:05:10.510+00:00] online_mongodb_redis_features
+job-worker-1  | INFO:     127.0.0.1:50496 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:38602 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:56792 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:36212 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:34008 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:35594 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:47314 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:60898 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:50592 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:40560 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:41760 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | [2026-10-21T13:06:34.690+00:00] als_temporal_cross_validation_and_training
+job-worker-1  | 
+[Stage 4:>                                                          (0 + 2) / 2]
+
+[Stage 5:>                                                          (0 + 2) / 4]
+
+[Stage 5:>                  (0 + 2) / 4][Stage 8:>                  (0 + 0) / 4]
+
+[Stage 5:=========>         (2 + 2) / 4][Stage 8:>                  (0 + 0) / 4]
+
+[Stage 8:>                                                          (0 + 2) / 4]
+
+[Stage 6:>                  (0 + 0) / 1][Stage 8:>                  (0 + 2) / 4]
+
+                                                                                
+
+[Stage 8:=============================>                             (2 + 2) / 4]
+
+                                                                                
+
+[Stage 11:>                                                         (0 + 2) / 4]
+
+[Stage 11:=============================>                            (2 + 2) / 4]
+
+[Stage 11:==========================================================(4 + 0) / 4]
+
+                                                                                
+
+[Stage 13:>                                                         (0 + 2) / 4]
+
+[Stage 13:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 16:>                                                         (0 + 2) / 4]
+
+[Stage 16:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 18:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 37:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 51:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 67:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 77:>                                                         (0 + 2) / 4]
+
+[Stage 77:=============================>                            (2 + 2) / 4]
+
+[Stage 77:===========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 80:>                                                        (0 + 2) / 50]
+
+[Stage 80:==>                                                      (2 + 2) / 50]
+
+[Stage 80:====>                                                    (4 + 2) / 50]
+
+[Stage 80:=========>                                               (8 + 2) / 50]
+
+[Stage 80:===============>                                        (14 + 2) / 50]
+
+[Stage 80:======================>                                 (20 + 2) / 50]
+
+[Stage 80:=============================>                          (26 + 2) / 50]
+
+[Stage 80:======================================>                 (34 + 2) / 50]
+
+[Stage 80:============================================>           (40 + 2) / 50]
+
+[Stage 80:===================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 83:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 86:===============>                                        (14 + 2) / 50]
+
+[Stage 86:=======================>                                (21 + 2) / 50]
+
+[Stage 86:==============================>                         (27 + 2) / 50]
+
+[Stage 86:====================================>                   (33 + 2) / 50]
+
+[Stage 86:===========================================>            (39 + 2) / 50]
+
+[Stage 86:=================================================>      (44 + 2) / 50]
+
+                                                                                
+
+[Stage 92:>                                                         (0 + 1) / 1]
+
+[Stage 95:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 120:===========>                                           (10 + 2) / 50]
+
+[Stage 120:===============>                                       (14 + 2) / 50]
+
+[Stage 120:===================>                                   (18 + 2) / 50]
+
+[Stage 120:========================>                              (22 + 2) / 50]
+
+[Stage 120:=============================>                         (27 + 2) / 50]
+
+[Stage 120:===================================>                   (32 + 2) / 50]
+
+[Stage 120:========================================>              (37 + 2) / 50]
+
+[Stage 120:=============================================>         (41 + 3) / 50]
+
+[Stage 120:==================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 126:>                                                        (0 + 2) / 2]
+
+[Stage 131:===============>                                       (14 + 2) / 50]
+
+[Stage 131:===================>                                   (18 + 2) / 50]
+
+[Stage 131:=========================>                             (23 + 2) / 50]
+
+[Stage 131:============================>                          (26 + 2) / 50]
+
+[Stage 131:===============================>                       (29 + 2) / 50]
+
+[Stage 131:===================================>                   (32 + 2) / 50]
+
+[Stage 131:=======================================>               (36 + 2) / 50]
+
+[Stage 131:============================================>          (40 + 2) / 50]
+
+[Stage 131:=============================================>         (41 + 2) / 50]
+
+[Stage 131:===============================================>       (43 + 2) / 50]
+
+[Stage 131:==================================================>    (46 + 2) / 50]
+
+[Stage 131:====================================================>  (48 + 2) / 50]
+
+                                                                                
+
+[Stage 141:===================================================>   (47 + 2) / 50]
+
+                                                                                
+26/10/21 13:06:42 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+job-worker-1  | 26/10/21 13:06:42 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.VectorBLAS
+job-worker-1  | 26/10/21 13:06:43 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.lapack.JNILAPACK
+job-worker-1  | INFO:     127.0.0.1:49708 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:55234 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:56644 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:46010 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:41448 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:47260 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:55960 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:35360 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:48796 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:44082 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:48204 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:39920 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:51744 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:53546 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:35790 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:43684 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:37118 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:36132 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:41156 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:46016 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | [2026-10-21T13:09:23.820+00:00] delta_acid_time_travel
+job-worker-1  | INFO:     127.0.0.1:51018 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:43808 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:45894 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | 
+[Stage 639:=====================================>                  (8 + 2) / 12]
+
+                                                                                
+
+[Stage 3064:========================================>             (12 + 2) / 16]
+
+                                                                                
+
+[Stage 3268:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3269:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3270:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3286:>                                                       (0 + 2) / 2]
+
+                                                                                
+
+[Stage 3466:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3467:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3677:(14 + 3) / 32][Stage 3678:>(0 + 0) / 32][Stage 3694:> (0 + 0) / 1]
+
+[Stage 3678:(16 + 2) / 32][Stage 3694:> (0 + 0) / 1][Stage 3695:>(0 + 0) / 32]
+
+                                                                                
+
+[Stage 3697:(22 + 2) / 32][Stage 3698:>(0 + 0) / 32][Stage 3700:> (0 + 0) / 1]
+
+[Stage 3698:(24 + 2) / 32][Stage 3700:> (0 + 0) / 1][Stage 3702:> (0 + 0) / 1]
+
+                                                                                
+
+[Stage 3755:>                                                       (0 + 2) / 2]
+
+[Stage 3755:> (0 + 2) / 2][Stage 3756:> (0 + 0) / 2][Stage 3757:> (0 + 0) / 2]
+
+[Stage 3756:> (0 + 2) / 2][Stage 3757:> (0 + 0) / 2][Stage 3759:> (0 + 0) / 1]
+
+[Stage 3759:>                                                       (0 + 1) / 1]
+
+[Stage 3761:>                                                       (0 + 1) / 1]
+
+[Stage 3788:===========================>                           (8 + 2) / 16]
+
+[Stage 3811:======>                                                (2 + 2) / 16]
+
+[Stage 3811:==========>                                            (3 + 2) / 16]
+
+[Stage 3811:=============>                                         (4 + 2) / 16]
+
+[Stage 3811:====================>                                  (6 + 2) / 16]
+
+[Stage 3811:========================>                              (7 + 2) / 16]
+
+[Stage 3811:===========================>                           (8 + 2) / 16]
+
+[Stage 3811:==============================>                        (9 + 2) / 16]
+
+[Stage 3811:=================================>                    (10 + 2) / 16]
+
+[Stage 3811:===========================================>          (13 + 2) / 16]
+
+[Stage 3811:==================================================>   (15 + 1) / 16]
+
+                                                                                
+
+[Stage 4095:==>                                                    (2 + 2) / 50]
+
+[Stage 4095:========>                                              (8 + 2) / 50]
+
+[Stage 4095:============>                                         (12 + 2) / 50]
+
+[Stage 4095:===============>                                      (14 + 2) / 50]
+
+[Stage 4095:===================>                                  (18 + 2) / 50]
+
+[Stage 4095:=========================>                            (24 + 2) / 50]
+
+[Stage 4095:==================================>                   (32 + 2) / 50]
+
+[Stage 4095:=========================================>            (38 + 2) / 50]
+
+[Stage 4095:=================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 4114:============>                                         (12 + 2) / 50]
+
+[Stage 4114:==================>                                   (17 + 2) / 50]
+
+[Stage 4114:=======================>                              (22 + 2) / 50]
+
+[Stage 4114:============================>                         (26 + 2) / 50]
+
+[Stage 4114:==================================>                   (32 + 2) / 50]
+
+[Stage 4114:======================================>               (36 + 2) / 50]
+
+[Stage 4114:=============================================>        (42 + 2) / 50]
+
+[Stage 4114:=================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 4126:=================>                                    (16 + 2) / 50]
+
+[Stage 4126:=========================>                            (24 + 2) / 50]
+
+[Stage 4126:===================================>                  (33 + 2) / 50]
+
+[Stage 4126:===============================================>      (44 + 2) / 50]
+
+                                                                                
+
+[Stage 4131:=================================================>    (46 + 2) / 50]
+
+                                                                                
+26/10/21 13:09:40 ERROR Utils: Aborting task
+job-worker-1  | org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+job-worker-1  |  - value : -1
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+job-worker-1  | 	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+job-worker-1  | 	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+job-worker-1  | 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+job-worker-1  | 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+job-worker-1  | 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+job-worker-1  | 	at java.base/java.lang.Thread.run(Thread.java:840)
+job-worker-1  | 26/10/21 13:09:40 ERROR DeltaFileFormatWriter: Job job_20261021130940410558967860961053_4141 aborted.
+job-worker-1  | 26/10/21 13:09:40 ERROR Executor: Exception in task 1.0 in stage 4141.0 (TID 2988)
+job-worker-1  | org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/acid_checks/ea5e5ecc100346d88a541fcec1470b42.
+job-worker-1  | 	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+job-worker-1  | 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+job-worker-1  | 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+job-worker-1  | 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+job-worker-1  | 	at java.base/java.lang.Thread.run(Thread.java:840)
+job-worker-1  | Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+job-worker-1  |  - value : -1
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+job-worker-1  | 	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+job-worker-1  | 	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+job-worker-1  | 	... 12 more
+job-worker-1  | 26/10/21 13:09:40 WARN TaskSetManager: Lost task 1.0 in stage 4141.0 (TID 2988) (localhost executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/acid_checks/ea5e5ecc100346d88a541fcec1470b42.
+job-worker-1  | 	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+job-worker-1  | 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+job-worker-1  | 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+job-worker-1  | 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+job-worker-1  | 	at java.base/java.lang.Thread.run(Thread.java:840)
+job-worker-1  | Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+job-worker-1  |  - value : -1
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+job-worker-1  | 	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+job-worker-1  | 	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+job-worker-1  | 	... 12 more
+job-worker-1  | 
+job-worker-1  | 26/10/21 13:09:40 ERROR TaskSetManager: Task 1 in stage 4141.0 failed 1 times; aborting job
+job-worker-1  | 26/10/21 13:09:40 ERROR DeltaFileFormatWriter: Aborting job b33781e8-0cb3-43c4-aea4-7764954a95b9
+job-worker-1  | org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 4141.0 failed 1 times, most recent failure: Lost task 1.0 in stage 4141.0 (TID 2988) (localhost executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/acid_checks/ea5e5ecc100346d88a541fcec1470b42.
+job-worker-1  | 	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+job-worker-1  | 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+job-worker-1  | 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+job-worker-1  | 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+job-worker-1  | 	at java.base/java.lang.Thread.run(Thread.java:840)
+job-worker-1  | Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+job-worker-1  |  - value : -1
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+job-worker-1  | 	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+job-worker-1  | 	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+job-worker-1  | 	... 12 more
+job-worker-1  | 
+job-worker-1  | Driver stacktrace:
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2898)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2834)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2833)
+job-worker-1  | 	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+job-worker-1  | 	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+job-worker-1  | 	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2833)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1253)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1253)
+job-worker-1  | 	at scala.Option.foreach(Option.scala:407)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1253)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3102)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3036)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3025)
+job-worker-1  | 	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+job-worker-1  | 	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:995)
+job-worker-1  | 	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$1(DeltaFileFormatWriter.scala:267)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.writeAndCommit(DeltaFileFormatWriter.scala:300)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeWrite(DeltaFileFormatWriter.scala:236)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.write(DeltaFileFormatWriter.scala:216)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.$anonfun$writeFiles$2(TransactionalWrite.scala:468)
+job-worker-1  | 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+job-worker-1  | 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:426)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:384)
+job-worker-1  | 	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:259)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:255)
+job-worker-1  | 	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:248)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:245)
+job-worker-1  | 	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+job-worker-1  | 	at org.apache.spark.sql.delta.commands.WriteIntoDelta.writeFiles(WriteIntoDelta.scala:377)
+job-worker-1  | 	at org.apache.spark.sql.delta.commands.WriteIntoDelta.writeAndReturnCommitData(WriteIntoDelta.scala:340)
+job-worker-1  | 	at org.apache.spark.sql.delta.commands.WriteIntoDelta.$anonfun$run$1(WriteIntoDelta.scala:108)
+job-worker-1  | 	at org.apache.spark.sql.delta.DeltaLog.withNewTransaction(DeltaLog.scala:241)
+job-worker-1  | 	at org.apache.spark.sql.delta.commands.WriteIntoDelta.run(WriteIntoDelta.scala:103)
+job-worker-1  | 	at org.apache.spark.sql.delta.sources.DeltaDataSource.createRelation(DeltaDataSource.scala:206)
+job-worker-1  | 	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+job-worker-1  | 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+job-worker-1  | 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+job-worker-1  | 	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+job-worker-1  | 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+job-worker-1  | 	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+job-worker-1  | 	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+job-worker-1  | 	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+job-worker-1  | 	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+job-worker-1  | 	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:307)
+job-worker-1  | 	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+job-worker-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+job-worker-1  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+job-worker-1  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+job-worker-1  | 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+job-worker-1  | 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+job-worker-1  | 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+job-worker-1  | 	at py4j.Gateway.invoke(Gateway.java:282)
+job-worker-1  | 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+job-worker-1  | 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+job-worker-1  | 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+job-worker-1  | 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+job-worker-1  | 	at java.base/java.lang.Thread.run(Thread.java:840)
+job-worker-1  | Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/acid_checks/ea5e5ecc100346d88a541fcec1470b42.
+job-worker-1  | 	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+job-worker-1  | 	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+job-worker-1  | 	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+job-worker-1  | 	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+job-worker-1  | 	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+job-worker-1  | 	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+job-worker-1  | 	... 1 more
+job-worker-1  | Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+job-worker-1  |  - value : -1
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+job-worker-1  | 	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+job-worker-1  | 	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+job-worker-1  | 	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+job-worker-1  | 	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+job-worker-1  | 	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+job-worker-1  | 	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+job-worker-1  | 	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+job-worker-1  | 	... 12 more
+job-worker-1  | [2026-10-21T13:09:43.340+00:00] publish_model_registry
+job-worker-1  | INFO:     127.0.0.1:42852 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:38896 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     172.21.0.8:36872 - "GET /jobs/64af6b3f57f5c1763b303ac8 HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:60214 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | 
+[Stage 4145:===================>                                  (18 + 2) / 50]
+
+[Stage 4145:=========================>                            (24 + 2) / 50]
+
+[Stage 4145:==============================>                       (28 + 2) / 50]
+
+[Stage 4145:==================================>                   (32 + 2) / 50]
+
+[Stage 4145:=========================================>            (38 + 2) / 50]
+
+[Stage 4145:===============================================>      (44 + 2) / 50]
+
+                                                                                
+26/10/21 13:10:15 WARN StateStore: Error running maintenance thread
+job-worker-1  | java.lang.IllegalStateException: SparkEnv not active, cannot do maintenance on StateStores
+job-worker-1  | 	at org.apache.spark.sql.execution.streaming.state.StateStore$.doMaintenance(StateStore.scala:632)
+job-worker-1  | 	at org.apache.spark.sql.execution.streaming.state.StateStore$.$anonfun$startMaintenanceIfNeeded$1(StateStore.scala:610)
+job-worker-1  | 	at org.apache.spark.sql.execution.streaming.state.StateStore$MaintenanceTask$$anon$1.run(StateStore.scala:453)
+job-worker-1  | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+job-worker-1  | 	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+job-worker-1  | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+job-worker-1  | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+job-worker-1  | 	at java.base/java.lang.Thread.run(Thread.java:840)
+job-worker-1  | INFO:     127.0.0.1:47064 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:41314 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:58318 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:44142 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:44190 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:40824 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:37048 - "GET /health HTTP/1.1" 200 OK
+job-worker-1  | INFO:     127.0.0.1:55196 - "GET /health HTTP/1.1" 200 OK

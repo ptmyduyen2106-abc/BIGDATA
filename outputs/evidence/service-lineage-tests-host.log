@@ -1,0 +1,21 @@
+test_atomic_version_reload_ignores_old_cache (test_service.ServiceTests.test_atomic_version_reload_ignores_old_cache) ... ok
+test_cache_hit_rechecks_live_seen_history (test_service.ServiceTests.test_cache_hit_rechecks_live_seen_history) ... ok
+test_cache_payload_version_mismatch_is_ignored (test_service.ServiceTests.test_cache_payload_version_mismatch_is_ignored) ... ok
+test_invalid_lineage_fails_closed_without_unrelated_history (test_service.ServiceTests.test_invalid_lineage_fails_closed_without_unrelated_history) ... ok
+test_invalid_schema_rejected_without_fake_ready (test_service.ServiceTests.test_invalid_schema_rejected_without_fake_ready) ... ok
+test_metrics_users_and_local_dashboard (test_service.ServiceTests.test_metrics_users_and_local_dashboard) ... ok
+test_not_ready_until_usable_bundle_and_liveness_independent (test_service.ServiceTests.test_not_ready_until_usable_bundle_and_liveness_independent) ... ok
+test_optional_redis_failure_falls_back_with_explicit_warning (test_service.ServiceTests.test_optional_redis_failure_falls_back_with_explicit_warning) ... ok
+test_personalized_seen_filter_and_popularity_fill (test_service.ServiceTests.test_personalized_seen_filter_and_popularity_fill) ... ok
+test_pointer_and_sidecar_path_traversal_rejected (test_service.ServiceTests.test_pointer_and_sidecar_path_traversal_rejected) ... ok
+test_pointer_switch_never_leaks_previous_run (test_service.ServiceTests.test_pointer_switch_never_leaks_previous_run) ... ok
+test_retrained_model_filters_canonical_data_history_even_on_cache_hit (test_service.ServiceTests.test_retrained_model_filters_canonical_data_history_even_on_cache_hit) ... ok
+test_same_run_failed_reload_retains_traceable_last_valid (test_service.ServiceTests.test_same_run_failed_reload_retains_traceable_last_valid) ... ok
+test_sqlite_filters_omitted_user_and_is_required_when_declared (test_service.ServiceTests.test_sqlite_filters_omitted_user_and_is_required_when_declared) ... ok
+test_strict_id_and_k_bounds (test_service.ServiceTests.test_strict_id_and_k_bounds) ... ok
+test_unknown_user_uses_explicit_popular_fallback (test_service.ServiceTests.test_unknown_user_uses_explicit_popular_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.132s
+
+OK

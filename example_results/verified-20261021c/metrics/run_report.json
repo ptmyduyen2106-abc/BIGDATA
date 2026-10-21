@@ -1,0 +1,510 @@
+{
+  "run_id": "verified-20261021c",
+  "started_at_utc": "2026-10-21T12:54:22.673+00:00",
+  "status": "completed",
+  "stages": {
+    "topics": [
+      {
+        "topic": "page_view",
+        "partitions": 3
+      },
+      {
+        "topic": "add_to_cart",
+        "partitions": 3
+      },
+      {
+        "topic": "purchase",
+        "partitions": 3
+      },
+      {
+        "topic": "review",
+        "partitions": 3
+      }
+    ],
+    "snapshot": {
+      "run_id": "verified-20261021c",
+      "clean_event_count": 9999,
+      "window_rows": 37727,
+      "session_rows": 6170,
+      "max_event_time_utc": "2015-05-03T20:39:24.308Z",
+      "format": "delta",
+      "created_at": "2026-10-21T12:57:39.299946+00:00",
+      "semantics": "Batch snapshot of observed clean events; open tails included. Provisional if ingestion resumes; not a stream-finalization claim.",
+      "phase4_csv_columns": [
+        "timestamp",
+        "visitorid",
+        "event",
+        "itemid",
+        "transactionid"
+      ],
+      "review_caveat": "Original Phase 4 silver filters out review; extend it explicitly if synthetic review events should be retained downstream."
+    },
+    "lake": {
+      "run_id": "verified-20261021c",
+      "bronze_events": 9999,
+      "silver_events": 9999,
+      "gold_user_item_pairs": 8313,
+      "visitors": 5882,
+      "items": 6776,
+      "event_counts": {
+        "addtocart": 211,
+        "transaction": 61,
+        "view": 9727
+      },
+      "purchasing_visitors": 40,
+      "distinct_transaction_ids": 52,
+      "visitor_purchase_conversion": 0.006800408024481469,
+      "conversion_definition": "Distinct visitors with >=1 purchase event / all distinct observed visitors",
+      "ctr": null,
+      "revenue": null,
+      "average_order_value": null,
+      "unavailable_metrics_reason": "Source has no ad impressions/click attribution, price, currency or order totals",
+      "first_event_time_utc": "2015-05-03T03:00:04.384Z",
+      "last_event_time_utc": "2015-05-03T20:39:24.308Z",
+      "weights": {
+        "view": 1.0,
+        "addtocart": 3.0,
+        "transaction": 5.0,
+        "review": 0.0
+      },
+      "status": "completed",
+      "created_at": "2026-10-21T12:58:04.535009+00:00",
+      "paths": {
+        "bronze": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/bronze",
+        "silver": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+        "gold_interactions": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/gold_interactions"
+      }
+    },
+    "nosql": {
+      "received_rows": 9999,
+      "affected_users": 5882,
+      "affected_items": 6776,
+      "durable_events": 9999,
+      "users": 5882,
+      "sessions": 6170,
+      "status": "completed",
+      "run_id": "verified-20261021c",
+      "stream_sinks": {
+        "windows": {
+          "status": "published",
+          "latest_user_rows": 5882
+        },
+        "sessions": {
+          "status": "published",
+          "latest_user_rows": 5510
+        }
+      },
+      "created_at": "2026-10-21T12:59:29.210802+00:00"
+    },
+    "training": {
+      "status": "evaluated",
+      "run_id": "verified-20261021c",
+      "algorithm": "als_implicit",
+      "quick_mode": true,
+      "metric_model_version": "verified-20261021c:als-evaluation-v1",
+      "serving_model_version": "verified-20261021c:als-serving-v1",
+      "evaluated_at_utc": "2026-10-21T13:01:21+00:00",
+      "seed": 42,
+      "top_k": 10,
+      "event_weights": {
+        "view": 1.0,
+        "addtocart": 3.0,
+        "transaction": 5.0
+      },
+      "input_events": 9999,
+      "weighted_events": 9999,
+      "silver_path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+      "excluded_nonweighted_events": 0,
+      "chronological_boundaries_epoch_ms": [
+        1430665658660,
+        1430674489035,
+        1430679923782
+      ],
+      "split_semantics": "fold1 train<=50% validate(50%,70%]; fold2 train<=70% validate(70%,85%]; evaluate train<=85% test>85%; split before aggregation",
+      "selected_parameters": {
+        "rank": 8,
+        "reg_param": 0.05,
+        "alpha": 20.0
+      },
+      "selection_metric": "mean_validation_ndcg_at_k",
+      "cross_validation": [
+        {
+          "parameters": {
+            "rank": 8,
+            "reg_param": 0.05,
+            "alpha": 20.0
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "train_end_inclusive": 1430665658660,
+              "validation_start_exclusive": 1430665658660,
+              "validation_end_inclusive": 1430674489035,
+              "k": 10,
+              "eligible_users": 1182,
+              "heldout_unique_pairs": 1693,
+              "novel_heldout_pairs": 1658,
+              "excluded_repeat_pairs": 35,
+              "training_catalog_size": 3734,
+              "precision_at_k": 0.0,
+              "recall_at_k": 0.0,
+              "ndcg_at_k": 0.0,
+              "catalog_coverage": 0.03481521156936261,
+              "user_coverage": 0.016074450084602367,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 1163,
+              "cold_item_pairs": 1340,
+              "status": "evaluated"
+            },
+            {
+              "fold": 2,
+              "train_end_inclusive": 1430674489035,
+              "validation_start_exclusive": 1430674489035,
+              "validation_end_inclusive": 1430679923782,
+              "k": 10,
+              "eligible_users": 932,
+              "heldout_unique_pairs": 1287,
+              "novel_heldout_pairs": 1242,
+              "excluded_repeat_pairs": 45,
+              "training_catalog_size": 5011,
+              "precision_at_k": 0.0001072961373390558,
+              "recall_at_k": 0.001072961373390558,
+              "ndcg_at_k": 0.0006769632549049973,
+              "catalog_coverage": 0.03632009578926362,
+              "user_coverage": 0.034334763948497854,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 900,
+              "cold_item_pairs": 934,
+              "status": "evaluated"
+            }
+          ],
+          "mean_validation_ndcg_at_k": 0.00033848162745249866,
+          "mean_validation_recall_at_k": 0.000536480686695279,
+          "evaluable_folds": 2
+        },
+        {
+          "parameters": {
+            "rank": 8,
+            "reg_param": 0.1,
+            "alpha": 20.0
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "train_end_inclusive": 1430665658660,
+              "validation_start_exclusive": 1430665658660,
+              "validation_end_inclusive": 1430674489035,
+              "k": 10,
+              "eligible_users": 1182,
+              "heldout_unique_pairs": 1693,
+              "novel_heldout_pairs": 1658,
+              "excluded_repeat_pairs": 35,
+              "training_catalog_size": 3734,
+              "precision_at_k": 0.0,
+              "recall_at_k": 0.0,
+              "ndcg_at_k": 0.0,
+              "catalog_coverage": 0.03508302088912694,
+              "user_coverage": 0.016074450084602367,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 1163,
+              "cold_item_pairs": 1340,
+              "status": "evaluated"
+            },
+            {
+              "fold": 2,
+              "train_end_inclusive": 1430674489035,
+              "validation_start_exclusive": 1430674489035,
+              "validation_end_inclusive": 1430679923782,
+              "k": 10,
+              "eligible_users": 932,
+              "heldout_unique_pairs": 1287,
+              "novel_heldout_pairs": 1242,
+              "excluded_repeat_pairs": 45,
+              "training_catalog_size": 5011,
+              "precision_at_k": 0.0001072961373390558,
+              "recall_at_k": 0.001072961373390558,
+              "ndcg_at_k": 0.0006769632549049973,
+              "catalog_coverage": 0.036918778686888844,
+              "user_coverage": 0.034334763948497854,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 900,
+              "cold_item_pairs": 934,
+              "status": "evaluated"
+            }
+          ],
+          "mean_validation_ndcg_at_k": 0.00033848162745249866,
+          "mean_validation_recall_at_k": 0.000536480686695279,
+          "evaluable_folds": 2
+        }
+      ],
+      "heldout_test": {
+        "k": 10,
+        "eligible_users": 912,
+        "heldout_unique_pairs": 1288,
+        "novel_heldout_pairs": 1223,
+        "excluded_repeat_pairs": 65,
+        "training_catalog_size": 5913,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "catalog_coverage": 0.034838491459496024,
+        "user_coverage": 0.044956140350877194,
+        "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+        "cold_users": 871,
+        "cold_item_pairs": 881,
+        "status": "evaluated"
+      },
+      "evaluation_train_events": 8490,
+      "heldout_test_events": 1509,
+      "feature_pipeline": {
+        "assembler_inputs": [
+          "view_count",
+          "cart_count",
+          "purchase_count"
+        ],
+        "assembler_output": "interaction_features",
+        "als_inputs": [
+          "visitorid",
+          "itemid",
+          "rating"
+        ],
+        "note": "Auxiliary vector is persisted/auditable; ALS consumes IDs and weighted implicit ratings."
+      },
+      "quality_gate": "No minimum accuracy claim: inspect heldout metrics and coverage, including cold users/items.",
+      "serving_refit_scope": "all observed weighted silver events, only AFTER heldout evaluation; metrics describe evaluation model",
+      "serving_scope": {
+        "max_json_users": 5000,
+        "exported_json_users": 5000,
+        "trained_users": 5882,
+        "training_catalog_size": 6776,
+        "all_observed_seen_pairs": 8313,
+        "all_recommendations_parquet": "models/recommendations",
+        "fallback": "users outside JSON recommendation scope use popularity with all-observed SQLite seen filtering"
+      },
+      "trained_at_utc": "2026-10-21T13:02:20+00:00"
+    },
+    "acid": {
+      "status": "passed",
+      "path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79",
+      "before_version": 0,
+      "after_update_version": 1,
+      "rollback_baseline_version": 2,
+      "checks": {
+        "update_commit": true,
+        "time_travel": true,
+        "constraint_rejection": true,
+        "no_partial_append": true
+      },
+      "rejection_exception_type": "Py4JJavaError",
+      "scope": "Actual per-table Delta operations; no concurrent-writer or distributed-transaction claim",
+      "created_at": "2026-10-21T13:02:45.760544+00:00"
+    },
+    "model_registry": {
+      "run_id": "verified-20261021c",
+      "model_version": "verified-20261021c:als-serving-v1",
+      "trained_at_utc": "2026-10-21T13:02:20+00:00",
+      "algorithm": "als_implicit",
+      "metrics": {
+        "status": "evaluated",
+        "run_id": "verified-20261021c",
+        "algorithm": "als_implicit",
+        "quick_mode": true,
+        "metric_model_version": "verified-20261021c:als-evaluation-v1",
+        "serving_model_version": "verified-20261021c:als-serving-v1",
+        "evaluated_at_utc": "2026-10-21T13:01:21+00:00",
+        "seed": 42,
+        "top_k": 10,
+        "event_weights": {
+          "view": 1.0,
+          "addtocart": 3.0,
+          "transaction": 5.0
+        },
+        "input_events": 9999,
+        "weighted_events": 9999,
+        "silver_path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+        "excluded_nonweighted_events": 0,
+        "chronological_boundaries_epoch_ms": [
+          1430665658660,
+          1430674489035,
+          1430679923782
+        ],
+        "split_semantics": "fold1 train<=50% validate(50%,70%]; fold2 train<=70% validate(70%,85%]; evaluate train<=85% test>85%; split before aggregation",
+        "selected_parameters": {
+          "rank": 8,
+          "reg_param": 0.05,
+          "alpha": 20.0
+        },
+        "selection_metric": "mean_validation_ndcg_at_k",
+        "cross_validation": [
+          {
+            "parameters": {
+              "rank": 8,
+              "reg_param": 0.05,
+              "alpha": 20.0
+            },
+            "folds": [
+              {
+                "fold": 1,
+                "train_end_inclusive": 1430665658660,
+                "validation_start_exclusive": 1430665658660,
+                "validation_end_inclusive": 1430674489035,
+                "k": 10,
+                "eligible_users": 1182,
+                "heldout_unique_pairs": 1693,
+                "novel_heldout_pairs": 1658,
+                "excluded_repeat_pairs": 35,
+                "training_catalog_size": 3734,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "catalog_coverage": 0.03481521156936261,
+                "user_coverage": 0.016074450084602367,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 1163,
+                "cold_item_pairs": 1340,
+                "status": "evaluated"
+              },
+              {
+                "fold": 2,
+                "train_end_inclusive": 1430674489035,
+                "validation_start_exclusive": 1430674489035,
+                "validation_end_inclusive": 1430679923782,
+                "k": 10,
+                "eligible_users": 932,
+                "heldout_unique_pairs": 1287,
+                "novel_heldout_pairs": 1242,
+                "excluded_repeat_pairs": 45,
+                "training_catalog_size": 5011,
+                "precision_at_k": 0.0001072961373390558,
+                "recall_at_k": 0.001072961373390558,
+                "ndcg_at_k": 0.0006769632549049973,
+                "catalog_coverage": 0.03632009578926362,
+                "user_coverage": 0.034334763948497854,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 900,
+                "cold_item_pairs": 934,
+                "status": "evaluated"
+              }
+            ],
+            "mean_validation_ndcg_at_k": 0.00033848162745249866,
+            "mean_validation_recall_at_k": 0.000536480686695279,
+            "evaluable_folds": 2
+          },
+          {
+            "parameters": {
+              "rank": 8,
+              "reg_param": 0.1,
+              "alpha": 20.0
+            },
+            "folds": [
+              {
+                "fold": 1,
+                "train_end_inclusive": 1430665658660,
+                "validation_start_exclusive": 1430665658660,
+                "validation_end_inclusive": 1430674489035,
+                "k": 10,
+                "eligible_users": 1182,
+                "heldout_unique_pairs": 1693,
+                "novel_heldout_pairs": 1658,
+                "excluded_repeat_pairs": 35,
+                "training_catalog_size": 3734,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "catalog_coverage": 0.03508302088912694,
+                "user_coverage": 0.016074450084602367,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 1163,
+                "cold_item_pairs": 1340,
+                "status": "evaluated"
+              },
+              {
+                "fold": 2,
+                "train_end_inclusive": 1430674489035,
+                "validation_start_exclusive": 1430674489035,
+                "validation_end_inclusive": 1430679923782,
+                "k": 10,
+                "eligible_users": 932,
+                "heldout_unique_pairs": 1287,
+                "novel_heldout_pairs": 1242,
+                "excluded_repeat_pairs": 45,
+                "training_catalog_size": 5011,
+                "precision_at_k": 0.0001072961373390558,
+                "recall_at_k": 0.001072961373390558,
+                "ndcg_at_k": 0.0006769632549049973,
+                "catalog_coverage": 0.036918778686888844,
+                "user_coverage": 0.034334763948497854,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 900,
+                "cold_item_pairs": 934,
+                "status": "evaluated"
+              }
+            ],
+            "mean_validation_ndcg_at_k": 0.00033848162745249866,
+            "mean_validation_recall_at_k": 0.000536480686695279,
+            "evaluable_folds": 2
+          }
+        ],
+        "heldout_test": {
+          "k": 10,
+          "eligible_users": 912,
+          "heldout_unique_pairs": 1288,
+          "novel_heldout_pairs": 1223,
+          "excluded_repeat_pairs": 65,
+          "training_catalog_size": 5913,
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "catalog_coverage": 0.034838491459496024,
+          "user_coverage": 0.044956140350877194,
+          "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+          "cold_users": 871,
+          "cold_item_pairs": 881,
+          "status": "evaluated"
+        },
+        "evaluation_train_events": 8490,
+        "heldout_test_events": 1509,
+        "feature_pipeline": {
+          "assembler_inputs": [
+            "view_count",
+            "cart_count",
+            "purchase_count"
+          ],
+          "assembler_output": "interaction_features",
+          "als_inputs": [
+            "visitorid",
+            "itemid",
+            "rating"
+          ],
+          "note": "Auxiliary vector is persisted/auditable; ALS consumes IDs and weighted implicit ratings."
+        },
+        "quality_gate": "No minimum accuracy claim: inspect heldout metrics and coverage, including cold users/items.",
+        "serving_refit_scope": "all observed weighted silver events, only AFTER heldout evaluation; metrics describe evaluation model",
+        "serving_scope": {
+          "max_json_users": 5000,
+          "exported_json_users": 5000,
+          "trained_users": 5882,
+          "training_catalog_size": 6776,
+          "all_observed_seen_pairs": 8313,
+          "all_recommendations_parquet": "models/recommendations",
+          "fallback": "users outside JSON recommendation scope use popularity with all-observed SQLite seen filtering"
+        },
+        "trained_at_utc": "2026-10-21T13:02:20+00:00"
+      }
+    }
+  },
+  "source_run_id": null,
+  "source": {
+    "rows": 10000,
+    "unique_event_ids": 9999,
+    "topic_counts": {
+      "add_to_cart": 211,
+      "page_view": 9728,
+      "purchase": 61
+    },
+    "input": "data/sample/events_10000.csv"
+  },
+  "clean_event_count": 9999,
+  "finished_at_utc": "2026-10-21T13:02:46.061+00:00",
+  "elapsed_seconds": 503.438
+}

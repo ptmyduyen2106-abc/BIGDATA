@@ -1,0 +1,44 @@
+{
+  "batch_id": 1,
+  "started_at": "2026-10-21T13:12:56.462598+00:00",
+  "input_rows": 1,
+  "lake": {
+    "run_id": "verified-20261021c",
+    "bronze_events": 10000,
+    "silver_events": 10000,
+    "gold_user_item_pairs": 8314,
+    "visitors": 5882,
+    "items": 6776,
+    "event_counts": {
+      "addtocart": 211,
+      "transaction": 61,
+      "view": 9728
+    },
+    "purchasing_visitors": 40,
+    "distinct_transaction_ids": 52,
+    "visitor_purchase_conversion": 0.006800408024481469,
+    "conversion_definition": "Distinct visitors with >=1 purchase event / all distinct observed visitors",
+    "ctr": null,
+    "revenue": null,
+    "average_order_value": null,
+    "unavailable_metrics_reason": "Source has no ad impressions/click attribution, price, currency or order totals",
+    "first_event_time_utc": "2015-05-03T03:00:04.384Z",
+    "last_event_time_utc": "2015-05-04T01:58:38.752Z",
+    "weights": {
+      "view": 1.0,
+      "addtocart": 3.0,
+      "transaction": 5.0,
+      "review": 0.0
+    },
+    "status": "completed",
+    "created_at": "2026-10-21T13:13:11.942590+00:00",
+    "paths": {
+      "bronze": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/bronze",
+      "silver": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+      "gold_interactions": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/gold_interactions"
+    }
+  },
+  "status": "failed",
+  "error": "Py4JJavaError: An error occurred while calling o3175.load.\n: java.lang.InterruptedException\n\tat java.base/java.util.concurrent.locks.ReentrantLock$Sync.lockInterruptibly(ReentrantLock.java:159)\n\tat java.base/java.util.concurrent.locks.ReentrantLock.lockInterruptibly(ReentrantLock.java:372)\n\tat org.apache.spark.sql.delta.SnapshotManagement.withSnapshotLockInterruptibly(SnapshotManagement.scala:83)\n\tat org.apache.spark.sql.delta.SnapshotManagement.withSnapshotLockInterruptibly$(SnapshotManagement.scala:82)\n\tat org.apache.spark.sql.delta.DeltaLog.withSnapshotLockInterruptibly(DeltaLog.scala:75)\n\tat org.apache.spark.sql.delta.SnapshotManagement.$anonfun$update$2(SnapshotManagement.scala:1050)\n\tat org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:171)\n\tat org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:169)\n\tat org.apache.spark.sql.delta.DeltaLog.recordFrameProfile(DeltaLog.scala:75)\n\tat org.apache.spark.sql.delta.SnapshotManagement.update(SnapshotManagement.scala:1050)\n\tat org.apache.spark.sql.delta.SnapshotManagement.update$(SnapshotManagement.scala:1017)\n\tat org.apache.spark.sql.delta.DeltaLog.update(DeltaLog.scala:75)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2.$anonfun$initialSnapshot$4(DeltaTableV2.scala:169)\n\tat scala.Option.getOrElse(Option.scala:189)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2.$anonfun$initialSnapshot$1(DeltaTableV2.scala:166)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2$.withEnrichedUnsupportedTableException(DeltaTableV2.scala:407)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2.initialSnapshot$lzycompute(DeltaTableV2.scala:165)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2.initialSnapshot(DeltaTableV2.scala:145)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2.toBaseRelation$lzycompute(DeltaTableV2.scala:265)\n\tat org.apache.spark.sql.delta.catalog.DeltaTableV2.toBaseRelation(DeltaTableV2.scala:263)\n\tat org.apache.spark.sql.delta.sources.DeltaDataSource.$anonfun$createRelation$5(DeltaDataSource.scala:255)\n\tat org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:171)\n\tat org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:169)\n\tat org.apache.spark.sql.delta.sources.DeltaDataSource.recordFrameProfile(DeltaDataSource.scala:50)\n\tat org.apache.spark.sql.delta.sources.DeltaDataSource.createRelation(DeltaDataSource.scala:214)\n\tat org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)\n\tat org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)\n\tat org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)\n\tat scala.Option.getOrElse(Option.scala:189)\n\tat org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)\n\tat org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:186)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:569)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat py4j.Gateway.invoke(Gateway.java:282)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.ClientServerConnection.sendCommand(ClientServerConnection.java:244)\n\tat py4j.CallbackClient.sendCommand(CallbackClient.java:384)\n\tat py4j.CallbackClient.sendCommand(CallbackClient.java:356)\n\tat py4j.reflection.PythonProxyHandler.invoke(PythonProxyHandler.java:106)\n\tat jdk.proxy3/jdk.proxy3.$Proxy32.call(Unknown Source)\n\tat org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1(ForeachBatchSink.scala:53)\n\tat org.apache.spark.sql.execution.streaming.sources.PythonForeachBatchHelper$.$anonfun$callForeachBatch$1$adapted(ForeachBatchSink.scala:53)\n\tat org.apache.spark.sql.execution.streaming.sources.ForeachBatchSink.addBatch(ForeachBatchSink.scala:34)\n\tat org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$17(MicroBatchExecution.scala:732)\n\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)\n\tat org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)\n\tat org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)\n\tat org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runBatch$16(MicroBatchExecution.scala:729)\n\tat org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)\n\tat org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)\n\tat org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)\n\tat org.apache.spark.sql.execution.streaming.MicroBatchExecution.runBatch(MicroBatchExecution.scala:729)\n\tat org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$2(MicroBatchExecution.scala:286)\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\n\tat org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken(ProgressReporter.scala:427)\n\tat org.apache.spark.sql.execution.streaming.ProgressReporter.reportTimeTaken$(ProgressReporter.scala:425)\n\tat org.apache.spark.sql.execution.streaming.StreamExecution.reportTimeTaken(StreamExecution.scala:67)\n\tat org.apache.spark.sql.execution.streaming.MicroBatchExecution.$anonfun$runActivatedStream$1(MicroBatchExecution.scala:249)\n\tat org.apache.spark.sql.execution.streaming.ProcessingTimeExecutor.execute(TriggerExecutor.scala:67)\n\tat org.apache.spark.sql.execution.streaming.MicroBatchExecution.runActivatedStream(MicroBatchExecution.scala:239)\n\tat org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:311)\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:289)\n\tat org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.$anonfun$run$1(StreamExecution.scala:211)\n\tat scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)\n\tat org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:94)\n\tat org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:211)\n",
+  "finished_at": "2026-10-21T13:14:13.166185+00:00"
+}

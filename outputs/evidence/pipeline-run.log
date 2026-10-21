@@ -1,0 +1,1259 @@
+ Container retailrocket17-app-run-70d1e19080ac Creating 
+ Container retailrocket17-app-run-70d1e19080ac Created 
+{
+  "run_id": "verified-20261021c",
+  "input": "data/sample/events_10000.csv",
+  "started_at": "2026-10-21T12:54:23.676+00:00",
+  "mode": "kafka",
+  "status": "success",
+  "sent": 10000,
+  "acknowledged": 10000,
+  "topic_counts": {
+    "add_to_cart": 211,
+    "page_view": 9728,
+    "purchase": 61
+  },
+  "acknowledged_topic_counts": {
+    "add_to_cart": 211,
+    "page_view": 9728,
+    "purchase": 61
+  },
+  "elapsed_seconds": 2.749,
+  "events_per_second": 3637.871,
+  "finished_at": "2026-10-21T12:54:26.431+00:00"
+}
+{
+  "run_id": "verified-20261021c",
+  "status": "success",
+  "started_at": "2026-10-21T12:54:26.447+00:00",
+  "expected_total": 10000,
+  "required_topics": [],
+  "matched": 10000,
+  "unique_event_ids": 9999,
+  "duplicate_event_ids": 1,
+  "topic_counts": {
+    "add_to_cart": 211,
+    "page_view": 9728,
+    "purchase": 61
+  },
+  "skipped_other_runs": 0,
+  "errors": [],
+  "elapsed_seconds": 4.723,
+  "finished_at": "2026-10-21T12:54:31.168+00:00"
+}
+:: loading settings :: url = jar:file:/usr/local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /root/.ivy2/cache
+The jars for the packages stored in: /root/.ivy2/jars
+io.delta#delta-spark_2.12 added as a dependency
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-e0ba825c-91e6-44af-ae38-33e246e607e8;1.0
+	confs: [default]
+	found io.delta#delta-spark_2.12;3.3.3 in central
+	found io.delta#delta-storage;3.3.3 in central
+	found org.antlr#antlr4-runtime;4.9.3 in central
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.6 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.6 in central
+	found org.apache.kafka#kafka-clients;3.4.1 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.5 in central
+	found org.slf4j#slf4j-api;2.0.7 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+	found commons-logging#commons-logging;1.1.3 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.apache.commons#commons-pool2;2.11.1 in central
+downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.6/spark-sql-kafka-0-10_2.12-3.5.6.jar ...
+	[SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.6!spark-sql-kafka-0-10_2.12.jar (3731ms)
+downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.6/spark-token-provider-kafka-0-10_2.12-3.5.6.jar ...
+	[SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.6!spark-token-provider-kafka-0-10_2.12.jar (642ms)
+downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.4.1/kafka-clients-3.4.1.jar ...
+	[SUCCESSFUL ] org.apache.kafka#kafka-clients;3.4.1!kafka-clients.jar (15243ms)
+downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+	[SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (444ms)
+downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+	[SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (558ms)
+downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.4/hadoop-client-runtime-3.3.4.jar ...
+	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.4!hadoop-client-runtime.jar (31656ms)
+downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+	[SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (799ms)
+downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar ...
+	[SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.10.5!snappy-java.jar(bundle) (2823ms)
+downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar ...
+	[SUCCESSFUL ] org.slf4j#slf4j-api;2.0.7!slf4j-api.jar (360ms)
+downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.4/hadoop-client-api-3.3.4.jar ...
+	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.4!hadoop-client-api.jar (11393ms)
+downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+	[SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (449ms)
+:: resolution report :: resolve 17494ms :: artifacts dl 68125ms
+	:: modules in use:
+	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	commons-logging#commons-logging;1.1.3 from central in [default]
+	io.delta#delta-spark_2.12;3.3.3 from central in [default]
+	io.delta#delta-storage;3.3.3 from central in [default]
+	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.6 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.6 from central in [default]
+	org.lz4#lz4-java;1.8.0 from central in [default]
+	org.slf4j#slf4j-api;2.0.7 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.10.5 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   14  |   11  |   11  |   0   ||   14  |   11  |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-e0ba825c-91e6-44af-ae38-33e246e607e8
+	confs: [default]
+	11 artifacts copied, 3 already retrieved (57002kB/267ms)
+26/10/21 12:56:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/21 12:56:13 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:56:14 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:56:15 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/21 12:56:15 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+
+[Stage 0:>                                                          (0 + 1) / 9]
+
+[Stage 0:>                                                          (0 + 2) / 9]
+
+[Stage 0:>                  (0 + 2) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:==>                (1 + 2) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:====>              (2 + 2) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:======>            (3 + 3) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:========>          (4 + 2) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:==========>        (5 + 2) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:============>      (6 + 2) / 9][Stage 1:>                  (0 + 0) / 9]
+
+[Stage 0:================>  (8 + 1) / 9][Stage 1:>                  (0 + 1) / 9]
+
+                                                                                
+
+[Stage 1:======>                                                    (1 + 2) / 9]
+
+[Stage 1:=============>                                             (2 + 2) / 9]
+
+[Stage 1:===================>                                       (3 + 2) / 9]
+
+[Stage 1:================================>                          (5 + 2) / 9]
+
+[Stage 1:=============================================>             (7 + 2) / 9]
+
+[Stage 1:====================================================>      (8 + 1) / 9]
+
+[Stage 2:>                                                          (0 + 2) / 4]
+
+[Stage 2:=============================>                             (2 + 2) / 4]
+
+                                                                                
+
+[Stage 4:==============>                                            (1 + 2) / 4]
+
+[Stage 4:=============================>                             (2 + 2) / 4]
+
+[Stage 4:============================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 5:=============================>                             (1 + 1) / 2]
+
+                                                                                
+26/10/21 12:56:47 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:56:48 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:56:51 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+[Stage 8:>                                                          (0 + 2) / 2]
+
+[Stage 8:=============================>                             (1 + 1) / 2]
+
+[Stage 11:>                                                         (0 + 2) / 2]
+
+[Stage 9:>                  (0 + 1) / 4][Stage 11:=========>        (1 + 1) / 2]
+
+[Stage 9:>                                                          (0 + 2) / 4]
+
+[Stage 9:>                  (0 + 2) / 4][Stage 12:>                 (0 + 0) / 4]
+
+[Stage 9:=========>         (2 + 2) / 4][Stage 12:>                 (0 + 0) / 4]
+
+[Stage 12:>                                                         (0 + 2) / 4]
+
+[Stage 10:>                 (0 + 0) / 1][Stage 12:>                 (0 + 2) / 4]
+
+                                                                                
+
+[Stage 12:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 15:>                                                         (0 + 2) / 4]
+
+[Stage 15:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 17:>                                                         (0 + 2) / 4]
+
+[Stage 17:>                                                         (0 + 3) / 4]
+
+[Stage 17:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 20:>                                                         (0 + 2) / 4]
+
+[Stage 20:=============================>                            (2 + 2) / 4]
+
+[Stage 20:==========================================================(4 + 0) / 4]
+
+                                                                                
+
+[Stage 22:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 24:>                                                         (0 + 2) / 2]
+
+[Stage 24:=============================>                            (1 + 1) / 2]
+
+[Stage 26:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 41:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 55:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 71:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 72:=============================>                            (1 + 1) / 2]
+
+[Stage 74:===========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 81:>                                                         (0 + 2) / 4]
+
+[Stage 81:=============================>                            (2 + 2) / 4]
+
+[Stage 81:===========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 84:>                                                        (0 + 2) / 50]
+
+[Stage 84:=====>                                                   (5 + 2) / 50]
+
+[Stage 84:=============>                                          (12 + 2) / 50]
+
+[Stage 84:=================>                                      (16 + 2) / 50]
+
+[Stage 84:======================>                                 (20 + 2) / 50]
+
+[Stage 84:==========================>                             (24 + 2) / 50]
+
+[Stage 84:===============================>                        (28 + 2) / 50]
+
+[Stage 84:===================================>                    (32 + 2) / 50]
+
+[Stage 84:==========================================>             (38 + 2) / 50]
+
+[Stage 84:=================================================>      (44 + 2) / 50]
+
+                                                                                
+
+[Stage 87:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 90:=============>                                          (12 + 2) / 50]
+
+[Stage 90:====================>                                   (18 + 2) / 50]
+
+[Stage 90:========================>                               (22 + 2) / 50]
+
+[Stage 90:===============================>                        (28 + 2) / 50]
+
+[Stage 90:=======================================>                (35 + 2) / 50]
+
+[Stage 90:===============================================>        (42 + 2) / 50]
+
+[Stage 90:====================================================>   (47 + 2) / 50]
+
+                                                                                
+
+[Stage 120:>                                                        (0 + 1) / 1]
+
+[Stage 124:=================>                                     (16 + 2) / 50]
+
+[Stage 124:========================>                              (22 + 2) / 50]
+
+[Stage 124:=============================>                         (27 + 2) / 50]
+
+[Stage 124:===================================>                   (32 + 2) / 50]
+
+[Stage 124:========================================>              (37 + 2) / 50]
+
+[Stage 124:=============================================>         (41 + 2) / 50]
+
+[Stage 124:==================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 130:>                                                        (0 + 2) / 2]
+
+[Stage 132:>                                                        (0 + 1) / 1]
+
+[Stage 135:=================>                                     (16 + 2) / 50]
+
+[Stage 135:======================>                                (20 + 2) / 50]
+
+[Stage 135:==========================>                            (24 + 2) / 50]
+
+[Stage 135:==============================>                        (28 + 2) / 50]
+
+[Stage 135:=====================================>                 (34 + 2) / 50]
+
+[Stage 135:=======================================>               (36 + 2) / 50]
+
+[Stage 135:==============================================>        (42 + 2) / 50]
+
+[Stage 135:===================================================>   (47 + 2) / 50]
+
+                                                                                
+
+[Stage 145:==============================>                        (28 + 2) / 50]
+
+[Stage 145:==========================================>            (39 + 2) / 50]
+
+                                                                                
+
+[Stage 150:===================================================>   (47 + 2) / 50]
+
+                                                                                
+26/10/21 12:59:37 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+26/10/21 12:59:37 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.VectorBLAS
+26/10/21 12:59:37 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.lapack.JNILAPACK
+
+[Stage 2441:====================================>                  (8 + 2) / 12]
+
+                                                                                
+
+[Stage 3147:========================================>             (12 + 2) / 16]
+
+                                                                                
+
+[Stage 3301:======================================================(16 + 0) / 16]
+
+                                                                                
+
+[Stage 3351:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3352:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3353:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3548:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3549:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3550:>                                                       (0 + 1) / 1]
+
+                                                                                
+
+[Stage 3776:>(0 + 2) / 32][Stage 3777:>(0 + 0) / 32][Stage 3778:>(0 + 0) / 32]
+
+[Stage 3776:>(8 + 2) / 32][Stage 3777:>(0 + 0) / 32][Stage 3778:>(0 + 0) / 32]
+
+[Stage 3777:>(0 + 2) / 32][Stage 3778:>(0 + 0) / 32][Stage 3779:>(0 + 0) / 32]
+
+[Stage 3777:(15 + 3) / 32][Stage 3778:>(0 + 0) / 32][Stage 3779:>(0 + 0) / 32]
+
+[Stage 3778:>(0 + 2) / 32][Stage 3779:>(0 + 0) / 32][Stage 3780:>(0 + 0) / 32]
+
+[Stage 3778:(11 + 2) / 32][Stage 3779:>(0 + 0) / 32][Stage 3780:>(0 + 0) / 32]
+
+[Stage 3778:(26 + 2) / 32][Stage 3779:>(0 + 0) / 32][Stage 3780:>(0 + 0) / 32]
+
+[Stage 3778:(30 + 2) / 32][Stage 3779:>(0 + 0) / 32][Stage 3780:>(0 + 0) / 32]
+
+[Stage 3779:>(5 + 2) / 32][Stage 3780:>(0 + 0) / 32][Stage 3781:>(0 + 0) / 32]
+
+[Stage 3779:(19 + 3) / 32][Stage 3780:>(0 + 0) / 32][Stage 3781:>(0 + 0) / 32]
+
+[Stage 3780:>(2 + 3) / 32][Stage 3781:>(0 + 0) / 32][Stage 3783:> (0 + 0) / 1]
+
+[Stage 3780:(21 + 2) / 32][Stage 3781:>(0 + 0) / 32][Stage 3783:> (0 + 0) / 1]
+
+[Stage 3781:>(4 + 2) / 32][Stage 3783:> (0 + 0) / 1][Stage 3785:> (0 + 0) / 1]
+
+[Stage 3781:(31 + 1) / 32][Stage 3783:> (0 + 1) / 1][Stage 3785:> (0 + 0) / 1]
+
+                                                                                
+
+[Stage 3835:>                                                       (0 + 2) / 2]
+
+[Stage 3835:> (0 + 2) / 2][Stage 3836:> (0 + 0) / 2][Stage 3837:> (0 + 0) / 2]
+
+[Stage 3836:> (0 + 2) / 2][Stage 3837:> (0 + 0) / 2][Stage 3839:> (0 + 0) / 1]
+
+[Stage 3839:>                                                       (0 + 1) / 1]
+
+[Stage 3841:>                                                       (0 + 1) / 1]
+
+[Stage 3891:======>                                                (2 + 2) / 16]
+
+[Stage 3891:=============>                                         (4 + 2) / 16]
+
+[Stage 3891:====================>                                  (6 + 2) / 16]
+
+[Stage 3891:===========================>                           (8 + 2) / 16]
+
+[Stage 3891:==============================>                        (9 + 2) / 16]
+
+[Stage 3891:===========================================>          (13 + 2) / 16]
+
+                                                                                
+
+[Stage 4171:>                                                       (0 + 2) / 2]
+
+                                                                                
+
+[Stage 4175:==>                                                    (2 + 2) / 50]
+
+[Stage 4175:======>                                                (6 + 2) / 50]
+
+[Stage 4175:==========>                                           (10 + 2) / 50]
+
+[Stage 4175:============>                                         (12 + 2) / 50]
+
+[Stage 4175:================>                                     (15 + 2) / 50]
+
+[Stage 4175:====================>                                 (19 + 2) / 50]
+
+[Stage 4175:========================>                             (23 + 2) / 50]
+
+[Stage 4175:==============================>                       (28 + 2) / 50]
+
+[Stage 4175:==================================>                   (32 + 2) / 50]
+
+[Stage 4175:======================================>               (36 + 2) / 50]
+
+[Stage 4175:=============================================>        (42 + 2) / 50]
+
+[Stage 4175:===================================================>  (48 + 2) / 50]
+
+                                                                                
+
+[Stage 4194:============>                                         (12 + 2) / 50]
+
+[Stage 4194:===================>                                  (18 + 2) / 50]
+
+[Stage 4194:========================>                             (23 + 2) / 50]
+
+[Stage 4194:==============================>                       (28 + 2) / 50]
+
+[Stage 4194:====================================>                 (34 + 2) / 50]
+
+[Stage 4194:=========================================>            (38 + 2) / 50]
+
+[Stage 4194:===============================================>      (44 + 2) / 50]
+
+[Stage 4194:====================================================> (49 + 1) / 50]
+
+                                                                                
+
+[Stage 4206:=======================>                              (22 + 2) / 50]
+
+[Stage 4206:=================================>                    (31 + 2) / 50]
+
+[Stage 4206:===========================================>          (40 + 2) / 50]
+
+[Stage 4206:====================================================> (49 + 1) / 50]
+
+                                                                                
+
+[Stage 4211:=============================================>        (42 + 2) / 50]
+
+                                                                                
+26/10/21 13:02:43 ERROR Utils: Aborting task
+org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+26/10/21 13:02:43 ERROR DeltaFileFormatWriter: Job job_202610211302425858563897136646069_4221 aborted.
+26/10/21 13:02:43 ERROR Executor: Exception in task 1.0 in stage 4221.0 (TID 3012)
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+26/10/21 13:02:43 WARN TaskSetManager: Lost task 1.0 in stage 4221.0 (TID 3012) (localhost executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+
+26/10/21 13:02:43 ERROR TaskSetManager: Task 1 in stage 4221.0 failed 1 times; aborting job
+26/10/21 13:02:43 ERROR DeltaFileFormatWriter: Aborting job 94d10748-eaf0-4a57-9810-53559f308af2
+org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 4221.0 failed 1 times, most recent failure: Lost task 1.0 in stage 4221.0 (TID 3012) (localhost executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2898)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2834)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2833)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2833)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1253)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3102)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3036)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3025)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:995)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$1(DeltaFileFormatWriter.scala:267)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.writeAndCommit(DeltaFileFormatWriter.scala:300)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeWrite(DeltaFileFormatWriter.scala:236)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.write(DeltaFileFormatWriter.scala:216)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.$anonfun$writeFiles$2(TransactionalWrite.scala:468)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:426)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:384)
+	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:259)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:255)
+	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:248)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:245)
+	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.writeFiles(WriteIntoDelta.scala:377)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.writeAndReturnCommitData(WriteIntoDelta.scala:340)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.$anonfun$run$1(WriteIntoDelta.scala:108)
+	at org.apache.spark.sql.delta.DeltaLog.withNewTransaction(DeltaLog.scala:241)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.run(WriteIntoDelta.scala:103)
+	at org.apache.spark.sql.delta.sources.DeltaDataSource.createRelation(DeltaDataSource.scala:206)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:307)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 more
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+
+[Stage 4225:===================>                                  (18 + 2) / 50]
+
+[Stage 4225:=========================>                            (24 + 2) / 50]
+
+[Stage 4225:================================>                     (30 + 2) / 50]
+
+[Stage 4225:======================================>               (36 + 2) / 50]
+
+[Stage 4225:===============================================>      (44 + 2) / 50]
+
+                                                                                
+{
+  "run_id": "verified-20261021c",
+  "started_at_utc": "2026-10-21T12:54:22.673+00:00",
+  "status": "completed",
+  "stages": {
+    "topics": [
+      {
+        "topic": "page_view",
+        "partitions": 3
+      },
+      {
+        "topic": "add_to_cart",
+        "partitions": 3
+      },
+      {
+        "topic": "purchase",
+        "partitions": 3
+      },
+      {
+        "topic": "review",
+        "partitions": 3
+      }
+    ],
+    "snapshot": {
+      "run_id": "verified-20261021c",
+      "clean_event_count": 9999,
+      "window_rows": 37727,
+      "session_rows": 6170,
+      "max_event_time_utc": "2015-05-03T20:39:24.308Z",
+      "format": "delta",
+      "created_at": "2026-10-21T12:57:39.299946+00:00",
+      "semantics": "Batch snapshot of observed clean events; open tails included. Provisional if ingestion resumes; not a stream-finalization claim.",
+      "phase4_csv_columns": [
+        "timestamp",
+        "visitorid",
+        "event",
+        "itemid",
+        "transactionid"
+      ],
+      "review_caveat": "Original Phase 4 silver filters out review; extend it explicitly if synthetic review events should be retained downstream."
+    },
+    "lake": {
+      "run_id": "verified-20261021c",
+      "bronze_events": 9999,
+      "silver_events": 9999,
+      "gold_user_item_pairs": 8313,
+      "visitors": 5882,
+      "items": 6776,
+      "event_counts": {
+        "addtocart": 211,
+        "transaction": 61,
+        "view": 9727
+      },
+      "purchasing_visitors": 40,
+      "distinct_transaction_ids": 52,
+      "visitor_purchase_conversion": 0.006800408024481469,
+      "conversion_definition": "Distinct visitors with >=1 purchase event / all distinct observed visitors",
+      "ctr": null,
+      "revenue": null,
+      "average_order_value": null,
+      "unavailable_metrics_reason": "Source has no ad impressions/click attribution, price, currency or order totals",
+      "first_event_time_utc": "2015-05-03T03:00:04.384Z",
+      "last_event_time_utc": "2015-05-03T20:39:24.308Z",
+      "weights": {
+        "view": 1.0,
+        "addtocart": 3.0,
+        "transaction": 5.0,
+        "review": 0.0
+      },
+      "status": "completed",
+      "created_at": "2026-10-21T12:58:04.535009+00:00",
+      "paths": {
+        "bronze": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/bronze",
+        "silver": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+        "gold_interactions": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/gold_interactions"
+      }
+    },
+    "nosql": {
+      "received_rows": 9999,
+      "affected_users": 5882,
+      "affected_items": 6776,
+      "durable_events": 9999,
+      "users": 5882,
+      "sessions": 6170,
+      "status": "completed",
+      "run_id": "verified-20261021c",
+      "stream_sinks": {
+        "windows": {
+          "status": "published",
+          "latest_user_rows": 5882
+        },
+        "sessions": {
+          "status": "published",
+          "latest_user_rows": 5510
+        }
+      },
+      "created_at": "2026-10-21T12:59:29.210802+00:00"
+    },
+    "training": {
+      "status": "evaluated",
+      "run_id": "verified-20261021c",
+      "algorithm": "als_implicit",
+      "quick_mode": true,
+      "metric_model_version": "verified-20261021c:als-evaluation-v1",
+      "serving_model_version": "verified-20261021c:als-serving-v1",
+      "evaluated_at_utc": "2026-10-21T13:01:21+00:00",
+      "seed": 42,
+      "top_k": 10,
+      "event_weights": {
+        "view": 1.0,
+        "addtocart": 3.0,
+        "transaction": 5.0
+      },
+      "input_events": 9999,
+      "weighted_events": 9999,
+      "silver_path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+      "excluded_nonweighted_events": 0,
+      "chronological_boundaries_epoch_ms": [
+        1430665658660,
+        1430674489035,
+        1430679923782
+      ],
+      "split_semantics": "fold1 train<=50% validate(50%,70%]; fold2 train<=70% validate(70%,85%]; evaluate train<=85% test>85%; split before aggregation",
+      "selected_parameters": {
+        "rank": 8,
+        "reg_param": 0.05,
+        "alpha": 20.0
+      },
+      "selection_metric": "mean_validation_ndcg_at_k",
+      "cross_validation": [
+        {
+          "parameters": {
+            "rank": 8,
+            "reg_param": 0.05,
+            "alpha": 20.0
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "train_end_inclusive": 1430665658660,
+              "validation_start_exclusive": 1430665658660,
+              "validation_end_inclusive": 1430674489035,
+              "k": 10,
+              "eligible_users": 1182,
+              "heldout_unique_pairs": 1693,
+              "novel_heldout_pairs": 1658,
+              "excluded_repeat_pairs": 35,
+              "training_catalog_size": 3734,
+              "precision_at_k": 0.0,
+              "recall_at_k": 0.0,
+              "ndcg_at_k": 0.0,
+              "catalog_coverage": 0.03481521156936261,
+              "user_coverage": 0.016074450084602367,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 1163,
+              "cold_item_pairs": 1340,
+              "status": "evaluated"
+            },
+            {
+              "fold": 2,
+              "train_end_inclusive": 1430674489035,
+              "validation_start_exclusive": 1430674489035,
+              "validation_end_inclusive": 1430679923782,
+              "k": 10,
+              "eligible_users": 932,
+              "heldout_unique_pairs": 1287,
+              "novel_heldout_pairs": 1242,
+              "excluded_repeat_pairs": 45,
+              "training_catalog_size": 5011,
+              "precision_at_k": 0.0001072961373390558,
+              "recall_at_k": 0.001072961373390558,
+              "ndcg_at_k": 0.0006769632549049973,
+              "catalog_coverage": 0.03632009578926362,
+              "user_coverage": 0.034334763948497854,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 900,
+              "cold_item_pairs": 934,
+              "status": "evaluated"
+            }
+          ],
+          "mean_validation_ndcg_at_k": 0.00033848162745249866,
+          "mean_validation_recall_at_k": 0.000536480686695279,
+          "evaluable_folds": 2
+        },
+        {
+          "parameters": {
+            "rank": 8,
+            "reg_param": 0.1,
+            "alpha": 20.0
+          },
+          "folds": [
+            {
+              "fold": 1,
+              "train_end_inclusive": 1430665658660,
+              "validation_start_exclusive": 1430665658660,
+              "validation_end_inclusive": 1430674489035,
+              "k": 10,
+              "eligible_users": 1182,
+              "heldout_unique_pairs": 1693,
+              "novel_heldout_pairs": 1658,
+              "excluded_repeat_pairs": 35,
+              "training_catalog_size": 3734,
+              "precision_at_k": 0.0,
+              "recall_at_k": 0.0,
+              "ndcg_at_k": 0.0,
+              "catalog_coverage": 0.03508302088912694,
+              "user_coverage": 0.016074450084602367,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 1163,
+              "cold_item_pairs": 1340,
+              "status": "evaluated"
+            },
+            {
+              "fold": 2,
+              "train_end_inclusive": 1430674489035,
+              "validation_start_exclusive": 1430674489035,
+              "validation_end_inclusive": 1430679923782,
+              "k": 10,
+              "eligible_users": 932,
+              "heldout_unique_pairs": 1287,
+              "novel_heldout_pairs": 1242,
+              "excluded_repeat_pairs": 45,
+              "training_catalog_size": 5011,
+              "precision_at_k": 0.0001072961373390558,
+              "recall_at_k": 0.001072961373390558,
+              "ndcg_at_k": 0.0006769632549049973,
+              "catalog_coverage": 0.036918778686888844,
+              "user_coverage": 0.034334763948497854,
+              "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+              "cold_users": 900,
+              "cold_item_pairs": 934,
+              "status": "evaluated"
+            }
+          ],
+          "mean_validation_ndcg_at_k": 0.00033848162745249866,
+          "mean_validation_recall_at_k": 0.000536480686695279,
+          "evaluable_folds": 2
+        }
+      ],
+      "heldout_test": {
+        "k": 10,
+        "eligible_users": 912,
+        "heldout_unique_pairs": 1288,
+        "novel_heldout_pairs": 1223,
+        "excluded_repeat_pairs": 65,
+        "training_catalog_size": 5913,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "catalog_coverage": 0.034838491459496024,
+        "user_coverage": 0.044956140350877194,
+        "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+        "cold_users": 871,
+        "cold_item_pairs": 881,
+        "status": "evaluated"
+      },
+      "evaluation_train_events": 8490,
+      "heldout_test_events": 1509,
+      "feature_pipeline": {
+        "assembler_inputs": [
+          "view_count",
+          "cart_count",
+          "purchase_count"
+        ],
+        "assembler_output": "interaction_features",
+        "als_inputs": [
+          "visitorid",
+          "itemid",
+          "rating"
+        ],
+        "note": "Auxiliary vector is persisted/auditable; ALS consumes IDs and weighted implicit ratings."
+      },
+      "quality_gate": "No minimum accuracy claim: inspect heldout metrics and coverage, including cold users/items.",
+      "serving_refit_scope": "all observed weighted silver events, only AFTER heldout evaluation; metrics describe evaluation model",
+      "serving_scope": {
+        "max_json_users": 5000,
+        "exported_json_users": 5000,
+        "trained_users": 5882,
+        "training_catalog_size": 6776,
+        "all_observed_seen_pairs": 8313,
+        "all_recommendations_parquet": "models/recommendations",
+        "fallback": "users outside JSON recommendation scope use popularity with all-observed SQLite seen filtering"
+      },
+      "trained_at_utc": "2026-10-21T13:02:20+00:00"
+    },
+    "acid": {
+      "status": "passed",
+      "path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/acid_checks/b068f82f25e84820a63af7f6c68fff79",
+      "before_version": 0,
+      "after_update_version": 1,
+      "rollback_baseline_version": 2,
+      "checks": {
+        "update_commit": true,
+        "time_travel": true,
+        "constraint_rejection": true,
+        "no_partial_append": true
+      },
+      "rejection_exception_type": "Py4JJavaError",
+      "scope": "Actual per-table Delta operations; no concurrent-writer or distributed-transaction claim",
+      "created_at": "2026-10-21T13:02:45.760544+00:00"
+    },
+    "model_registry": {
+      "run_id": "verified-20261021c",
+      "model_version": "verified-20261021c:als-serving-v1",
+      "trained_at_utc": "2026-10-21T13:02:20+00:00",
+      "algorithm": "als_implicit",
+      "metrics": {
+        "status": "evaluated",
+        "run_id": "verified-20261021c",
+        "algorithm": "als_implicit",
+        "quick_mode": true,
+        "metric_model_version": "verified-20261021c:als-evaluation-v1",
+        "serving_model_version": "verified-20261021c:als-serving-v1",
+        "evaluated_at_utc": "2026-10-21T13:01:21+00:00",
+        "seed": 42,
+        "top_k": 10,
+        "event_weights": {
+          "view": 1.0,
+          "addtocart": 3.0,
+          "transaction": 5.0
+        },
+        "input_events": 9999,
+        "weighted_events": 9999,
+        "silver_path": "hdfs://namenode:8020/ecommerce/runs/verified-20261021c/delta/silver",
+        "excluded_nonweighted_events": 0,
+        "chronological_boundaries_epoch_ms": [
+          1430665658660,
+          1430674489035,
+          1430679923782
+        ],
+        "split_semantics": "fold1 train<=50% validate(50%,70%]; fold2 train<=70% validate(70%,85%]; evaluate train<=85% test>85%; split before aggregation",
+        "selected_parameters": {
+          "rank": 8,
+          "reg_param": 0.05,
+          "alpha": 20.0
+        },
+        "selection_metric": "mean_validation_ndcg_at_k",
+        "cross_validation": [
+          {
+            "parameters": {
+              "rank": 8,
+              "reg_param": 0.05,
+              "alpha": 20.0
+            },
+            "folds": [
+              {
+                "fold": 1,
+                "train_end_inclusive": 1430665658660,
+                "validation_start_exclusive": 1430665658660,
+                "validation_end_inclusive": 1430674489035,
+                "k": 10,
+                "eligible_users": 1182,
+                "heldout_unique_pairs": 1693,
+                "novel_heldout_pairs": 1658,
+                "excluded_repeat_pairs": 35,
+                "training_catalog_size": 3734,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "catalog_coverage": 0.03481521156936261,
+                "user_coverage": 0.016074450084602367,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 1163,
+                "cold_item_pairs": 1340,
+                "status": "evaluated"
+              },
+              {
+                "fold": 2,
+                "train_end_inclusive": 1430674489035,
+                "validation_start_exclusive": 1430674489035,
+                "validation_end_inclusive": 1430679923782,
+                "k": 10,
+                "eligible_users": 932,
+                "heldout_unique_pairs": 1287,
+                "novel_heldout_pairs": 1242,
+                "excluded_repeat_pairs": 45,
+                "training_catalog_size": 5011,
+                "precision_at_k": 0.0001072961373390558,
+                "recall_at_k": 0.001072961373390558,
+                "ndcg_at_k": 0.0006769632549049973,
+                "catalog_coverage": 0.03632009578926362,
+                "user_coverage": 0.034334763948497854,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 900,
+                "cold_item_pairs": 934,
+                "status": "evaluated"
+              }
+            ],
+            "mean_validation_ndcg_at_k": 0.00033848162745249866,
+            "mean_validation_recall_at_k": 0.000536480686695279,
+            "evaluable_folds": 2
+          },
+          {
+            "parameters": {
+              "rank": 8,
+              "reg_param": 0.1,
+              "alpha": 20.0
+            },
+            "folds": [
+              {
+                "fold": 1,
+                "train_end_inclusive": 1430665658660,
+                "validation_start_exclusive": 1430665658660,
+                "validation_end_inclusive": 1430674489035,
+                "k": 10,
+                "eligible_users": 1182,
+                "heldout_unique_pairs": 1693,
+                "novel_heldout_pairs": 1658,
+                "excluded_repeat_pairs": 35,
+                "training_catalog_size": 3734,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "catalog_coverage": 0.03508302088912694,
+                "user_coverage": 0.016074450084602367,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 1163,
+                "cold_item_pairs": 1340,
+                "status": "evaluated"
+              },
+              {
+                "fold": 2,
+                "train_end_inclusive": 1430674489035,
+                "validation_start_exclusive": 1430674489035,
+                "validation_end_inclusive": 1430679923782,
+                "k": 10,
+                "eligible_users": 932,
+                "heldout_unique_pairs": 1287,
+                "novel_heldout_pairs": 1242,
+                "excluded_repeat_pairs": 45,
+                "training_catalog_size": 5011,
+                "precision_at_k": 0.0001072961373390558,
+                "recall_at_k": 0.001072961373390558,
+                "ndcg_at_k": 0.0006769632549049973,
+                "catalog_coverage": 0.036918778686888844,
+                "user_coverage": 0.034334763948497854,
+                "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+                "cold_users": 900,
+                "cold_item_pairs": 934,
+                "status": "evaluated"
+              }
+            ],
+            "mean_validation_ndcg_at_k": 0.00033848162745249866,
+            "mean_validation_recall_at_k": 0.000536480686695279,
+            "evaluable_folds": 2
+          }
+        ],
+        "heldout_test": {
+          "k": 10,
+          "eligible_users": 912,
+          "heldout_unique_pairs": 1288,
+          "novel_heldout_pairs": 1223,
+          "excluded_repeat_pairs": 65,
+          "training_catalog_size": 5913,
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "catalog_coverage": 0.034838491459496024,
+          "user_coverage": 0.044956140350877194,
+          "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+          "cold_users": 871,
+          "cold_item_pairs": 881,
+          "status": "evaluated"
+        },
+        "evaluation_train_events": 8490,
+        "heldout_test_events": 1509,
+        "feature_pipeline": {
+          "assembler_inputs": [
+            "view_count",
+            "cart_count",
+            "purchase_count"
+          ],
+          "assembler_output": "interaction_features",
+          "als_inputs": [
+            "visitorid",
+            "itemid",
+            "rating"
+          ],
+          "note": "Auxiliary vector is persisted/auditable; ALS consumes IDs and weighted implicit ratings."
+        },
+        "quality_gate": "No minimum accuracy claim: inspect heldout metrics and coverage, including cold users/items.",
+        "serving_refit_scope": "all observed weighted silver events, only AFTER heldout evaluation; metrics describe evaluation model",
+        "serving_scope": {
+          "max_json_users": 5000,
+          "exported_json_users": 5000,
+          "trained_users": 5882,
+          "training_catalog_size": 6776,
+          "all_observed_seen_pairs": 8313,
+          "all_recommendations_parquet": "models/recommendations",
+          "fallback": "users outside JSON recommendation scope use popularity with all-observed SQLite seen filtering"
+        },
+        "trained_at_utc": "2026-10-21T13:02:20+00:00"
+      }
+    }
+  },
+  "source_run_id": null,
+  "source": {
+    "rows": 10000,
+    "unique_event_ids": 9999,
+    "topic_counts": {
+      "add_to_cart": 211,
+      "page_view": 9728,
+      "purchase": 61
+    },
+    "input": "data/sample/events_10000.csv"
+  },
+  "clean_event_count": 9999,
+  "finished_at_utc": "2026-10-21T13:02:46.061+00:00",
+  "elapsed_seconds": 503.438
+}

@@ -1,0 +1,15 @@
+{
+  "job_id": "64af6b3f57f5c1763b303ac8",
+  "request_id": "verified-phase17-20261021",
+  "source_run_id": "verified-20261021c",
+  "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+  "quick": true,
+  "status": "completed",
+  "created_at_utc": "2026-10-21T13:03:44.806+00:00",
+  "started_at_utc": "2026-10-21T13:03:44.829+00:00",
+  "result": {
+    "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+    "elapsed_seconds": 358.692
+  },
+  "finished_at_utc": "2026-10-21T13:09:44.108+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "ServerVersion": "29.8.2",
+  "OperatingSystem": "Docker Desktop",
+  "OSType": "linux",
+  "Architecture": "x86_64",
+  "NCPU": 12,
+  "MemTotal": 7899127808,
+  "KernelVersion": "6.6.87.2-microsoft-standard-WSL2",
+  "Driver": "overlayfs"
+}

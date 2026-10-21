@@ -1,0 +1,1 @@
+[{"dag_id": "retailrocket_daily_retrain", "fileloc": "/opt/airflow/dags/retrain_recommendations.py", "owners": ["airflow"], "is_paused": "False"}]

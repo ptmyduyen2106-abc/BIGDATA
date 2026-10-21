@@ -1,0 +1,25 @@
+{
+  "dag_runs": [
+    {
+      "dag_id": "retailrocket_daily_retrain",
+      "run_id": "verified-phase17-20261021",
+      "state": "success",
+      "start_date": "2026-10-21 13:03:38.804358",
+      "end_date": "2026-10-21 13:10:10.443745"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "submit_retraining",
+      "state": "success",
+      "start_date": "2026-10-21 13:03:44.425283",
+      "end_date": "2026-10-21 13:03:44.855421"
+    },
+    {
+      "task_id": "wait_for_evaluated_model",
+      "state": "success",
+      "start_date": "2026-10-21 13:10:07.803522",
+      "end_date": "2026-10-21 13:10:08.569708"
+    }
+  ]
+}

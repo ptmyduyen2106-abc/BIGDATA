@@ -1,0 +1,21 @@
+ Container retailrocket17-app-run-d65107b8b869 Creating 
+ Container retailrocket17-app-run-d65107b8b869 Created 
+{
+  "measured_at_utc": "2026-10-21T13:03:38.972+00:00",
+  "requests": 100,
+  "concurrency": 4,
+  "successful": 100,
+  "errors": [],
+  "elapsed_seconds": 3.4855194570000094,
+  "throughput_requests_per_second": 28.690128181373034,
+  "latency_ms": {
+    "mean": 136.98583145001066,
+    "p50": 113.8820934999103,
+    "p95": 237.32829835016665,
+    "p99": 302.2869079400449
+  },
+  "environment": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "status": "passed",
+  "scope": "HTTP recommendation API, five warmup requests, selected user and configured concurrency. No production scale/SLO claim.",
+  "run_id": "verified-20261021c"
+}

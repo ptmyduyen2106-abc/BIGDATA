@@ -1,0 +1,7 @@
+{
+  "run_id": "verified-20261021c",
+  "status": "completed",
+  "started_at": "2026-10-21T13:10:07.616605+00:00",
+  "termination": "normal_or_requested_duration; inspect source offsets for backlog",
+  "finished_at": "2026-10-21T13:14:13.217862+00:00"
+}

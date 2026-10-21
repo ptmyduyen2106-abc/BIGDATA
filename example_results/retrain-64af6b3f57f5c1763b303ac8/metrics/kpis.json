@@ -1,0 +1,36 @@
+{
+  "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+  "bronze_events": 9999,
+  "silver_events": 9999,
+  "gold_user_item_pairs": 8313,
+  "visitors": 5882,
+  "items": 6776,
+  "event_counts": {
+    "addtocart": 211,
+    "transaction": 61,
+    "view": 9727
+  },
+  "purchasing_visitors": 40,
+  "distinct_transaction_ids": 52,
+  "visitor_purchase_conversion": 0.006800408024481469,
+  "conversion_definition": "Distinct visitors with >=1 purchase event / all distinct observed visitors",
+  "ctr": null,
+  "revenue": null,
+  "average_order_value": null,
+  "unavailable_metrics_reason": "Source has no ad impressions/click attribution, price, currency or order totals",
+  "first_event_time_utc": "2015-05-03T03:00:04.384Z",
+  "last_event_time_utc": "2015-05-03T20:39:24.308Z",
+  "weights": {
+    "view": 1.0,
+    "addtocart": 3.0,
+    "transaction": 5.0,
+    "review": 0.0
+  },
+  "status": "completed",
+  "created_at": "2026-10-21T13:05:10.453902+00:00",
+  "paths": {
+    "bronze": "hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/bronze",
+    "silver": "hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/silver",
+    "gold_interactions": "hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/gold_interactions"
+  }
+}

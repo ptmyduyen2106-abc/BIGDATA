@@ -1,0 +1,61 @@
+{
+  "id": "bfea6d85-f741-488b-8c5c-10be573fcfe2",
+  "runId": "2ed20b4c-9e6c-4082-8839-eb083010f1a3",
+  "name": "retrain-64af6b3f57f5c1763b303ac8_windows",
+  "timestamp": "2026-10-21T13:04:33.576Z",
+  "batchId": 1,
+  "numInputRows": 0,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 0.0,
+  "durationMs": {
+    "addBatch": 1231,
+    "commitOffsets": 591,
+    "getBatch": 1,
+    "latestOffset": 1,
+    "queryPlanning": 75,
+    "triggerExecution": 2442,
+    "walCommit": 538
+  },
+  "eventTime": {
+    "watermark": "2015-05-03T20:29:24.308Z"
+  },
+  "stateOperators": [
+    {
+      "operatorName": "stateStoreSave",
+      "numRowsTotal": 810,
+      "numRowsUpdated": 0,
+      "allUpdatesTimeMs": 0,
+      "numRowsRemoved": 36917,
+      "allRemovalsTimeMs": 437,
+      "commitTimeMs": 1237,
+      "memoryUsedBytes": 24699936,
+      "numRowsDroppedByWatermark": 0,
+      "numShufflePartitions": 4,
+      "numStateStoreInstances": 4,
+      "customMetrics": {
+        "loadedMapCacheHitCount": 8,
+        "loadedMapCacheMissCount": 0,
+        "stateOnCurrentVersionSizeBytes": 527424
+      }
+    }
+  ],
+  "sources": [
+    {
+      "description": "FileStreamSource[file:/app/outputs/runs/retrain-64af6b3f57f5c1763b303ac8/clean]",
+      "startOffset": {
+        "logOffset": 0
+      },
+      "endOffset": {
+        "logOffset": 0
+      },
+      "latestOffset": null,
+      "numInputRows": 0,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 0.0
+    }
+  ],
+  "sink": {
+    "description": "ForeachBatchSink",
+    "numOutputRows": -1
+  }
+}

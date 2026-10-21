@@ -1,0 +1,18 @@
+{
+  "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+  "clean_event_count": 9999,
+  "window_rows": 37727,
+  "session_rows": 6170,
+  "max_event_time_utc": "2015-05-03T20:39:24.308Z",
+  "format": "delta",
+  "created_at": "2026-10-21T13:04:50.074598+00:00",
+  "semantics": "Batch snapshot of observed clean events; open tails included. Provisional if ingestion resumes; not a stream-finalization claim.",
+  "phase4_csv_columns": [
+    "timestamp",
+    "visitorid",
+    "event",
+    "itemid",
+    "transactionid"
+  ],
+  "review_caveat": "Original Phase 4 silver filters out review; extend it explicitly if synthetic review events should be retained downstream."
+}

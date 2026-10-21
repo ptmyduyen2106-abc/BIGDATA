@@ -1,0 +1,61 @@
+{
+  "id": "20424c18-fe39-46f3-bfd6-9fb5f815b9bb",
+  "runId": "4fcb7cae-4873-4bcd-98f3-4d17b0117b4a",
+  "name": "verified-20261021c_sessions",
+  "timestamp": "2026-10-21T12:57:05.371Z",
+  "batchId": 1,
+  "numInputRows": 0,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 0.0,
+  "durationMs": {
+    "addBatch": 8472,
+    "commitOffsets": 552,
+    "getBatch": 1,
+    "latestOffset": 0,
+    "queryPlanning": 83,
+    "triggerExecution": 9736,
+    "walCommit": 622
+  },
+  "eventTime": {
+    "watermark": "2015-05-03T20:29:24.308Z"
+  },
+  "stateOperators": [
+    {
+      "operatorName": "defaultName",
+      "numRowsTotal": 410,
+      "numRowsUpdated": 0,
+      "allUpdatesTimeMs": 0,
+      "numRowsRemoved": 5760,
+      "allRemovalsTimeMs": 816,
+      "commitTimeMs": 1650,
+      "memoryUsedBytes": 6334112,
+      "numRowsDroppedByWatermark": 0,
+      "numShufflePartitions": 4,
+      "numStateStoreInstances": 4,
+      "customMetrics": {
+        "loadedMapCacheHitCount": 8,
+        "loadedMapCacheMissCount": 0,
+        "stateOnCurrentVersionSizeBytes": 459136
+      }
+    }
+  ],
+  "sources": [
+    {
+      "description": "FileStreamSource[file:/app/outputs/runs/verified-20261021c/clean]",
+      "startOffset": {
+        "logOffset": 0
+      },
+      "endOffset": {
+        "logOffset": 0
+      },
+      "latestOffset": null,
+      "numInputRows": 0,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 0.0
+    }
+  ],
+  "sink": {
+    "description": "ForeachBatchSink",
+    "numOutputRows": -1
+  }
+}

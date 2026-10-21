@@ -1,0 +1,37 @@
+{
+  "id": "e99bfb95-6a9c-4e5e-bdfd-54809686a5a7",
+  "runId": "bd2e72d9-9a67-4c2f-a19a-776bfeb8192c",
+  "name": "verified-20261021c_lake_online",
+  "timestamp": "2026-10-21T13:10:16.321Z",
+  "batchId": 0,
+  "numInputRows": 9999,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 63.20560310496972,
+  "durationMs": {
+    "addBatch": 155284,
+    "commitOffsets": 495,
+    "getBatch": 224,
+    "latestOffset": 945,
+    "queryPlanning": 696,
+    "triggerExecution": 158198,
+    "walCommit": 504
+  },
+  "stateOperators": [],
+  "sources": [
+    {
+      "description": "FileStreamSource[file:/app/outputs/runs/verified-20261021c/clean]",
+      "startOffset": null,
+      "endOffset": {
+        "logOffset": 0
+      },
+      "latestOffset": null,
+      "numInputRows": 9999,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 63.20560310496972
+    }
+  ],
+  "sink": {
+    "description": "ForeachBatchSink",
+    "numOutputRows": -1
+  }
+}

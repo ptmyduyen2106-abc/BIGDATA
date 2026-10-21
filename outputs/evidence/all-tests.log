@@ -1,0 +1,749 @@
+ Container retailrocket17-app-run-37391d6b2e56 Creating 
+ Container retailrocket17-app-run-37391d6b2e56 Created 
+
+Running test_phase2.py in an isolated Python/JVM process
+test_all_four_topics_and_raw_names_are_preserved (test_phase2.ContractTests.test_all_four_topics_and_raw_names_are_preserved) ... ok
+test_blank_transaction_normalizes_to_json_null (test_phase2.ContractTests.test_blank_transaction_normalizes_to_json_null) ... ok
+test_hash_matches_documented_canonical_five_field_array (test_phase2.ContractTests.test_hash_matches_documented_canonical_five_field_array) ... ok
+test_missing_columns_and_blank_run_rejected (test_phase2.ContractTests.test_missing_columns_and_blank_run_rejected) ... ok
+test_replay_identity_independent_of_run_and_ingestion (test_phase2.ContractTests.test_replay_identity_independent_of_run_and_ingestion) ... ok
+test_synthetic_review_is_explicit_and_unicode_serializes (test_phase2.ContractTests.test_synthetic_review_is_explicit_and_unicode_serializes) ... ok
+test_unknown_event_and_invalid_ids_rejected (test_phase2.ContractTests.test_unknown_event_and_invalid_ids_rejected) ... ok
+test_wire_integer_schema_and_timezone_enforced (test_phase2.ContractTests.test_wire_integer_schema_and_timezone_enforced) ... ok
+test_wrong_topic_and_tampered_hash_rejected (test_phase2.ContractTests.test_wrong_topic_and_tampered_hash_rejected) ... ok
+test_ack_failure_propagates_with_partial_metrics (test_phase2.ProducerTests.test_ack_failure_propagates_with_partial_metrics) ... ok
+test_bad_csv_emits_failure_report_and_nonzero_exit (test_phase2.ProducerTests.test_bad_csv_emits_failure_report_and_nonzero_exit) ... ok
+test_bounded_pending_and_acknowledgement_counts (test_phase2.ProducerTests.test_bounded_pending_and_acknowledgement_counts) ... ok
+test_dry_run_writes_jsonl_and_metrics_without_kafka (test_phase2.ProducerTests.test_dry_run_writes_jsonl_and_metrics_without_kafka) ... ok
+test_empty_input_does_not_report_success (test_phase2.ProducerTests.test_empty_input_does_not_report_success) ... ok
+test_fixture_contains_eight_labeled_rows_and_four_topics (test_phase2.ProducerTests.test_fixture_contains_eight_labeled_rows_and_four_topics) ... ok
+test_timestamp_pacing_rejects_unsorted_input (test_phase2.ProducerTests.test_timestamp_pacing_rejects_unsorted_input) ... ok
+test_verifier_checks_scope_topic_key_and_contract (test_phase2.VerificationTests.test_verifier_checks_scope_topic_key_and_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.376s
+
+OK
+
+Running test_phase3_streaming.py in an isolated Python/JVM process
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/21 12:49:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+test_batch_window_session_features_and_boundaries (test_phase3_streaming.Phase3SparkTests.test_batch_window_session_features_and_boundaries) ... 26/10/21 12:49:26 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+[Stage 0:>                                                          (0 + 2) / 2]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 38188), raddr=('127.0.0.1', 44909)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 49458), raddr=('127.0.0.1', 44637)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_parse_validation_and_exact_epoch_milliseconds (test_phase3_streaming.Phase3SparkTests.test_parse_validation_and_exact_epoch_milliseconds) ... /usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 42816), raddr=('127.0.0.1', 35239)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 36990), raddr=('127.0.0.1', 40183)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_streaming_dedup_lateness_features_and_checkpoint_restart (test_phase3_streaming.Phase3SparkTests.test_streaming_dedup_lateness_features_and_checkpoint_restart) ... 26/10/21 12:49:38 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:49:38 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+
+[Stage 11:>                                                         (0 + 1) / 1]
+
+[Stage 11:>                 (0 + 1) / 1][Stage 13:>                 (0 + 1) / 2]
+
+                                                                                
+26/10/21 12:49:40 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1970 milliseconds
+26/10/21 12:49:40 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 2095 milliseconds
+26/10/21 12:49:41 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 676 milliseconds
+26/10/21 12:49:42 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1196 milliseconds
+26/10/21 12:49:42 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1116 milliseconds
+26/10/21 12:49:44 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1157 milliseconds
+26/10/21 12:49:44 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1359 milliseconds
+26/10/21 12:49:45 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 707 milliseconds
+26/10/21 12:49:46 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 800 milliseconds
+26/10/21 12:49:46 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 962 milliseconds
+26/10/21 12:49:48 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:49:48 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:49:49 WARN HDFSBackedStateStoreProvider: The state for version 6 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 12:49:49 WARN HDFSBackedStateStoreProvider: The state for version 6 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 12:49:49 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1020 milliseconds
+26/10/21 12:49:49 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1146 milliseconds
+26/10/21 12:49:50 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 657 milliseconds
+26/10/21 12:49:51 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:49:52 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+
+[Stage 52:>                                                         (0 + 2) / 2]
+
+                                                                                
+26/10/21 12:49:54 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 2071 milliseconds
+26/10/21 12:49:55 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 2107 milliseconds
+26/10/21 12:49:55 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1403 milliseconds
+
+[Stage 58:=============================>                            (1 + 1) / 2]
+
+                                                                                
+26/10/21 12:49:56 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 200 milliseconds, but spent 1691 milliseconds
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 39436), raddr=('127.0.0.1', 43427)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 40238), raddr=('127.0.0.1', 37837)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+26/10/21 12:49:58 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 12:49:58 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 56748), raddr=('127.0.0.1', 38885)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 94:>                                                         (0 + 2) / 2]
+
+[Stage 94:=============================>                            (1 + 1) / 2]
+
+                                                                                
+ok
+----------------------------------------------------------------------
+Ran 3 tests in 55.684s
+
+OK
+
+Running test_service.py in an isolated Python/JVM process
+test_atomic_version_reload_ignores_old_cache (test_service.ServiceTests.test_atomic_version_reload_ignores_old_cache) ... ok
+test_cache_hit_rechecks_live_seen_history (test_service.ServiceTests.test_cache_hit_rechecks_live_seen_history) ... ok
+test_cache_payload_version_mismatch_is_ignored (test_service.ServiceTests.test_cache_payload_version_mismatch_is_ignored) ... ok
+test_invalid_schema_rejected_without_fake_ready (test_service.ServiceTests.test_invalid_schema_rejected_without_fake_ready) ... ok
+test_metrics_users_and_local_dashboard (test_service.ServiceTests.test_metrics_users_and_local_dashboard) ... ok
+test_not_ready_until_usable_bundle_and_liveness_independent (test_service.ServiceTests.test_not_ready_until_usable_bundle_and_liveness_independent) ... ok
+test_optional_redis_failure_falls_back_with_explicit_warning (test_service.ServiceTests.test_optional_redis_failure_falls_back_with_explicit_warning) ... ok
+test_personalized_seen_filter_and_popularity_fill (test_service.ServiceTests.test_personalized_seen_filter_and_popularity_fill) ... ok
+test_pointer_and_sidecar_path_traversal_rejected (test_service.ServiceTests.test_pointer_and_sidecar_path_traversal_rejected) ... ok
+test_pointer_switch_never_leaks_previous_run (test_service.ServiceTests.test_pointer_switch_never_leaks_previous_run) ... ok
+test_same_run_failed_reload_retains_traceable_last_valid (test_service.ServiceTests.test_same_run_failed_reload_retains_traceable_last_valid) ... ok
+test_sqlite_filters_omitted_user_and_is_required_when_declared (test_service.ServiceTests.test_sqlite_filters_omitted_user_and_is_required_when_declared) ... ok
+test_strict_id_and_k_bounds (test_service.ServiceTests.test_strict_id_and_k_bounds) ... ok
+test_unknown_user_uses_explicit_popular_fallback (test_service.ServiceTests.test_unknown_user_uses_explicit_popular_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 8.432s
+
+OK
+
+Running test_sort_events.py in an isolated Python/JVM process
+test_atomic_commit_race_does_not_clobber_competing_file (test_sort_events.SortEventsTests.test_atomic_commit_race_does_not_clobber_competing_file) ... ok
+test_empty_csv_with_valid_header_outputs_header_only (test_sort_events.SortEventsTests.test_empty_csv_with_valid_header_outputs_header_only) ... ok
+test_equal_timestamps_stable_across_multiple_merge_passes (test_sort_events.SortEventsTests.test_equal_timestamps_stable_across_multiple_merge_passes) ... ok
+test_existing_output_and_input_overwrite_are_rejected (test_sort_events.SortEventsTests.test_existing_output_and_input_overwrite_are_rejected) ... ok
+test_invalid_timestamp_or_header_leaves_no_output (test_sort_events.SortEventsTests.test_invalid_timestamp_or_header_leaves_no_output) ... ok
+test_sort_across_chunks_preserves_every_raw_field (test_sort_events.SortEventsTests.test_sort_across_chunks_preserves_every_raw_field) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 5.396s
+
+OK
+
+Running test_storage.py in an isolated Python/JVM process
+:: loading settings :: url = jar:file:/usr/local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+test_build_retry_and_actual_acid_time_travel (test_storage.DeltaIntegrationTests.test_build_retry_and_actual_acid_time_travel) ... Ivy Default Cache set to: /root/.ivy2/cache
+The jars for the packages stored in: /root/.ivy2/jars
+io.delta#delta-spark_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-042c8a38-9ce3-400e-88e3-62a1f6d9e276;1.0
+	confs: [default]
+	found io.delta#delta-spark_2.12;3.3.3 in central
+	found io.delta#delta-storage;3.3.3 in central
+	found org.antlr#antlr4-runtime;4.9.3 in central
+downloading https://repo1.maven.org/maven2/io/delta/delta-spark_2.12/3.3.3/delta-spark_2.12-3.3.3.jar ...
+	[SUCCESSFUL ] io.delta#delta-spark_2.12;3.3.3!delta-spark_2.12.jar (3877ms)
+downloading https://repo1.maven.org/maven2/io/delta/delta-storage/3.3.3/delta-storage-3.3.3.jar ...
+	[SUCCESSFUL ] io.delta#delta-storage;3.3.3!delta-storage.jar (369ms)
+downloading https://repo1.maven.org/maven2/org/antlr/antlr4-runtime/4.9.3/antlr4-runtime-4.9.3.jar ...
+	[SUCCESSFUL ] org.antlr#antlr4-runtime;4.9.3!antlr4-runtime.jar (500ms)
+:: resolution report :: resolve 5320ms :: artifacts dl 4772ms
+	:: modules in use:
+	io.delta#delta-spark_2.12;3.3.3 from central in [default]
+	io.delta#delta-storage;3.3.3 from central in [default]
+	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   3   |   3   |   3   |   0   ||   3   |   3   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-042c8a38-9ce3-400e-88e3-62a1f6d9e276
+	confs: [default]
+	3 artifacts copied, 0 already retrieved (7316kB/52ms)
+26/10/21 12:50:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+
+[Stage 0:>                                                          (0 + 2) / 2]
+
+                                                                                
+26/10/21 12:50:58 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+[Stage 1:>                                                          (0 + 2) / 2]
+
+                                                                                
+
+[Stage 10:>                                                         (0 + 2) / 4]
+
+[Stage 10:==============>                                           (1 + 2) / 4]
+
+[Stage 10:=============================>                            (2 + 2) / 4]
+
+[Stage 10:===========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 13:>                                                        (0 + 2) / 50]
+
+[Stage 13:==>                                                      (2 + 4) / 50]
+
+[Stage 13:======>                                                  (6 + 2) / 50]
+
+[Stage 13:===========>                                            (10 + 2) / 50]
+
+[Stage 13:=============>                                          (12 + 2) / 50]
+
+[Stage 13:===============>                                        (14 + 2) / 50]
+
+[Stage 13:====================>                                   (18 + 2) / 50]
+
+[Stage 13:=======================>                                (21 + 2) / 50]
+
+[Stage 13:==========================>                             (24 + 2) / 50]
+
+[Stage 13:=============================>                          (26 + 2) / 50]
+
+[Stage 13:===============================>                        (28 + 3) / 50]
+
+[Stage 13:===================================>                    (32 + 2) / 50]
+
+[Stage 13:=======================================>                (35 + 2) / 50]
+
+[Stage 13:==========================================>             (38 + 2) / 50]
+
+[Stage 13:============================================>           (40 + 2) / 50]
+
+[Stage 13:===============================================>        (42 + 2) / 50]
+
+[Stage 13:===================================================>    (46 + 2) / 50]
+
+[Stage 13:=====================================================>  (48 + 2) / 50]
+
+                                                                                
+
+[Stage 16:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 19:======>                                                  (6 + 2) / 50]
+
+[Stage 19:===========>                                            (10 + 2) / 50]
+
+[Stage 19:=================>                                      (16 + 2) / 50]
+
+[Stage 19:======================>                                 (20 + 2) / 50]
+
+[Stage 19:============================>                           (25 + 2) / 50]
+
+[Stage 19:==================================>                     (31 + 2) / 50]
+
+[Stage 19:=========================================>              (37 + 2) / 50]
+
+[Stage 19:===============================================>        (42 + 2) / 50]
+
+[Stage 19:===================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 24:=====================>                                  (19 + 2) / 50]
+
+[Stage 24:==============================>                         (27 + 2) / 50]
+
+[Stage 24:======================================>                 (34 + 3) / 50]
+
+[Stage 24:====================================================>   (47 + 2) / 50]
+
+                                                                                
+
+[Stage 28:>                                                         (0 + 1) / 1]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 36026), raddr=('127.0.0.1', 39623)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 60772), raddr=('127.0.0.1', 45245)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 58:=========================>                              (23 + 2) / 50]
+
+[Stage 58:=================================>                      (30 + 2) / 50]
+
+[Stage 58:==========================================>             (38 + 2) / 50]
+
+                                                                                
+
+[Stage 63:==========================================>             (38 + 2) / 50]
+
+                                                                                
+
+[Stage 66:==============>                                           (1 + 2) / 4]
+
+[Stage 66:=============================>                            (2 + 2) / 4]
+
+                                                                                
+
+[Stage 68:===================================================>    (46 + 3) / 50]
+
+                                                                                
+
+[Stage 71:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 76:=============>                                          (12 + 2) / 50]
+
+[Stage 76:======================>                                 (20 + 2) / 50]
+
+[Stage 76:=============================>                          (26 + 2) / 50]
+
+[Stage 76:=================================>                      (30 + 2) / 50]
+
+[Stage 76:==========================================>             (38 + 2) / 50]
+
+[Stage 76:=================================================>      (44 + 2) / 50]
+
+                                                                                
+
+[Stage 84:=========>                                               (8 + 2) / 50]
+
+[Stage 84:============>                                           (11 + 2) / 50]
+
+[Stage 84:===============>                                        (14 + 2) / 50]
+
+[Stage 84:================>                                       (15 + 2) / 50]
+
+[Stage 84:====================>                                   (18 + 3) / 50]
+
+[Stage 84:=======================>                                (21 + 2) / 50]
+
+[Stage 84:=========================>                              (23 + 2) / 50]
+
+[Stage 84:=============================>                          (26 + 2) / 50]
+
+[Stage 84:=================================>                      (30 + 2) / 50]
+
+[Stage 84:===================================>                    (32 + 2) / 50]
+
+[Stage 84:====================================>                   (33 + 2) / 50]
+
+[Stage 84:========================================>               (36 + 2) / 50]
+
+[Stage 84:=============================================>          (41 + 2) / 50]
+
+[Stage 84:===================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 91:>                                                         (0 + 1) / 1]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 42928), raddr=('127.0.0.1', 43631)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 41356), raddr=('127.0.0.1', 37059)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 116:======================>                                (20 + 2) / 50]
+
+[Stage 116:============================>                          (26 + 2) / 50]
+
+[Stage 116:=======================================>               (36 + 2) / 50]
+
+[Stage 116:================================================>      (44 + 2) / 50]
+
+                                                                                
+
+[Stage 118:=========================================>             (38 + 2) / 50]
+
+[Stage 118:===================================================>   (47 + 2) / 50]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 45372), raddr=('127.0.0.1', 43227)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 123:============================>                            (1 + 1) / 2]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 36002), raddr=('127.0.0.1', 35803)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 127:========================>                              (22 + 2) / 50]
+
+[Stage 127:==============================>                        (28 + 2) / 50]
+
+[Stage 127:=========================================>             (38 + 2) / 50]
+
+[Stage 127:================================================>      (44 + 2) / 50]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 60314), raddr=('127.0.0.1', 37547)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 36712), raddr=('127.0.0.1', 46755)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 146:===========>                                           (10 + 2) / 50]
+
+[Stage 146:===============>                                       (14 + 2) / 50]
+
+[Stage 146:===================>                                   (18 + 2) / 50]
+
+[Stage 146:===========================>                           (25 + 2) / 50]
+
+[Stage 146:=================================>                     (30 + 2) / 50]
+
+[Stage 146:=======================================>               (36 + 2) / 50]
+
+[Stage 146:==============================================>        (42 + 2) / 50]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 38034), raddr=('127.0.0.1', 33173)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 158:==============================>                        (28 + 2) / 50]
+
+[Stage 158:=========================================>             (38 + 2) / 50]
+
+[Stage 158:==================================================>    (46 + 2) / 50]
+
+                                                                                
+
+[Stage 163:================================================>      (44 + 2) / 50]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 48638), raddr=('127.0.0.1', 45039)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 173:>                                                        (0 + 2) / 2]
+26/10/21 12:52:10 ERROR Utils: Aborting task
+org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+[Stage 173:============================>                            (1 + 1) / 2]
+26/10/21 12:52:11 ERROR DeltaFileFormatWriter: Job job_202610211252108695437899160974021_0173 aborted.
+26/10/21 12:52:11 ERROR Executor: Exception in task 1.0 in stage 173.0 (TID 1261)
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/delta-course-test-khpins2b/delta/acid_checks/7d4c9dae27114b428932de2add038dd6.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+26/10/21 12:52:11 WARN TaskSetManager: Lost task 1.0 in stage 173.0 (TID 1261) (localhost executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/delta-course-test-khpins2b/delta/acid_checks/7d4c9dae27114b428932de2add038dd6.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+
+26/10/21 12:52:11 ERROR TaskSetManager: Task 1 in stage 173.0 failed 1 times; aborting job
+26/10/21 12:52:11 ERROR DeltaFileFormatWriter: Aborting job 742e7622-e103-4381-a613-ba79fbb5bd94
+org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 173.0 failed 1 times, most recent failure: Lost task 1.0 in stage 173.0 (TID 1261) (localhost executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/delta-course-test-khpins2b/delta/acid_checks/7d4c9dae27114b428932de2add038dd6.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2898)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2834)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2833)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2833)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1253)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3102)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3036)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3025)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:995)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$1(DeltaFileFormatWriter.scala:267)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.writeAndCommit(DeltaFileFormatWriter.scala:300)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeWrite(DeltaFileFormatWriter.scala:236)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.write(DeltaFileFormatWriter.scala:216)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.$anonfun$writeFiles$2(TransactionalWrite.scala:468)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:426)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:384)
+	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:259)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:255)
+	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles(TransactionalWrite.scala:248)
+	at org.apache.spark.sql.delta.files.TransactionalWrite.writeFiles$(TransactionalWrite.scala:245)
+	at org.apache.spark.sql.delta.OptimisticTransaction.writeFiles(OptimisticTransaction.scala:165)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.writeFiles(WriteIntoDelta.scala:377)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.writeAndReturnCommitData(WriteIntoDelta.scala:340)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.$anonfun$run$1(WriteIntoDelta.scala:108)
+	at org.apache.spark.sql.delta.DeltaLog.withNewTransaction(DeltaLog.scala:241)
+	at org.apache.spark.sql.delta.commands.WriteIntoDelta.run(WriteIntoDelta.scala:103)
+	at org.apache.spark.sql.delta.sources.DeltaDataSource.createRelation(DeltaDataSource.scala:206)
+	at org.apache.spark.sql.execution.datasources.SaveIntoDataSourceCommand.run(SaveIntoDataSourceCommand.scala:48)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult$lzycompute(commands.scala:75)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.sideEffectResult(commands.scala:73)
+	at org.apache.spark.sql.execution.command.ExecutedCommandExec.executeCollect(commands.scala:84)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:307)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to hdfs://namenode:8020/ecommerce/runs/delta-course-test-khpins2b/delta/acid_checks/7d4c9dae27114b428932de2add038dd6.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:467)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeWrite$3(DeltaFileFormatWriter.scala:279)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 more
+Caused by: org.apache.spark.sql.delta.schema.DeltaInvariantViolationException: [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint value_nonnegative (value >= 0) violated by row with values:
+ - value : -1
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.getConstraintViolationWithValuesException(InvariantViolationException.scala:78)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:106)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException$.apply(InvariantViolationException.scala:117)
+	at org.apache.spark.sql.delta.schema.DeltaInvariantViolationException.apply(InvariantViolationException.scala)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$SpecificUnsafeProjection.apply(Unknown Source)
+	at org.apache.spark.sql.delta.constraints.DeltaInvariantCheckerExec.$anonfun$doExecute$3(DeltaInvariantCheckerExec.scala:89)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.$anonfun$executeTask$1(DeltaFileFormatWriter.scala:450)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.delta.files.DeltaFileFormatWriter$.executeTask(DeltaFileFormatWriter.scala:457)
+	... 12 more
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=7, family=2, type=1, proto=6, laddr=('127.0.0.1', 59604), raddr=('127.0.0.1', 40247)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 177:==================>                                    (17 + 2) / 50]
+
+[Stage 177:========================>                              (22 + 2) / 50]
+
+[Stage 177:==============================>                        (28 + 2) / 50]
+
+[Stage 177:=======================================>               (36 + 2) / 50]
+
+[Stage 177:==================================================>    (46 + 2) / 50]
+
+                                                                                
+ok
+test_real_mongo_redis_retry_session_bridge_and_seen_set (test_storage.OnlineIntegrationTests.test_real_mongo_redis_retry_session_bridge_and_seen_set) ... ok
+test_dedup_order_window_and_late_session_bridge (test_storage.ProjectionTests.test_dedup_order_window_and_late_session_bridge) ... ok
+test_retry_replaces_projections_removes_stale_sessions_and_isolates_runs (test_storage.ProjectionTests.test_retry_replaces_projections_removes_stale_sessions_and_isolates_runs) ... ok
+test_utc_milliseconds_and_missing_metrics (test_storage.ProjectionTests.test_utc_milliseconds_and_missing_metrics) ... ok
+----------------------------------------------------------------------
+Ran 5 tests in 111.703s
+
+OK
+
+Running test_training.py in an isolated Python/JVM process
+test_chronological_splits_precede_validation_and_keep_equal_times_together (test_training.RankingTests.test_chronological_splits_precede_validation_and_keep_equal_times_together) ... ok
+test_known_binary_ranking_values_and_fixed_precision_denominator (test_training.RankingTests.test_known_binary_ranking_values_and_fixed_precision_denominator) ... ok
+test_missing_cold_predictions_are_misses_and_duplicate_ids_do_not_inflate (test_training.RankingTests.test_missing_cold_predictions_are_misses_and_duplicate_ids_do_not_inflate) ... ok
+test_quick_grid_really_selects_multiple_candidates_and_full_grid_tunes_alpha (test_training.RankingTests.test_quick_grid_really_selects_multiple_candidates_and_full_grid_tunes_alpha) ... ok
+test_seen_filter_is_unique_score_ordered_and_deterministic (test_training.RankingTests.test_seen_filter_is_unique_score_ordered_and_deterministic) ... ok
+test_sqlite_sidecar_contains_all_seen_users_beyond_json_scope (test_training.RankingTests.test_sqlite_sidecar_contains_all_seen_users_beyond_json_scope) ... ok
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/21 12:52:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+test_real_als_pipeline_persists_and_filters_seen_items (test_training.SparkALSTests.test_real_als_pipeline_persists_and_filters_seen_items) ... 
+[Stage 0:>                                                          (0 + 2) / 2]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 42150), raddr=('127.0.0.1', 45975)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 46596), raddr=('127.0.0.1', 41865)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 33172), raddr=('127.0.0.1', 38071)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 55710), raddr=('127.0.0.1', 46805)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 34642), raddr=('127.0.0.1', 32951)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+
+[Stage 469:>                                                        (0 + 2) / 2]
+
+[Stage 469:============================>                            (1 + 1) / 2]
+
+                                                                                
+
+[Stage 477:>                                                        (0 + 2) / 2]
+
+                                                                                
+/usr/local/lib/python3.11/socket.py:789: ResourceWarning: unclosed <socket.socket fd=8, family=2, type=1, proto=6, laddr=('127.0.0.1', 56744), raddr=('127.0.0.1', 37847)>
+  self._sock = None
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+----------------------------------------------------------------------
+Ran 7 tests in 47.853s
+
+OK
+
+Module results: [('test_phase2.py', 0), ('test_phase3_streaming.py', 0), ('test_service.py', 0), ('test_sort_events.py', 0), ('test_storage.py', 0), ('test_training.py', 0)]

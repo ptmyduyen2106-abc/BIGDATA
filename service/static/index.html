@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Theo dõi dữ liệu RetailRocket và thử gợi ý sản phẩm từ mô hình ALS đã huấn luyện.">
+  <title>Retail Signal · Big Data</title>
+  <link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="Retail Signal"><span class="brand-icon">R<span>·</span></span><span>retail<span class="brand-light">signal</span></span></a>
+    <div class="nav-label">KHÔNG GIAN PHÂN TÍCH</div>
+    <a class="nav active" href="#overview"><span>◫</span>Tổng quan</a>
+    <a class="nav" href="#recommend"><span>✦</span>Gợi ý sản phẩm</a>
+    <a class="nav" href="#model-section"><span>⌘</span>Mô hình & hệ thống</a>
+    <div class="sidebar-bottom"><span class="tiny-dot"></span> RETAILROCKET<br><small>Pipeline học tập · Phase 1–7</small><a href="/docs" target="_blank" rel="noopener">Tài liệu API ↗</a></div>
+  </aside>
+  <main id="overview">
+    <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> RetailRocket</div><span class="environment">LOCAL ANALYTICS</span></header>
+    <section class="page-heading"><div><div class="eyebrow">TỪ HÀNH VI ĐẾN GỢI Ý</div><h1>Tín hiệu từ mỗi tương tác<span>.</span></h1><p>Dữ liệu thật, mô hình đã huấn luyện và kết quả có thể đối chiếu.</p></div><button id="refresh" class="secondary">↻ <span>Cập nhật dữ liệu</span></button></section>
+    <div class="run-strip"><div><span id="health-dot" class="status-dot"></span><strong id="health-text">Đang kiểm tra</strong><span class="strip-divider"></span><span>Run <code id="run-id">—</code></span></div><span id="updated-at">Chưa tải dữ liệu</span></div>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <section class="kpi-grid" aria-label="Chỉ số dữ liệu">
+      <article class="kpi"><div class="kpi-label">SỰ KIỆN ĐÃ LÀM SẠCH <span>↗</span></div><strong id="kpi-events">—</strong><div class="kpi-foot">Tổng số quan sát trong run</div></article>
+      <article class="kpi"><div class="kpi-label">NGƯỜI DÙNG <span>◎</span></div><strong id="kpi-users">—</strong><div class="kpi-foot">Visitor ID phân biệt</div></article>
+      <article class="kpi"><div class="kpi-label">SẢN PHẨM <span>▦</span></div><strong id="kpi-items">—</strong><div class="kpi-foot">Item ID phân biệt</div></article>
+      <article class="kpi accent"><div class="kpi-label">MUA / XEM <span>↗</span></div><strong id="kpi-ratio">—</strong><div class="kpi-foot">Tỷ lệ số sự kiện · không phải CTR</div></article>
+    </section>
+    <section class="overview-grid">
+      <article class="panel events-panel"><div class="panel-heading"><div><div class="eyebrow">DỮ LIỆU QUAN SÁT</div><h2>Hành trình tương tác</h2></div><span class="chip">Event counts</span></div><div id="event-bars" class="event-bars"><p class="muted">Đang đọc KPI của run hiện tại…</p></div><p class="panel-note">Các nhóm có thể chứa cùng người dùng. Đây là số sự kiện, không phải funnel người dùng duy nhất.</p></article>
+      <article class="panel model-card" id="model-section"><div class="eyebrow">MÔ HÌNH PHỤC VỤ</div><h2>Implicit ALS<span class="model-orbit">✦</span></h2><p>Học từ tín hiệu xem, thêm giỏ và mua hàng.</p><dl class="model-details"><div><dt>Phiên bản</dt><dd id="model-version">—</dd></div><div><dt>Huấn luyện (UTC)</dt><dd id="trained-at">—</dd></div><div><dt>Model đánh giá</dt><dd id="metric-model-version">—</dd></div><div><dt>User có gợi ý xuất sẵn</dt><dd id="exported-users">—</dd></div></dl><div id="model-metrics" class="model-metrics"><span class="muted">Chưa có metric đánh giá.</span></div><p class="panel-note">Metric được đọc từ kết quả held-out; không phải số hiệu năng minh họa.</p></article>
+    </section>
+    <section class="recommend-section" id="recommend"><div class="section-heading"><div><div class="eyebrow">KHÁM PHÁ KẾT QUẢ</div><h2>Một người dùng. Những gợi ý mới.</h2><p>Loại sản phẩm đã tương tác, kể cả lịch sử online mới nhất khi có kết nối.</p></div><span class="tag">PERSONALIZATION LAB</span></div>
+      <article class="panel recommend-panel"><form id="recommend-form"><div class="field"><label for="visitor-id">Visitor ID</label><input id="visitor-id" name="visitorid" type="text" inputmode="numeric" pattern="[0-9]+" placeholder="Nhập ID người dùng" required autocomplete="off"></div><div class="field sample-field"><label for="sample-users">Chọn user có trong bundle</label><select id="sample-users"><option value="">Chọn một người dùng…</option></select></div><div class="field k-field"><label for="top-k">Số gợi ý</label><select id="top-k"><option>5</option><option selected>10</option><option>20</option></select></div><button type="submit" class="primary" id="recommend-button">Tạo gợi ý <span>↗</span></button></form>
+        <div id="recommend-meta" class="recommend-meta">Chọn một visitor để xem kết quả từ mô hình của run hiện tại.</div><div id="recommend-error" class="inline-error" role="alert" hidden></div>
+        <div id="recommend-results" class="results empty"><div class="empty-symbol">✦</div><strong>Sản phẩm phù hợp bắt đầu từ dữ liệu.</strong><p>Nhập Visitor ID hoặc chọn user mẫu ở trên.<br>Người dùng ngoài danh sách nhận baseline phổ biến có lọc lịch sử.</p></div>
+      </article>
+    </section>
+    <section class="bottom-grid"><article class="panel"><div class="panel-heading"><div><div class="eyebrow">QUAN SÁT TỪ TRÌNH DUYỆT</div><h2>Độ trễ truy vấn API</h2></div><strong id="latency-current" class="latency-number">—<small> ms</small></strong></div><div class="chart-wrap"><canvas id="latency-chart" height="140" aria-label="Độ trễ end-to-end của tối đa 20 yêu cầu gợi ý vừa thực hiện"></canvas><div id="chart-empty">Chưa có phép đo. Thử tạo một danh sách gợi ý.</div></div><p class="panel-note">Đo bằng đồng hồ trình duyệt, gồm mạng và API. Tối đa 20 truy vấn tại phiên này; không phải SLA hay benchmark tải.</p></article><article class="panel system-panel"><div class="eyebrow">KHẢ NĂNG QUAN SÁT</div><h2>Kết nối & giới hạn</h2><div id="dependencies" class="dependencies"><div class="muted">Đang kiểm tra dịch vụ…</div></div><div class="data-limit"><strong>CTR & doanh thu: chưa có dữ liệu</strong><p>RetailRocket không có mẫu số lượt hiển thị quảng cáo hoặc giá / giá trị đơn hàng. Dashboard không suy diễn các chỉ số này.</p></div></article></section>
+    <footer><span>retailsignal <b>·</b> Big Data project</span><span>Kafka → Spark → Delta / NoSQL → ALS → API</span></footer>
+  </main>
+</body>
+</html>

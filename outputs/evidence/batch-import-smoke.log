@@ -1,0 +1,43 @@
+ Container retailrocket17-app-run-75fc57ab31e4 Creating 
+ Container retailrocket17-app-run-75fc57ab31e4 Created 
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/21 13:08:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+[Stage 0:>                                                          (0 + 1) / 1]
+
+                                                                                
+
+[Stage 4:>                                                          (0 + 1) / 1]
+
+                                                                                
+
+[Stage 8:>                                                          (0 + 1) / 1]
+
+                                                                                
+26/10/21 13:09:07 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+[Stage 9:>                                                          (0 + 1) / 1]
+
+[Stage 11:>                                                         (0 + 1) / 1]
+
+                                                                                
+{
+  "run_id": "batch-import-check",
+  "status": "passed",
+  "started_at_utc": "2026-10-21T13:08:41.984892+00:00",
+  "import": {
+    "raw_rows": 10000,
+    "clean_rows": 9999,
+    "rejected_rows": 0,
+    "source": "/app/data/sample/events_10000.csv",
+    "mode": "batch_full_history_no_watermark"
+  },
+  "persisted_clean_rows": 9999,
+  "persisted_distinct_event_ids": 9999,
+  "persisted_quarantined_rows": 0,
+  "rows_with_kafka_metadata": 0,
+  "active_streaming_queries": 0,
+  "semantics": "Actual sample batch import. No Kafka, streaming watermark, training or baseline-run mutation.",
+  "finished_at_utc": "2026-10-21T13:09:16.620686+00:00"
+}

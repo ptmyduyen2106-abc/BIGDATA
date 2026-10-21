@@ -1,0 +1,82 @@
+{
+  "id": "2c7ba76c-ee58-489c-bdf3-5d4843ae9dca",
+  "runId": "4ba7a70d-7fb6-4d5b-a7f7-51caed997476",
+  "name": "verified-20261021c_quarantine",
+  "timestamp": "2026-10-21T12:56:17.169Z",
+  "batchId": 0,
+  "numInputRows": 10000,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 695.6037840845854,
+  "durationMs": {
+    "addBatch": 11009,
+    "commitOffsets": 1655,
+    "getBatch": 97,
+    "latestOffset": 139,
+    "queryPlanning": 945,
+    "triggerExecution": 14374,
+    "walCommit": 459
+  },
+  "stateOperators": [],
+  "sources": [
+    {
+      "description": "KafkaV2[Subscribe[page_view, add_to_cart, purchase, review]]",
+      "startOffset": null,
+      "endOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3298,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "latestOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3298,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "numInputRows": 10000,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 695.6037840845854,
+      "metrics": {
+        "avgOffsetsBehindLatest": "0.0",
+        "maxOffsetsBehindLatest": "0",
+        "minOffsetsBehindLatest": "0"
+      }
+    }
+  ],
+  "sink": {
+    "description": "FileSink[/app/outputs/runs/verified-20261021c/quarantine]",
+    "numOutputRows": -1
+  }
+}

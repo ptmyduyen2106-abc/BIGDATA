@@ -1,0 +1,19 @@
+{
+  "run_id": "batch-import-check",
+  "status": "passed",
+  "started_at_utc": "2026-10-21T13:08:41.984892+00:00",
+  "import": {
+    "raw_rows": 10000,
+    "clean_rows": 9999,
+    "rejected_rows": 0,
+    "source": "/app/data/sample/events_10000.csv",
+    "mode": "batch_full_history_no_watermark"
+  },
+  "persisted_clean_rows": 9999,
+  "persisted_distinct_event_ids": 9999,
+  "persisted_quarantined_rows": 0,
+  "rows_with_kafka_metadata": 0,
+  "active_streaming_queries": 0,
+  "semantics": "Actual sample batch import. No Kafka, streaming watermark, training or baseline-run mutation.",
+  "finished_at_utc": "2026-10-21T13:09:16.620686+00:00"
+}

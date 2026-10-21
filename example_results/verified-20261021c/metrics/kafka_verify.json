@@ -1,0 +1,19 @@
+{
+  "run_id": "verified-20261021c",
+  "status": "success",
+  "started_at": "2026-10-21T12:54:26.447+00:00",
+  "expected_total": 10000,
+  "required_topics": [],
+  "matched": 10000,
+  "unique_event_ids": 9999,
+  "duplicate_event_ids": 1,
+  "topic_counts": {
+    "add_to_cart": 211,
+    "page_view": 9728,
+    "purchase": 61
+  },
+  "skipped_other_runs": 0,
+  "errors": [],
+  "elapsed_seconds": 4.723,
+  "finished_at": "2026-10-21T12:54:31.168+00:00"
+}

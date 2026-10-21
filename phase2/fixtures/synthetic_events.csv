@@ -1,0 +1,9 @@
+timestamp,visitorid,event,itemid,transactionid,synthetic,rating,review_text
+1430622000000,9000001,view,101,,true,,
+1430622001000,9000001,addtocart,101,,true,,
+1430622002000,9000001,transaction,101,8000001,true,,
+1430622003000,9000001,review,101,,true,5,SYNTHETIC TEST ONLY - verified four-topic routing
+1430622004000,9000002,view,102,,true,,
+1430622005000,9000002,addtocart,102,,true,,
+1430622006000,9000002,transaction,102,8000002,true,,
+1430622007000,9000002,review,102,,true,4,SYNTHETIC TEST ONLY - review schema verification

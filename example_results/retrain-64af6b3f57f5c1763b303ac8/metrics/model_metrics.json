@@ -1,0 +1,187 @@
+{
+  "status": "evaluated",
+  "run_id": "retrain-64af6b3f57f5c1763b303ac8",
+  "algorithm": "als_implicit",
+  "quick_mode": true,
+  "metric_model_version": "retrain-64af6b3f57f5c1763b303ac8:als-evaluation-v1",
+  "serving_model_version": "retrain-64af6b3f57f5c1763b303ac8:als-serving-v1",
+  "evaluated_at_utc": "2026-10-21T13:08:26+00:00",
+  "seed": 42,
+  "top_k": 10,
+  "event_weights": {
+    "view": 1.0,
+    "addtocart": 3.0,
+    "transaction": 5.0
+  },
+  "input_events": 9999,
+  "weighted_events": 9999,
+  "silver_path": "hdfs://namenode:8020/ecommerce/runs/retrain-64af6b3f57f5c1763b303ac8/delta/silver",
+  "excluded_nonweighted_events": 0,
+  "chronological_boundaries_epoch_ms": [
+    1430665658660,
+    1430674489035,
+    1430679923782
+  ],
+  "split_semantics": "fold1 train<=50% validate(50%,70%]; fold2 train<=70% validate(70%,85%]; evaluate train<=85% test>85%; split before aggregation",
+  "selected_parameters": {
+    "rank": 8,
+    "reg_param": 0.05,
+    "alpha": 20.0
+  },
+  "selection_metric": "mean_validation_ndcg_at_k",
+  "cross_validation": [
+    {
+      "parameters": {
+        "rank": 8,
+        "reg_param": 0.05,
+        "alpha": 20.0
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "train_end_inclusive": 1430665658660,
+          "validation_start_exclusive": 1430665658660,
+          "validation_end_inclusive": 1430674489035,
+          "k": 10,
+          "eligible_users": 1182,
+          "heldout_unique_pairs": 1693,
+          "novel_heldout_pairs": 1658,
+          "excluded_repeat_pairs": 35,
+          "training_catalog_size": 3734,
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "catalog_coverage": 0.03481521156936261,
+          "user_coverage": 0.016074450084602367,
+          "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+          "cold_users": 1163,
+          "cold_item_pairs": 1340,
+          "status": "evaluated"
+        },
+        {
+          "fold": 2,
+          "train_end_inclusive": 1430674489035,
+          "validation_start_exclusive": 1430674489035,
+          "validation_end_inclusive": 1430679923782,
+          "k": 10,
+          "eligible_users": 932,
+          "heldout_unique_pairs": 1287,
+          "novel_heldout_pairs": 1242,
+          "excluded_repeat_pairs": 45,
+          "training_catalog_size": 5011,
+          "precision_at_k": 0.0001072961373390558,
+          "recall_at_k": 0.001072961373390558,
+          "ndcg_at_k": 0.0006769632549049973,
+          "catalog_coverage": 0.03632009578926362,
+          "user_coverage": 0.034334763948497854,
+          "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+          "cold_users": 900,
+          "cold_item_pairs": 934,
+          "status": "evaluated"
+        }
+      ],
+      "mean_validation_ndcg_at_k": 0.00033848162745249866,
+      "mean_validation_recall_at_k": 0.000536480686695279,
+      "evaluable_folds": 2
+    },
+    {
+      "parameters": {
+        "rank": 8,
+        "reg_param": 0.1,
+        "alpha": 20.0
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "train_end_inclusive": 1430665658660,
+          "validation_start_exclusive": 1430665658660,
+          "validation_end_inclusive": 1430674489035,
+          "k": 10,
+          "eligible_users": 1182,
+          "heldout_unique_pairs": 1693,
+          "novel_heldout_pairs": 1658,
+          "excluded_repeat_pairs": 35,
+          "training_catalog_size": 3734,
+          "precision_at_k": 0.0,
+          "recall_at_k": 0.0,
+          "ndcg_at_k": 0.0,
+          "catalog_coverage": 0.03508302088912694,
+          "user_coverage": 0.016074450084602367,
+          "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+          "cold_users": 1163,
+          "cold_item_pairs": 1340,
+          "status": "evaluated"
+        },
+        {
+          "fold": 2,
+          "train_end_inclusive": 1430674489035,
+          "validation_start_exclusive": 1430674489035,
+          "validation_end_inclusive": 1430679923782,
+          "k": 10,
+          "eligible_users": 932,
+          "heldout_unique_pairs": 1287,
+          "novel_heldout_pairs": 1242,
+          "excluded_repeat_pairs": 45,
+          "training_catalog_size": 5011,
+          "precision_at_k": 0.0001072961373390558,
+          "recall_at_k": 0.001072961373390558,
+          "ndcg_at_k": 0.0006769632549049973,
+          "catalog_coverage": 0.036918778686888844,
+          "user_coverage": 0.034334763948497854,
+          "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+          "cold_users": 900,
+          "cold_item_pairs": 934,
+          "status": "evaluated"
+        }
+      ],
+      "mean_validation_ndcg_at_k": 0.00033848162745249866,
+      "mean_validation_recall_at_k": 0.000536480686695279,
+      "evaluable_folds": 2
+    }
+  ],
+  "heldout_test": {
+    "k": 10,
+    "eligible_users": 912,
+    "heldout_unique_pairs": 1288,
+    "novel_heldout_pairs": 1223,
+    "excluded_repeat_pairs": 65,
+    "training_catalog_size": 5913,
+    "precision_at_k": 0.0,
+    "recall_at_k": 0.0,
+    "ndcg_at_k": 0.0,
+    "catalog_coverage": 0.034838491459496024,
+    "user_coverage": 0.044956140350877194,
+    "definition": "macro user ranking over novel held-out items; cold users/items count as misses; precision denominator is K",
+    "cold_users": 871,
+    "cold_item_pairs": 881,
+    "status": "evaluated"
+  },
+  "evaluation_train_events": 8490,
+  "heldout_test_events": 1509,
+  "feature_pipeline": {
+    "assembler_inputs": [
+      "view_count",
+      "cart_count",
+      "purchase_count"
+    ],
+    "assembler_output": "interaction_features",
+    "als_inputs": [
+      "visitorid",
+      "itemid",
+      "rating"
+    ],
+    "note": "Auxiliary vector is persisted/auditable; ALS consumes IDs and weighted implicit ratings."
+  },
+  "quality_gate": "No minimum accuracy claim: inspect heldout metrics and coverage, including cold users/items.",
+  "serving_refit_scope": "all observed weighted silver events, only AFTER heldout evaluation; metrics describe evaluation model",
+  "serving_scope": {
+    "max_json_users": 5000,
+    "exported_json_users": 5000,
+    "trained_users": 5882,
+    "training_catalog_size": 6776,
+    "all_observed_seen_pairs": 8313,
+    "all_recommendations_parquet": "models/recommendations",
+    "fallback": "users outside JSON recommendation scope use popularity with all-observed SQLite seen filtering"
+  },
+  "trained_at_utc": "2026-10-21T13:09:22+00:00"
+}

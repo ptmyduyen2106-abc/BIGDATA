@@ -1,0 +1,11 @@
+test_cycle_is_rejected (test_lineage.DataLineageTests.test_cycle_is_rejected) ... ok
+test_explicit_canonical_data_source (test_lineage.DataLineageTests.test_explicit_canonical_data_source) ... ok
+test_identity_mismatch_is_rejected (test_lineage.DataLineageTests.test_identity_mismatch_is_rejected) ... ok
+test_ingestion_run_and_legacy_missing_report (test_lineage.DataLineageTests.test_ingestion_run_and_legacy_missing_report) ... ok
+test_malformed_source_and_path_escape_are_rejected (test_lineage.DataLineageTests.test_malformed_source_and_path_escape_are_rejected) ... ok
+test_multiple_model_generations_keep_live_data_source (test_lineage.DataLineageTests.test_multiple_model_generations_keep_live_data_source) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.208s
+
+OK

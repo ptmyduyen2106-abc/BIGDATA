@@ -1,0 +1,21 @@
+{
+  "received_rows": 10000,
+  "affected_users": 5882,
+  "affected_items": 6776,
+  "durable_events": 10000,
+  "users": 5882,
+  "sessions": 6171,
+  "status": "completed",
+  "run_id": "verified-20261021c",
+  "stream_sinks": {
+    "windows": {
+      "status": "published",
+      "latest_user_rows": 5882
+    },
+    "sessions": {
+      "status": "published",
+      "latest_user_rows": 5882
+    }
+  },
+  "created_at": "2026-10-21T13:12:53.974340+00:00"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "8752556f-21b4-421e-b654-61cfa720e742",
+  "runId": "0a992a6b-9527-4870-898b-8866563d82f1",
+  "name": "verified-20261021c_windows",
+  "timestamp": "2026-10-21T13:11:00.000Z",
+  "batchId": 2,
+  "numInputRows": 1,
+  "inputRowsPerSecond": 0.20004000800160032,
+  "processedRowsPerSecond": 0.04552490212146044,
+  "durationMs": {
+    "addBatch": 14739,
+    "commitOffsets": 837,
+    "getBatch": 188,
+    "latestOffset": 4279,
+    "queryPlanning": 507,
+    "triggerExecution": 21966,
+    "walCommit": 1404
+  },
+  "eventTime": {
+    "avg": "2015-05-04T01:58:38.752Z",
+    "max": "2015-05-04T01:58:38.752Z",
+    "min": "2015-05-04T01:58:38.752Z",
+    "watermark": "2015-05-03T20:29:24.308Z"
+  },
+  "stateOperators": [
+    {
+      "operatorName": "stateStoreSave",
+      "numRowsTotal": 815,
+      "numRowsUpdated": 5,
+      "allUpdatesTimeMs": 643,
+      "numRowsRemoved": 0,
+      "allRemovalsTimeMs": 6,
+      "commitTimeMs": 3374,
+      "memoryUsedBytes": 1131808,
+      "numRowsDroppedByWatermark": 0,
+      "numShufflePartitions": 4,
+      "numStateStoreInstances": 4,
+      "customMetrics": {
+        "loadedMapCacheHitCount": 4,
+        "loadedMapCacheMissCount": 4,
+        "stateOnCurrentVersionSizeBytes": 430784
+      }
+    }
+  ],
+  "sources": [
+    {
+      "description": "FileStreamSource[file:/app/outputs/runs/verified-20261021c/clean]",
+      "startOffset": {
+        "logOffset": 0
+      },
+      "endOffset": {
+        "logOffset": 1
+      },
+      "latestOffset": null,
+      "numInputRows": 1,
+      "inputRowsPerSecond": 0.20004000800160032,
+      "processedRowsPerSecond": 0.04552490212146044
+    }
+  ],
+  "sink": {
+    "description": "ForeachBatchSink",
+    "numOutputRows": -1
+  }
+}

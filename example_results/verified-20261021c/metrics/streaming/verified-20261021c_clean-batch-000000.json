@@ -1,0 +1,108 @@
+{
+  "id": "f06897a2-b3b9-4788-882f-af077283a32a",
+  "runId": "d8e5d80f-d982-40ff-a61b-0e1b9529a97c",
+  "name": "verified-20261021c_clean",
+  "timestamp": "2026-10-21T12:56:17.169Z",
+  "batchId": 0,
+  "numInputRows": 10000,
+  "inputRowsPerSecond": 0.0,
+  "processedRowsPerSecond": 464.3172215257464,
+  "durationMs": {
+    "addBatch": 18822,
+    "commitOffsets": 952,
+    "getBatch": 98,
+    "latestOffset": 139,
+    "queryPlanning": 994,
+    "triggerExecution": 21536,
+    "walCommit": 456
+  },
+  "eventTime": {
+    "avg": "2015-05-03T12:35:26.518Z",
+    "max": "2015-05-03T20:39:24.308Z",
+    "min": "2015-05-03T03:00:04.384Z",
+    "watermark": "1970-01-01T00:00:00.000Z"
+  },
+  "stateOperators": [
+    {
+      "operatorName": "dedupeWithinWatermark",
+      "numRowsTotal": 9999,
+      "numRowsUpdated": 9999,
+      "allUpdatesTimeMs": 1336,
+      "numRowsRemoved": 0,
+      "allRemovalsTimeMs": 11,
+      "commitTimeMs": 1458,
+      "memoryUsedBytes": 2206160,
+      "numRowsDroppedByWatermark": 0,
+      "numShufflePartitions": 4,
+      "numStateStoreInstances": 4,
+      "customMetrics": {
+        "loadedMapCacheHitCount": 0,
+        "loadedMapCacheMissCount": 0,
+        "numDroppedDuplicateRows": 1,
+        "stateOnCurrentVersionSizeBytes": 2205584
+      }
+    }
+  ],
+  "sources": [
+    {
+      "description": "KafkaV2[Subscribe[page_view, add_to_cart, purchase, review]]",
+      "startOffset": null,
+      "endOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3298,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "latestOffset": {
+        "purchase": {
+          "2": 22,
+          "1": 16,
+          "0": 23
+        },
+        "review": {
+          "2": 0,
+          "1": 0,
+          "0": 0
+        },
+        "page_view": {
+          "2": 3298,
+          "1": 3179,
+          "0": 3251
+        },
+        "add_to_cart": {
+          "2": 59,
+          "1": 68,
+          "0": 84
+        }
+      },
+      "numInputRows": 10000,
+      "inputRowsPerSecond": 0.0,
+      "processedRowsPerSecond": 464.3172215257464,
+      "metrics": {
+        "avgOffsetsBehindLatest": "0.0",
+        "maxOffsetsBehindLatest": "0",
+        "minOffsetsBehindLatest": "0"
+      }
+    }
+  ],
+  "sink": {
+    "description": "FileSink[/app/outputs/runs/verified-20261021c/clean]",
+    "numOutputRows": -1
+  }
+}

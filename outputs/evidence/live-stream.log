@@ -1,0 +1,308 @@
+ Container retailrocket17-app-run-a9517d859031 Creating 
+ Container retailrocket17-app-run-a9517d859031 Created 
+:: loading settings :: url = jar:file:/usr/local/lib/python3.11/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /root/.ivy2/cache
+The jars for the packages stored in: /root/.ivy2/jars
+io.delta#delta-spark_2.12 added as a dependency
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-ac2894e1-a21d-433f-8da1-c86a5c4ffcd0;1.0
+	confs: [default]
+	found io.delta#delta-spark_2.12;3.3.3 in central
+	found io.delta#delta-storage;3.3.3 in central
+	found org.antlr#antlr4-runtime;4.9.3 in central
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.6 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.6 in central
+	found org.apache.kafka#kafka-clients;3.4.1 in central
+	found org.lz4#lz4-java;1.8.0 in central
+	found org.xerial.snappy#snappy-java;1.1.10.5 in central
+	found org.slf4j#slf4j-api;2.0.7 in central
+	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+	found commons-logging#commons-logging;1.1.3 in central
+	found com.google.code.findbugs#jsr305;3.0.0 in central
+	found org.apache.commons#commons-pool2;2.11.1 in central
+:: resolution report :: resolve 1181ms :: artifacts dl 34ms
+	:: modules in use:
+	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+	commons-logging#commons-logging;1.1.3 from central in [default]
+	io.delta#delta-spark_2.12;3.3.3 from central in [default]
+	io.delta#delta-storage;3.3.3 from central in [default]
+	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.6 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.6 from central in [default]
+	org.lz4#lz4-java;1.8.0 from central in [default]
+	org.slf4j#slf4j-api;2.0.7 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.10.5 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   14  |   0   |   0   |   0   ||   14  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-ac2894e1-a21d-433f-8da1-c86a5c4ffcd0
+	confs: [default]
+	0 artifacts copied, 14 already retrieved (0kB/20ms)
+26/10/21 13:10:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/10/21 13:10:12 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 13:10:12 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 13:10:13 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/21 13:10:13 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+26/10/21 13:10:14 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 13:10:15 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+26/10/21 13:10:15 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+
+[Stage 0:>                                                          (0 + 5) / 5]
+
+[Stage 0:===========>                                               (1 + 4) / 5]
+
+                                                                                
+26/10/21 13:10:23 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+[Stage 2:===========>                                               (1 + 4) / 5]
+
+[Stage 4:>                                                          (0 + 4) / 4]
+
+                                                                                
+
+[Stage 12:>                                                       (0 + 12) / 50]
+
+[Stage 12:=>                                                      (1 + 20) / 50]
+
+[Stage 12:==============>                                        (13 + 13) / 50]
+
+[Stage 12:==========================>                            (24 + 12) / 50]
+
+[Stage 12:==================================>                    (31 + 13) / 50]
+
+                                                                                
+
+[Stage 17:======================================>                (35 + 15) / 50]
+
+                                                                                
+
+[Stage 20:>                                                         (0 + 4) / 4]
+
+[Stage 20:===========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 23:>                                                       (0 + 12) / 50]
+
+[Stage 23:>               (1 + 12) / 50][Stage 24:>                 (0 + 0) / 1]
+
+[Stage 23:>               (3 + 13) / 50][Stage 24:>                 (0 + 0) / 1]
+
+[Stage 23:> (7 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(10 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(14 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(15 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(16 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(26 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(27 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:>(33 + 12) / 50][Stage 24:>   (0 + 0) / 1][Stage 25:>   (0 + 0) / 1]
+
+[Stage 23:=>(43 + 7) / 50][Stage 24:>   (0 + 1) / 1][Stage 25:>   (0 + 1) / 1]
+
+[Stage 24:>                 (0 + 1) / 1][Stage 25:>                 (0 + 1) / 1]
+
+                                                                                
+
+[Stage 24:>                 (0 + 1) / 1][Stage 25:>                 (0 + 1) / 1]
+
+[Stage 24:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 26:>                 (0 + 4) / 4][Stage 31:==========>     (33 + 9) / 50]
+26/10/21 13:10:56 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+
+                                                                                
+26/10/21 13:10:56 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:10:56 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:10:56 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+
+[Stage 26:>                                                         (0 + 4) / 4]
+
+[Stage 26:===========================================>              (3 + 1) / 4]
+26/10/21 13:10:57 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 12419 milliseconds
+
+                                                                                
+
+[Stage 34:>                                                         (0 + 1) / 1]
+26/10/21 13:10:58 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 13769 milliseconds
+
+                                                                                
+
+[Stage 36:>                                                        (0 + 0) / 50]
+
+[Stage 36:>               (0 + 15) / 50][Stage 38:>                 (0 + 0) / 4]
+
+[Stage 36:=======>       (25 + 12) / 50][Stage 38:>                 (0 + 0) / 4]
+
+[Stage 36:=======>       (26 + 13) / 50][Stage 38:>                 (0 + 0) / 4]
+
+[Stage 36:=========>     (32 + 12) / 50][Stage 38:>                 (0 + 0) / 4]
+
+[Stage 36:===========>   (37 + 13) / 50][Stage 38:>                 (0 + 1) / 4]
+26/10/21 13:11:02 WARN FileStreamSource: Listed 6 file(s) in 2640 ms
+
+                                                                                
+
+[Stage 38:>                                                         (0 + 4) / 4]
+
+[Stage 38:=============================>                            (2 + 2) / 4]
+
+                                                                                
+26/10/21 13:11:06 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 7752 milliseconds
+
+[Stage 41:==============================>                        (28 + 12) / 50]
+
+[Stage 41:======================================>                (35 + 12) / 50]
+
+[Stage 41:======================================================> (49 + 1) / 50]
+
+                                                                                
+26/10/21 13:11:07 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:07 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:07 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:07 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:08 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:08 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:08 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+26/10/21 13:11:08 WARN HDFSBackedStateStoreProvider: The state for version 2 doesn't exist in loadedMaps. Reading snapshot file and delta files if needed...Note that this is normal for the first batch of starting query.
+
+[Stage 46:>                 (0 + 4) / 4][Stage 49:>                 (0 + 4) / 4]
+
+[Stage 46:=============>    (3 + 1) / 4][Stage 49:====>             (1 + 3) / 4]
+
+                                                                                
+
+[Stage 49:=========>        (2 + 2) / 4][Stage 55:==============> (46 + 4) / 50]
+
+                                                                                
+26/10/21 13:11:10 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 10128 milliseconds
+
+[Stage 64:>                                                         (0 + 1) / 1]
+
+                                                                                
+
+[Stage 66:===>                                                    (3 + 13) / 50]
+
+[Stage 66:============>                                          (11 + 12) / 50]
+
+[Stage 66:====>          (15 + 13) / 50][Stage 69:>                (0 + 0) / 50]
+
+[Stage 66:======>        (21 + 13) / 50][Stage 69:>                (0 + 0) / 50]
+
+[Stage 66:========>      (29 + 12) / 50][Stage 69:>                (0 + 0) / 50]
+
+[Stage 66:===========>   (39 + 11) / 50][Stage 69:>                (0 + 1) / 50]
+
+[Stage 66:==============> (45 + 5) / 50][Stage 69:==>              (6 + 7) / 50]
+
+[Stage 69:===========================>                           (25 + 12) / 50]
+
+[Stage 69:==================================================>     (45 + 5) / 50]
+
+                                                                                
+
+[Stage 71:>                                                       (0 + 12) / 50]
+
+[Stage 71:=================>                                     (16 + 14) / 50]
+
+[Stage 71:===========================>                           (25 + 12) / 50]
+
+[Stage 71:=============>  (42 + 8) / 50][Stage 72:>                 (0 + 1) / 1]
+
+                                                                                
+
+[Stage 73:>                 (0 + 4) / 4][Stage 75:>                 (0 + 1) / 1]
+
+                                                                                
+26/10/21 13:11:21 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 21970 milliseconds
+
+[Stage 103:>                                                      (0 + 12) / 50]
+
+[Stage 103:============>                                         (12 + 12) / 50]
+
+[Stage 103:======================>                               (21 + 12) / 50]
+
+[Stage 103:================================>                     (30 + 12) / 50]
+
+[Stage 103:================================================>      (44 + 6) / 50]
+
+                                                                                
+
+[Stage 106:=========================>                            (24 + 14) / 50]
+
+[Stage 106:===============================>                      (29 + 12) / 50]
+
+[Stage 106:================================================>      (44 + 6) / 50]
+
+                                                                                
+
+[Stage 108:==============>                                          (1 + 3) / 4]
+
+                                                                                
+
+[Stage 111:==============>                                          (1 + 3) / 4]
+
+                                                                                
+
+[Stage 114:>                                                        (0 + 4) / 4]
+
+                                                                                
+26/10/21 13:11:29 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 19287 milliseconds
+26/10/21 13:11:29 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 7603 milliseconds
+
+[Stage 124:=================>                                    (16 + 13) / 50]
+
+[Stage 124:=============================>                        (27 + 12) / 50]
+
+[Stage 124:==========================================>           (39 + 11) / 50]
+
+                                                                                
+
+[Stage 135:====================================>                 (34 + 12) / 50]
+
+[Stage 135:===============================================>       (43 + 7) / 50]
+
+                                                                                
+26/10/21 13:12:54 WARN ProcessingTimeExecutor: Current batch is falling behind. The trigger interval is 5000 milliseconds, but spent 158199 milliseconds
+
+[Stage 158:==========================================>              (3 + 1) / 4]
+
+                                                                                
+
+[Stage 161:===============>                                      (14 + 12) / 50]
+
+[Stage 161:====================================>                 (34 + 14) / 50]
+
+                                                                                
+
+[Stage 164:>                                                        (0 + 1) / 1]
+
+                                                                                
+
+[Stage 169:===============================>                      (29 + 13) / 50]
+
+                                                                                
+
+[Stage 177:================================>                     (30 + 12) / 50]
+
+[Stage 177:===========================================>          (40 + 10) / 50]
+
+                                                                                

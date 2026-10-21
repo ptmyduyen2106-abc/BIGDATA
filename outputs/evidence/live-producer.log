@@ -1,0 +1,20 @@
+ Container retailrocket17-app-run-2f1dbb99af89 Creating 
+ Container retailrocket17-app-run-2f1dbb99af89 Created 
+{
+  "run_id": "verified-20261021c",
+  "input": "data/sample/live_check.csv",
+  "started_at": "2026-10-21T13:10:41.818+00:00",
+  "mode": "kafka",
+  "status": "success",
+  "sent": 1,
+  "acknowledged": 1,
+  "topic_counts": {
+    "page_view": 1
+  },
+  "acknowledged_topic_counts": {
+    "page_view": 1
+  },
+  "elapsed_seconds": 0.137,
+  "events_per_second": 7.281,
+  "finished_at": "2026-10-21T13:10:42.251+00:00"
+}
