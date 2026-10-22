@@ -1,0 +1,1868 @@
+{
+  "run_id": "p5-full-grid",
+  "generated_at_utc": "2026-10-21T23:02:24+00:00",
+  "status": "completed",
+  "environment": {
+    "spark": "3.5.6",
+    "master": "local[2]",
+    "driver_memory": "5g",
+    "python_executable_cores": 2
+  },
+  "config": {
+    "top_k": 10,
+    "quick_grid": false,
+    "event_weights": {
+      "view": 1.0,
+      "addtocart": 3.0,
+      "transaction": 5.0
+    },
+    "seed": 42,
+    "eval_warm_users": 30000,
+    "eval_cold_users": 20000
+  },
+  "data": {
+    "clean_rows": 2755641,
+    "event_counts": {
+      "transaction": 22457,
+      "addtocart": 68966,
+      "view": 2664218
+    },
+    "users": 1407580,
+    "items": 235061,
+    "first_event_ms": 1430622004384,
+    "last_event_ms": 1442545187788,
+    "source": "csv",
+    "path": "data/raw/events.csv",
+    "raw_rows": 2756101,
+    "removed_rows": 460,
+    "first_event_utc": "2015-05-03 03:00:04 UTC",
+    "last_event_utc": "2015-09-18 02:59:47 UTC"
+  },
+  "gold": {
+    "format": "parquet",
+    "path": "outputs/phase5/p5-full-grid/lake/gold_interactions",
+    "rating_pairs": 2145179,
+    "gold_pairs": 2145179,
+    "mismatched_pairs": 0,
+    "consistent": true
+  },
+  "split": {
+    "boundaries_epoch_ms": [
+      1436432903851,
+      1438554269341,
+      1440536420790
+    ],
+    "boundaries_utc": [
+      "2015-07-09 09:08:23 UTC",
+      "2015-08-02 22:24:29 UTC",
+      "2015-08-25 21:00:20 UTC"
+    ],
+    "events_per_partition": {
+      "train_fold1_<=50%": 1376307,
+      "validation_fold1_(50%,70%]": 551584,
+      "validation_fold2_(70%,85%]": 412431,
+      "test_>85%": 415319
+    },
+    "semantics": "chia theo timestamp sự kiện thô trước khi gộp user-item; fold1: train<=50% val(50,70]; fold2: train<=70% val(70,85]; held-out: train<=85% test>85%"
+  },
+  "cross_validation": {
+    "selection_metric": "mean_warm_ndcg_at_k (user warm, 2 fold thời gian)",
+    "candidates": [
+      {
+        "parameters": {
+          "rank": 8,
+          "reg_param": 0.05,
+          "alpha": 10.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.002068426432565689,
+                "recall_at_k": 0.009190349770621583,
+                "ndcg_at_k": 0.005989801280543395,
+                "hit_rate_at_k": 0.016715771751548314
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00011332937998286872,
+                "recall_at_k": 0.0005035405779640494,
+                "ndcg_at_k": 0.00032818206857981554,
+                "hit_rate_at_k": 0.0009158595242801607
+              },
+              "catalog_coverage_warm_sample": 0.0020403354196481425,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.002068426432565689,
+                "recall_at_k": 0.009190349770621583,
+                "ndcg_at_k": 0.005989801280543395,
+                "hit_rate_at_k": 0.016715771751548314
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007466199841865975,
+                "recall_at_k": 0.00535906861014725,
+                "ndcg_at_k": 0.0025871079602922406,
+                "hit_rate_at_k": 0.007059723594913356
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 25.1
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0019350037211609988,
+                "recall_at_k": 0.010022906834613378,
+                "ndcg_at_k": 0.006075619390705423,
+                "hit_rate_at_k": 0.01693128256015877
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0001347866094687591,
+                "recall_at_k": 0.0006981659076336141,
+                "ndcg_at_k": 0.0004232095934185005,
+                "hit_rate_at_k": 0.001179382832851644
+              },
+              "catalog_coverage_warm_sample": 0.0017070791527313267,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0019350037211609988,
+                "recall_at_k": 0.010022906834613378,
+                "ndcg_at_k": 0.006075619390705423,
+                "hit_rate_at_k": 0.01693128256015877
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007022958220471142,
+                "recall_at_k": 0.0052544728696633375,
+                "ndcg_at_k": 0.0030511198172490507,
+                "hit_rate_at_k": 0.006668406364347214
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 24.5
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.006032710335624409,
+        "mean_warm_recall_at_k": 0.00960662830261748,
+        "mean_warm_precision_at_k": 0.002001715076863344
+      },
+      {
+        "parameters": {
+          "rank": 8,
+          "reg_param": 0.05,
+          "alpha": 20.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0020443749624195753,
+                "recall_at_k": 0.009733263796200554,
+                "ndcg_at_k": 0.005996930227020151,
+                "hit_rate_at_k": 0.017136672479105285
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00011201159649469578,
+                "recall_at_k": 0.0005332869150511017,
+                "ndcg_at_k": 0.00032857266457657027,
+                "hit_rate_at_k": 0.0009389207353231864
+              },
+              "catalog_coverage_warm_sample": 0.002471392198447046,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0020443749624195753,
+                "recall_at_k": 0.009733263796200554,
+                "ndcg_at_k": 0.005996930227020151,
+                "hit_rate_at_k": 0.017136672479105285
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007453022006984246,
+                "recall_at_k": 0.005388814947234304,
+                "ndcg_at_k": 0.0025874985562889955,
+                "hit_rate_at_k": 0.0070827848059563814
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 13.9
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0019163979161498355,
+                "recall_at_k": 0.010193868310278385,
+                "ndcg_at_k": 0.005894992679967872,
+                "hit_rate_at_k": 0.01699330191019598
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00013349058437771334,
+                "recall_at_k": 0.0007100745760266837,
+                "ndcg_at_k": 0.00041062767346994284,
+                "hit_rate_at_k": 0.0011837029164884633
+              },
+              "catalog_coverage_warm_sample": 0.0021400700748526835,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0019163979161498353,
+                "recall_at_k": 0.010193868310278385,
+                "ndcg_at_k": 0.005894992679967872,
+                "hit_rate_at_k": 0.01699330191019598
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067722,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007009997969560683,
+                "recall_at_k": 0.005266381538056406,
+                "ndcg_at_k": 0.0030385378973004926,
+                "hit_rate_at_k": 0.006672726447984033
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 18.9
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.005945961453494011,
+        "mean_warm_recall_at_k": 0.009963566053239468,
+        "mean_warm_precision_at_k": 0.0019803864392847056
+      },
+      {
+        "parameters": {
+          "rank": 8,
+          "reg_param": 0.1,
+          "alpha": 10.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.00209849077024833,
+                "recall_at_k": 0.009429876136572276,
+                "ndcg_at_k": 0.006088761170250877,
+                "hit_rate_at_k": 0.017136672479105285
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00011497660934308485,
+                "recall_at_k": 0.00051666426180185,
+                "ndcg_at_k": 0.00033360409508612483,
+                "hit_rate_at_k": 0.0009389207353231864
+              },
+              "catalog_coverage_warm_sample": 0.0020460828433654615,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.00209849077024833,
+                "recall_at_k": 0.009429876136572276,
+                "ndcg_at_k": 0.006088761170250877,
+                "hit_rate_at_k": 0.017136672479105285
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007482672135468136,
+                "recall_at_k": 0.005372192293985051,
+                "ndcg_at_k": 0.00259252998679855,
+                "hit_rate_at_k": 0.0070827848059563814
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 14.3
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0018791863061275082,
+                "recall_at_k": 0.009659161797314677,
+                "ndcg_at_k": 0.005998386234338059,
+                "hit_rate_at_k": 0.016435127759861078
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00013089853419562177,
+                "recall_at_k": 0.0006728285091819139,
+                "ndcg_at_k": 0.0004178297612396344,
+                "hit_rate_at_k": 0.0011448221637570903
+              },
+              "catalog_coverage_warm_sample": 0.0017269867813346075,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0018791863061275082,
+                "recall_at_k": 0.009659161797314677,
+                "ndcg_at_k": 0.005998386234338059,
+                "hit_rate_at_k": 0.016435127759861078
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006984077467739768,
+                "recall_at_k": 0.005229135471211638,
+                "ndcg_at_k": 0.0030457399850701847,
+                "hit_rate_at_k": 0.0066338456952526595
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 18.7
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.006043573702294467,
+        "mean_warm_recall_at_k": 0.009544518966943477,
+        "mean_warm_precision_at_k": 0.0019888385381879193
+      },
+      {
+        "parameters": {
+          "rank": 8,
+          "reg_param": 0.1,
+          "alpha": 20.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0020624135650291605,
+                "recall_at_k": 0.009805985026322737,
+                "ndcg_at_k": 0.006041090421201393,
+                "hit_rate_at_k": 0.017196801154470566
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0001129999341108255,
+                "recall_at_k": 0.0005372713216471419,
+                "ndcg_at_k": 0.0003309922079297633,
+                "hit_rate_at_k": 0.0009422151940436187
+              },
+              "catalog_coverage_warm_sample": 0.002471392198447046,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0020624135650291605,
+                "recall_at_k": 0.009805985026322737,
+                "ndcg_at_k": 0.006041090421201393,
+                "hit_rate_at_k": 0.017196801154470566
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007462905383145543,
+                "recall_at_k": 0.005392799353830343,
+                "ndcg_at_k": 0.0025899180996421887,
+                "hit_rate_at_k": 0.007086079264676814
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 12.8
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0019225998511535566,
+                "recall_at_k": 0.01016639881183394,
+                "ndcg_at_k": 0.005902132993431563,
+                "hit_rate_at_k": 0.017055321260233194
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00013392259274139524,
+                "recall_at_k": 0.0007081611323890083,
+                "ndcg_at_k": 0.0004111250464888111,
+                "hit_rate_at_k": 0.0011880230001252825
+              },
+              "catalog_coverage_warm_sample": 0.0021649546106067845,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0019225998511535568,
+                "recall_at_k": 0.010166398811833942,
+                "ndcg_at_k": 0.005902132993431562,
+                "hit_rate_at_k": 0.017055321260233194
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067722,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007014318053197502,
+                "recall_at_k": 0.005264468094418732,
+                "ndcg_at_k": 0.003039035270319361,
+                "hit_rate_at_k": 0.006677046531620852
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 17.9
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.005971611707316478,
+        "mean_warm_recall_at_k": 0.00998619191907834,
+        "mean_warm_precision_at_k": 0.0019925067080913588
+      },
+      {
+        "parameters": {
+          "rank": 16,
+          "reg_param": 0.05,
+          "alpha": 10.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0030004209007275617,
+                "recall_at_k": 0.013473282255293631,
+                "ndcg_at_k": 0.008875875594709964,
+                "hit_rate_at_k": 0.023450183392459863
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00016439349014956867,
+                "recall_at_k": 0.0007382030611708123,
+                "ndcg_at_k": 0.0004863104929024886,
+                "hit_rate_at_k": 0.001284838900968571
+              },
+              "catalog_coverage_warm_sample": 0.004735877143070618,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0030004209007275617,
+                "recall_at_k": 0.013473282255293631,
+                "ndcg_at_k": 0.008875875594709964,
+                "hit_rate_at_k": 0.023450183392459863
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007976840943532974,
+                "recall_at_k": 0.005593731093354014,
+                "ndcg_at_k": 0.002745236384614914,
+                "hit_rate_at_k": 0.007428702971601766
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 19.4
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.002797072686678248,
+                "recall_at_k": 0.01467587156024051,
+                "ndcg_at_k": 0.009295382611183012,
+                "hit_rate_at_k": 0.023629372364177625
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00019483577202054664,
+                "recall_at_k": 0.0010222776044156352,
+                "ndcg_at_k": 0.0006474887320239803,
+                "hit_rate_at_k": 0.0016459518656281185
+              },
+              "catalog_coverage_warm_sample": 0.0037277034559643255,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.002797072686678248,
+                "recall_at_k": 0.01467587156024051,
+                "ndcg_at_k": 0.009295382611183012,
+                "hit_rate_at_k": 0.023629372364177625
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007623449845989017,
+                "recall_at_k": 0.005578584566445359,
+                "ndcg_at_k": 0.0032753989558545306,
+                "hit_rate_at_k": 0.007134975397123688
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 27.4
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.009085629102946488,
+        "mean_warm_recall_at_k": 0.014074576907767072,
+        "mean_warm_precision_at_k": 0.002898746793702905
+      },
+      {
+        "parameters": {
+          "rank": 16,
+          "reg_param": 0.05,
+          "alpha": 20.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.003156755456677295,
+                "recall_at_k": 0.014470796782534346,
+                "ndcg_at_k": 0.009429859115272847,
+                "hit_rate_at_k": 0.02507365762732247
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00017295908282269256,
+                "recall_at_k": 0.000792857024742468,
+                "ndcg_at_k": 0.0005166633292024205,
+                "hit_rate_at_k": 0.001373789286420241
+              },
+              "catalog_coverage_warm_sample": 0.005770413412187987,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.003156755456677295,
+                "recall_at_k": 0.014470796782534346,
+                "ndcg_at_k": 0.009429859115272847,
+                "hit_rate_at_k": 0.02507365762732247
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0008062496870264213,
+                "recall_at_k": 0.00564838505692567,
+                "ndcg_at_k": 0.002775589220914846,
+                "hit_rate_at_k": 0.007517653357053436
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 19.9
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0029273133217563936,
+                "recall_at_k": 0.015731369390178152,
+                "ndcg_at_k": 0.0099059735632992,
+                "hit_rate_at_k": 0.024931778714959066
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00020390794765786703,
+                "recall_at_k": 0.0010958004469006966,
+                "ndcg_at_k": 0.0006900206834140596,
+                "hit_rate_at_k": 0.001736673622001322
+              },
+              "catalog_coverage_warm_sample": 0.00486741519350215,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0029273133217563936,
+                "recall_at_k": 0.015731369390178152,
+                "ndcg_at_k": 0.0099059735632992,
+                "hit_rate_at_k": 0.024931778714959066
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000771417160236222,
+                "recall_at_k": 0.005652107408930419,
+                "ndcg_at_k": 0.00331793090724461,
+                "hit_rate_at_k": 0.007225697153496891
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 27.1
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.009667916339286023,
+        "mean_warm_recall_at_k": 0.01510108308635625,
+        "mean_warm_precision_at_k": 0.0030420343892168444
+      },
+      {
+        "parameters": {
+          "rank": 16,
+          "reg_param": 0.1,
+          "alpha": 10.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0030124466358006177,
+                "recall_at_k": 0.013463354296923642,
+                "ndcg_at_k": 0.008847449762062731,
+                "hit_rate_at_k": 0.023450183392459863
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0001650523818936551,
+                "recall_at_k": 0.000737659106912226,
+                "ndcg_at_k": 0.0004847530374674352,
+                "hit_rate_at_k": 0.001284838900968571
+              },
+              "catalog_coverage_warm_sample": 0.004747371990505256,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0030124466358006177,
+                "recall_at_k": 0.013463354296923642,
+                "ndcg_at_k": 0.008847449762062731,
+                "hit_rate_at_k": 0.023450183392459863
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007983429860973839,
+                "recall_at_k": 0.005593187139095427,
+                "ndcg_at_k": 0.002743678929179861,
+                "hit_rate_at_k": 0.007428702971601766
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 20.9
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.002759861076655921,
+                "recall_at_k": 0.014576064590157827,
+                "ndcg_at_k": 0.009229191381109463,
+                "hit_rate_at_k": 0.023319275613991566
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0001922437218384551,
+                "recall_at_k": 0.0010153253474500913,
+                "ndcg_at_k": 0.0006428780476203207,
+                "hit_rate_at_k": 0.0016243514474440226
+              },
+              "catalog_coverage_warm_sample": 0.003737657270265966,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.002759861076655921,
+                "recall_at_k": 0.014576064590157827,
+                "ndcg_at_k": 0.009229191381109463,
+                "hit_rate_at_k": 0.023319275613991566
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007597529344168101,
+                "recall_at_k": 0.005571632309479815,
+                "ndcg_at_k": 0.0032707882714508715,
+                "hit_rate_at_k": 0.007113374978939592
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 28.2
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.009038320571586097,
+        "mean_warm_recall_at_k": 0.014019709443540734,
+        "mean_warm_precision_at_k": 0.0028861538562282695
+      },
+      {
+        "parameters": {
+          "rank": 16,
+          "reg_param": 0.1,
+          "alpha": 20.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0031747940592868795,
+                "recall_at_k": 0.014653532901839511,
+                "ndcg_at_k": 0.009475137714415516,
+                "hit_rate_at_k": 0.02543442967951416
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00017394742043882222,
+                "recall_at_k": 0.0008028691628467184,
+                "ndcg_at_k": 0.0005191441501233592,
+                "hit_rate_at_k": 0.0013935560387428345
+              },
+              "catalog_coverage_warm_sample": 0.005822140225643855,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0031747940592868795,
+                "recall_at_k": 0.014653532901839511,
+                "ndcg_at_k": 0.009475137714415516,
+                "hit_rate_at_k": 0.02543442967951416
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000807238024642551,
+                "recall_at_k": 0.005658397195029919,
+                "ndcg_at_k": 0.0027780700418357845,
+                "hit_rate_at_k": 0.0075374201093760295
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 21.0
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0029831307367898844,
+                "recall_at_k": 0.01592318815374392,
+                "ndcg_at_k": 0.00994127806457652,
+                "hit_rate_at_k": 0.02542793351525676
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.00020779602293100435,
+                "recall_at_k": 0.0011091619719927552,
+                "ndcg_at_k": 0.0006924798900678332,
+                "hit_rate_at_k": 0.0017712342910958757
+              },
+              "catalog_coverage_warm_sample": 0.004897276636407071,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0029831307367898844,
+                "recall_at_k": 0.01592318815374392,
+                "ndcg_at_k": 0.00994127806457652,
+                "hit_rate_at_k": 0.02542793351525676
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007753052355093594,
+                "recall_at_k": 0.005665468934022478,
+                "ndcg_at_k": 0.0033203901138983837,
+                "hit_rate_at_k": 0.0072602578225914455
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 26.9
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.009708207889496018,
+        "mean_warm_recall_at_k": 0.015288360527791717,
+        "mean_warm_precision_at_k": 0.003078962398038382
+      }
+    ],
+    "selected_parameters": {
+      "rank": 16,
+      "reg_param": 0.1,
+      "alpha": 20.0
+    },
+    "iterations": 10
+  },
+  "heldout_test": {
+    "k": 10,
+    "heldout_unique_pairs": 331821,
+    "novel_pairs": 326433,
+    "repeat_pairs_excluded": 5388,
+    "eligible_users": 231963,
+    "eligible_warm_users": 18055,
+    "eligible_cold_users": 213908,
+    "cold_user_share": 0.9221643106874803,
+    "train_users": 1193672,
+    "train_catalog_size": 218501,
+    "sample": {
+      "warm_users": 30000,
+      "cold_users": 20000,
+      "seed": 42,
+      "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+    },
+    "als": {
+      "warm": {
+        "users_evaluated": 18055,
+        "precision_at_k": 0.002730545555247858,
+        "recall_at_k": 0.014548114701984754,
+        "ndcg_at_k": 0.009048152380533737,
+        "hit_rate_at_k": 0.022985322625311548
+      },
+      "cold": {
+        "users_evaluated": 20000,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate_at_k": 0.0
+      },
+      "overall_weighted": {
+        "precision_at_k": 0.00021253389549195378,
+        "recall_at_k": 0.0011323625360265851,
+        "ndcg_at_k": 0.0007042691775435592,
+        "hit_rate_at_k": 0.0017890784306117786
+      },
+      "catalog_coverage_warm_sample": 0.004279156617132187,
+      "users_with_recommendations_warm_sample": 1.0
+    },
+    "popularity": {
+      "warm": {
+        "users_evaluated": 18055,
+        "precision_at_k": 0.000531708667959014,
+        "recall_at_k": 0.0035535256469846005,
+        "ndcg_at_k": 0.0023821627570329734,
+        "hit_rate_at_k": 0.005040155081694821
+      },
+      "cold": {
+        "users_evaluated": 20000,
+        "precision_at_k": 0.0008399999999999986,
+        "recall_at_k": 0.007151874325782095,
+        "ndcg_at_k": 0.004355411061068106,
+        "hit_rate_at_k": 0.0084
+      },
+      "overall_weighted": {
+        "precision_at_k": 0.0008160039316615137,
+        "recall_at_k": 0.0068717943759810975,
+        "ndcg_at_k": 0.004201821919138772,
+        "hit_rate_at_k": 0.00813848415480055
+      }
+    },
+    "hybrid_als_popularity": {
+      "warm": {
+        "users_evaluated": 18055,
+        "precision_at_k": 0.0027305455552478586,
+        "recall_at_k": 0.014548114701984758,
+        "ndcg_at_k": 0.00904815238053374,
+        "hit_rate_at_k": 0.022985322625311548
+      },
+      "cold": {
+        "users_evaluated": 20000,
+        "precision_at_k": 0.0008399999999999986,
+        "recall_at_k": 0.007151874325782095,
+        "ndcg_at_k": 0.004355411061068107,
+        "hit_rate_at_k": 0.0084
+      },
+      "overall_weighted": {
+        "precision_at_k": 0.000987151916469436,
+        "recall_at_k": 0.007727565793784919,
+        "ndcg_at_k": 0.004720673816434058,
+        "hit_rate_at_k": 0.009535258640386611
+      }
+    },
+    "fit_seconds": 38.3,
+    "train_events": 2340322,
+    "test_events": 415319,
+    "fit_iterations": 10
+  },
+  "rmse": {
+    "label": "ALS explicit trên mức hành vi mạnh nhất (1/3/5); chỉ cặp mới, user/item đã biết",
+    "grid": [
+      {
+        "rank": 8,
+        "reg_param": 0.05,
+        "folds": [
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.05,
+            "max_iter": 10,
+            "novel_test_pairs": 434740,
+            "scored_pairs": 37993,
+            "coverage": 0.08739246446151723,
+            "train_pairs": 1060957,
+            "train_global_mean_level": 1.0796337646106298,
+            "test_mean_level": 1.1572394914852735,
+            "rmse": {
+              "als_clipped_1_5": 0.7230200954930598,
+              "als_raw": 1.1636710773962948,
+              "baseline_global_mean": 0.7050373136574972,
+              "baseline_item_mean": 0.7153242328613534
+            }
+          },
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.05,
+            "max_iter": 10,
+            "novel_test_pairs": 323049,
+            "scored_pairs": 34025,
+            "coverage": 0.10532457924339651,
+            "train_pairs": 1495697,
+            "train_global_mean_level": 1.0786857231110312,
+            "test_mean_level": 1.1475385745775166,
+            "rmse": {
+              "als_clipped_1_5": 0.6870618184015532,
+              "als_raw": 1.053723030584576,
+              "baseline_global_mean": 0.6817158450737683,
+              "baseline_item_mean": 0.6906287153262576
+            }
+          }
+        ],
+        "mean_als_clipped_rmse": 0.7050409569473065
+      },
+      {
+        "rank": 8,
+        "reg_param": 0.1,
+        "folds": [
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.1,
+            "max_iter": 10,
+            "novel_test_pairs": 434740,
+            "scored_pairs": 37993,
+            "coverage": 0.08739246446151723,
+            "train_pairs": 1060957,
+            "train_global_mean_level": 1.0796337646106298,
+            "test_mean_level": 1.1572394914852735,
+            "rmse": {
+              "als_clipped_1_5": 0.7133093786035313,
+              "als_raw": 1.072626595442502,
+              "baseline_global_mean": 0.7050373136574972,
+              "baseline_item_mean": 0.7153242328613534
+            }
+          },
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.1,
+            "max_iter": 10,
+            "novel_test_pairs": 323049,
+            "scored_pairs": 34025,
+            "coverage": 0.10532457924339651,
+            "train_pairs": 1495697,
+            "train_global_mean_level": 1.0786857231110312,
+            "test_mean_level": 1.1475385745775166,
+            "rmse": {
+              "als_clipped_1_5": 0.6796218362291949,
+              "als_raw": 0.9838226020277057,
+              "baseline_global_mean": 0.6817158450737683,
+              "baseline_item_mean": 0.6906287153262576
+            }
+          }
+        ],
+        "mean_als_clipped_rmse": 0.6964656074163631
+      },
+      {
+        "rank": 8,
+        "reg_param": 0.3,
+        "folds": [
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.3,
+            "max_iter": 10,
+            "novel_test_pairs": 434740,
+            "scored_pairs": 37993,
+            "coverage": 0.08739246446151723,
+            "train_pairs": 1060957,
+            "train_global_mean_level": 1.0796337646106298,
+            "test_mean_level": 1.1572394914852735,
+            "rmse": {
+              "als_clipped_1_5": 0.7082300541874765,
+              "als_raw": 1.034772222725718,
+              "baseline_global_mean": 0.7050373136574972,
+              "baseline_item_mean": 0.7153242328613534
+            }
+          },
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.3,
+            "max_iter": 10,
+            "novel_test_pairs": 323049,
+            "scored_pairs": 34025,
+            "coverage": 0.10532457924339651,
+            "train_pairs": 1495697,
+            "train_global_mean_level": 1.0786857231110312,
+            "test_mean_level": 1.1475385745775166,
+            "rmse": {
+              "als_clipped_1_5": 0.681302457828514,
+              "als_raw": 0.9677593574348139,
+              "baseline_global_mean": 0.6817158450737683,
+              "baseline_item_mean": 0.6906287153262576
+            }
+          }
+        ],
+        "mean_als_clipped_rmse": 0.6947662560079952
+      }
+    ],
+    "selected": {
+      "rank": 8,
+      "reg_param": 0.3
+    },
+    "heldout_test": {
+      "status": "evaluated",
+      "rank": 8,
+      "reg_param": 0.3,
+      "max_iter": 10,
+      "novel_test_pairs": 326433,
+      "scored_pairs": 35898,
+      "coverage": 0.10997049930613632,
+      "train_pairs": 1818746,
+      "train_global_mean_level": 1.0794316523582732,
+      "test_mean_level": 1.1395620925956877,
+      "rmse": {
+        "als_clipped_1_5": 0.6663334910266104,
+        "als_raw": 0.9458482992420131,
+        "baseline_global_mean": 0.6644886681063562,
+        "baseline_item_mean": 0.6696961580568804
+      }
+    }
+  },
+  "serving_model": {
+    "model_version": "p5-full-grid:als-serving-v1",
+    "parameters": {
+      "rank": 16,
+      "reg_param": 0.1,
+      "alpha": 20.0
+    },
+    "fit_iterations": 10,
+    "fit_seconds": 40.4,
+    "trained_users": 1407580,
+    "catalog_size": 235061,
+    "interaction_pairs": 2145179,
+    "sample_users_exported": 5000,
+    "note": "Gợi ý xuất cho mẫu user (hash cố định). Chạy toàn bộ user: dùng pipeline/train.py trên cụm/Docker của nhóm."
+  },
+  "timings_seconds": {
+    "1_load_clean_gold": 34.7,
+    "3_cross_validation": 3026.9,
+    "4_heldout_test": 280.5,
+    "4b_rmse": 149.4,
+    "5_serving_model": 114.8,
+    "total": 3613.0
+  }
+}

@@ -1,0 +1,728 @@
+{
+  "run_id": "p5-full-quick",
+  "generated_at_utc": "2026-10-21T22:43:29+00:00",
+  "status": "completed",
+  "environment": {
+    "spark": "3.5.6",
+    "master": "local[2]",
+    "driver_memory": "5g",
+    "python_executable_cores": 2
+  },
+  "config": {
+    "top_k": 10,
+    "quick_grid": true,
+    "event_weights": {
+      "view": 1.0,
+      "addtocart": 3.0,
+      "transaction": 5.0
+    },
+    "seed": 42,
+    "eval_warm_users": 30000,
+    "eval_cold_users": 20000
+  },
+  "data": {
+    "clean_rows": 2755641,
+    "event_counts": {
+      "transaction": 22457,
+      "addtocart": 68966,
+      "view": 2664218
+    },
+    "users": 1407580,
+    "items": 235061,
+    "first_event_ms": 1430622004384,
+    "last_event_ms": 1442545187788,
+    "source": "csv",
+    "path": "data/raw/events.csv",
+    "raw_rows": 2756101,
+    "removed_rows": 460,
+    "first_event_utc": "2015-05-03 03:00:04 UTC",
+    "last_event_utc": "2015-09-18 02:59:47 UTC"
+  },
+  "gold": {
+    "format": "parquet",
+    "path": "outputs/phase5/p5-full-quick/lake/gold_interactions",
+    "rating_pairs": 2145179,
+    "gold_pairs": 2145179,
+    "mismatched_pairs": 0,
+    "consistent": true
+  },
+  "split": {
+    "boundaries_epoch_ms": [
+      1436432903851,
+      1438554269341,
+      1440536420790
+    ],
+    "boundaries_utc": [
+      "2015-07-09 09:08:23 UTC",
+      "2015-08-02 22:24:29 UTC",
+      "2015-08-25 21:00:20 UTC"
+    ],
+    "events_per_partition": {
+      "train_fold1_<=50%": 1376307,
+      "validation_fold1_(50%,70%]": 551584,
+      "validation_fold2_(70%,85%]": 412431,
+      "test_>85%": 415319
+    },
+    "semantics": "chia theo timestamp sự kiện thô trước khi gộp user-item; fold1: train<=50% val(50,70]; fold2: train<=70% val(70,85]; held-out: train<=85% test>85%"
+  },
+  "cross_validation": {
+    "selection_metric": "mean_warm_ndcg_at_k (user warm, 2 fold thời gian)",
+    "candidates": [
+      {
+        "parameters": {
+          "rank": 8,
+          "reg_param": 0.05,
+          "alpha": 20.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0012446635800613297,
+                "recall_at_k": 0.005923012985906782,
+                "ndcg_at_k": 0.003578578472569279,
+                "hit_rate_at_k": 0.010823161565750706
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 6.819529551294714e-05,
+                "recall_at_k": 0.0003245227283673179,
+                "ndcg_at_k": 0.00019607082617546182,
+                "hit_rate_at_k": 0.0005930025696778019
+              },
+              "catalog_coverage_warm_sample": 0.002511624164468277,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0012446635800613297,
+                "recall_at_k": 0.0059230129859067825,
+                "ndcg_at_k": 0.0035785784725692786,
+                "hit_rate_at_k": 0.010823161565750706
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.0023898670490308405,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007014858997166758,
+                "recall_at_k": 0.0051800507605505195,
+                "ndcg_at_k": 0.002454996717887887,
+                "hit_rate_at_k": 0.006736866640310997
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 16.7
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0011163483006698077,
+                "recall_at_k": 0.005594256368862032,
+                "ndcg_at_k": 0.003164138670453182,
+                "hit_rate_at_k": 0.00998511535599107
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 7.776150546274566e-05,
+                "recall_at_k": 0.0003896792756581924,
+                "ndcg_at_k": 0.00022040449773578848,
+                "hit_rate_at_k": 0.0006955334655278926
+              },
+              "catalog_coverage_warm_sample": 0.002125139353400223,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0011163483006698077,
+                "recall_at_k": 0.005594256368862032,
+                "ndcg_at_k": 0.003164138670453182,
+                "hit_rate_at_k": 0.00998511535599107
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006452707180411006,
+                "recall_at_k": 0.004945986237687915,
+                "ndcg_at_k": 0.0028483147215663386,
+                "hit_rate_at_k": 0.006184556997023462
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 11.2
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.0033713585715112303,
+        "mean_warm_recall_at_k": 0.005758634677384407,
+        "mean_warm_precision_at_k": 0.0011805059403655687
+      },
+      {
+        "parameters": {
+          "rank": 8,
+          "reg_param": 0.1,
+          "alpha": 20.0
+        },
+        "folds": [
+          {
+            "k": 10,
+            "heldout_unique_pairs": 440740,
+            "novel_pairs": 434740,
+            "repeat_pairs_excluded": 6000,
+            "eligible_users": 303540,
+            "eligible_warm_users": 16631,
+            "eligible_cold_users": 286909,
+            "cold_user_share": 0.9452098570204915,
+            "train_users": 691410,
+            "train_catalog_size": 173991,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0012386507125248015,
+                "recall_at_k": 0.005723203890949644,
+                "ndcg_at_k": 0.0034964698464487617,
+                "hit_rate_at_k": 0.010642775539654861
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 6.786584964090391e-05,
+                "recall_at_k": 0.0003135751594860102,
+                "ndcg_at_k": 0.00019157208281046767,
+                "hit_rate_at_k": 0.0005831191935165052
+              },
+              "catalog_coverage_warm_sample": 0.0025173715881855957,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0007395827069929643,
+                "recall_at_k": 0.0038203328705112482,
+                "ndcg_at_k": 0.002123592129114208,
+                "hit_rate_at_k": 0.006914797667007396
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.002389867049030841,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006738124464650451,
+                "recall_at_k": 0.005064844616387829,
+                "ndcg_at_k": 0.0023752778080967517,
+                "hit_rate_at_k": 0.006522726823482902
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16631,
+                "precision_at_k": 0.0012386507125248015,
+                "recall_at_k": 0.005723203890949644,
+                "ndcg_at_k": 0.0034964698464487612,
+                "hit_rate_at_k": 0.010642775539654861
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006699999999999994,
+                "recall_at_k": 0.005136984126984127,
+                "ndcg_at_k": 0.0023898670490308405,
+                "hit_rate_at_k": 0.0065
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0007011564538446326,
+                "recall_at_k": 0.005169103191669211,
+                "ndcg_at_k": 0.0024504979745228928,
+                "hit_rate_at_k": 0.0067269832641497
+              }
+            },
+            "fold": 1,
+            "train_end_inclusive": 1436432903851,
+            "fit_seconds": 6.1
+          },
+          {
+            "k": 10,
+            "heldout_unique_pairs": 328396,
+            "novel_pairs": 323049,
+            "repeat_pairs_excluded": 5347,
+            "eligible_users": 231477,
+            "eligible_warm_users": 16124,
+            "eligible_cold_users": 215353,
+            "cold_user_share": 0.9303429714399271,
+            "train_users": 978319,
+            "train_catalog_size": 200928,
+            "sample": {
+              "warm_users": 30000,
+              "cold_users": 20000,
+              "seed": 42,
+              "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+            },
+            "als": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0011225502356735286,
+                "recall_at_k": 0.005751888883539945,
+                "ndcg_at_k": 0.003162806735713972,
+                "hit_rate_at_k": 0.01004713470602828
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0,
+                "recall_at_k": 0.0,
+                "ndcg_at_k": 0.0,
+                "hit_rate_at_k": 0.0
+              },
+              "overall_weighted": {
+                "precision_at_k": 7.819351382642757e-05,
+                "recall_at_k": 0.00040065948823510793,
+                "ndcg_at_k": 0.00022031171911961916,
+                "hit_rate_at_k": 0.0006998535491647118
+              },
+              "catalog_coverage_warm_sample": 0.002095277910495302,
+              "users_with_recommendations_warm_sample": 1.0
+            },
+            "popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0007008186554204907,
+                "recall_at_k": 0.0033883857042539024,
+                "ndcg_at_k": 0.002564030748686494,
+                "hit_rate_at_k": 0.006139915653683949
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.000616326157674412,
+                "recall_at_k": 0.00479233184180348,
+                "ndcg_at_k": 0.0028065129869207107,
+                "hit_rate_at_k": 0.005916711811540671
+              }
+            },
+            "hybrid_als_popularity": {
+              "warm": {
+                "users_evaluated": 16124,
+                "precision_at_k": 0.0011225502356735286,
+                "recall_at_k": 0.005751888883539945,
+                "ndcg_at_k": 0.003162806735713972,
+                "hit_rate_at_k": 0.01004713470602828
+              },
+              "cold": {
+                "users_evaluated": 20000,
+                "precision_at_k": 0.0006099999999999994,
+                "recall_at_k": 0.004897448684948685,
+                "ndcg_at_k": 0.0028246682186067727,
+                "hit_rate_at_k": 0.0059
+              },
+              "overall_weighted": {
+                "precision_at_k": 0.0006457027264047825,
+                "recall_at_k": 0.004956966450264831,
+                "ndcg_at_k": 0.0028482219429501695,
+                "hit_rate_at_k": 0.006188877080660281
+              }
+            },
+            "fold": 2,
+            "train_end_inclusive": 1438554269341,
+            "fit_seconds": 7.7
+          }
+        ],
+        "mean_warm_ndcg_at_k": 0.0033296382910813667,
+        "mean_warm_recall_at_k": 0.005737546387244795,
+        "mean_warm_precision_at_k": 0.001180600474099165
+      }
+    ],
+    "selected_parameters": {
+      "rank": 8,
+      "reg_param": 0.05,
+      "alpha": 20.0
+    },
+    "iterations": 3
+  },
+  "heldout_test": {
+    "k": 10,
+    "heldout_unique_pairs": 331821,
+    "novel_pairs": 326433,
+    "repeat_pairs_excluded": 5388,
+    "eligible_users": 231963,
+    "eligible_warm_users": 18055,
+    "eligible_cold_users": 213908,
+    "cold_user_share": 0.9221643106874803,
+    "train_users": 1193672,
+    "train_catalog_size": 218501,
+    "sample": {
+      "warm_users": 30000,
+      "cold_users": 20000,
+      "seed": 42,
+      "method": "xxhash64(visitorid, seed) trong từng tầng; gia quyền lại theo quần thể"
+    },
+    "als": {
+      "warm": {
+        "users_evaluated": 18055,
+        "precision_at_k": 0.0013957352533924096,
+        "recall_at_k": 0.007256455148880073,
+        "ndcg_at_k": 0.004199912280097372,
+        "hit_rate_at_k": 0.011963445029077818
+      },
+      "cold": {
+        "users_evaluated": 20000,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "ndcg_at_k": 0.0,
+        "hit_rate_at_k": 0.0
+      },
+      "overall_weighted": {
+        "precision_at_k": 0.00010863801554558252,
+        "recall_at_k": 0.000564811188478463,
+        "ndcg_at_k": 0.0003269030673734951,
+        "hit_rate_at_k": 0.0009311829903907089
+      },
+      "catalog_coverage_warm_sample": 0.0017070860087596853,
+      "users_with_recommendations_warm_sample": 1.0
+    },
+    "popularity": {
+      "warm": {
+        "users_evaluated": 18055,
+        "precision_at_k": 0.000531708667959014,
+        "recall_at_k": 0.0035535256469846005,
+        "ndcg_at_k": 0.0023821627570329734,
+        "hit_rate_at_k": 0.005040155081694821
+      },
+      "cold": {
+        "users_evaluated": 20000,
+        "precision_at_k": 0.0008399999999999986,
+        "recall_at_k": 0.007151874325782095,
+        "ndcg_at_k": 0.004355411061068106,
+        "hit_rate_at_k": 0.0084
+      },
+      "overall_weighted": {
+        "precision_at_k": 0.0008160039316615137,
+        "recall_at_k": 0.0068717943759810975,
+        "ndcg_at_k": 0.004201821919138772,
+        "hit_rate_at_k": 0.00813848415480055
+      }
+    },
+    "hybrid_als_popularity": {
+      "warm": {
+        "users_evaluated": 18055,
+        "precision_at_k": 0.0013957352533924096,
+        "recall_at_k": 0.007256455148880073,
+        "ndcg_at_k": 0.004199912280097372,
+        "hit_rate_at_k": 0.011963445029077818
+      },
+      "cold": {
+        "users_evaluated": 20000,
+        "precision_at_k": 0.0008399999999999986,
+        "recall_at_k": 0.007151874325782095,
+        "ndcg_at_k": 0.004355411061068106,
+        "hit_rate_at_k": 0.0084
+      },
+      "overall_weighted": {
+        "precision_at_k": 0.0008832560365230648,
+        "recall_at_k": 0.007160014446236797,
+        "ndcg_at_k": 0.004343307706263993,
+        "hit_rate_at_k": 0.008677363200165543
+      }
+    },
+    "fit_seconds": 14.8,
+    "train_events": 2340322,
+    "test_events": 415319,
+    "fit_iterations": 5
+  },
+  "rmse": {
+    "label": "ALS explicit trên mức hành vi mạnh nhất (1/3/5); chỉ cặp mới, user/item đã biết",
+    "grid": [
+      {
+        "rank": 8,
+        "reg_param": 0.05,
+        "folds": [
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.05,
+            "max_iter": 5,
+            "novel_test_pairs": 434740,
+            "scored_pairs": 37993,
+            "coverage": 0.08739246446151723,
+            "train_pairs": 1060957,
+            "train_global_mean_level": 1.0796337646106298,
+            "test_mean_level": 1.1572394914852735,
+            "rmse": {
+              "als_clipped_1_5": 0.7239527941791488,
+              "als_raw": 1.3557051520708134,
+              "baseline_global_mean": 0.7050373136574972,
+              "baseline_item_mean": 0.7153242328613534
+            }
+          },
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.05,
+            "max_iter": 5,
+            "novel_test_pairs": 323049,
+            "scored_pairs": 34025,
+            "coverage": 0.10532457924339651,
+            "train_pairs": 1495697,
+            "train_global_mean_level": 1.0786857231110312,
+            "test_mean_level": 1.1475385745775166,
+            "rmse": {
+              "als_clipped_1_5": 0.692063727599296,
+              "als_raw": 1.2293813526337232,
+              "baseline_global_mean": 0.6817158450737683,
+              "baseline_item_mean": 0.6906287153262576
+            }
+          }
+        ],
+        "mean_als_clipped_rmse": 0.7080082608892224
+      },
+      {
+        "rank": 8,
+        "reg_param": 0.1,
+        "folds": [
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.1,
+            "max_iter": 5,
+            "novel_test_pairs": 434740,
+            "scored_pairs": 37993,
+            "coverage": 0.08739246446151723,
+            "train_pairs": 1060957,
+            "train_global_mean_level": 1.0796337646106298,
+            "test_mean_level": 1.1572394914852735,
+            "rmse": {
+              "als_clipped_1_5": 0.7166964626147989,
+              "als_raw": 1.2640531750473392,
+              "baseline_global_mean": 0.7050373136574972,
+              "baseline_item_mean": 0.7153242328613534
+            }
+          },
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.1,
+            "max_iter": 5,
+            "novel_test_pairs": 323049,
+            "scored_pairs": 34025,
+            "coverage": 0.10532457924339651,
+            "train_pairs": 1495697,
+            "train_global_mean_level": 1.0786857231110312,
+            "test_mean_level": 1.1475385745775166,
+            "rmse": {
+              "als_clipped_1_5": 0.6833686785468153,
+              "als_raw": 1.1434886144230112,
+              "baseline_global_mean": 0.6817158450737683,
+              "baseline_item_mean": 0.6906287153262576
+            }
+          }
+        ],
+        "mean_als_clipped_rmse": 0.700032570580807
+      },
+      {
+        "rank": 8,
+        "reg_param": 0.3,
+        "folds": [
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.3,
+            "max_iter": 5,
+            "novel_test_pairs": 434740,
+            "scored_pairs": 37993,
+            "coverage": 0.08739246446151723,
+            "train_pairs": 1060957,
+            "train_global_mean_level": 1.0796337646106298,
+            "test_mean_level": 1.1572394914852735,
+            "rmse": {
+              "als_clipped_1_5": 0.7146206131636318,
+              "als_raw": 1.2366654481703758,
+              "baseline_global_mean": 0.7050373136574972,
+              "baseline_item_mean": 0.7153242328613534
+            }
+          },
+          {
+            "status": "evaluated",
+            "rank": 8,
+            "reg_param": 0.3,
+            "max_iter": 5,
+            "novel_test_pairs": 323049,
+            "scored_pairs": 34025,
+            "coverage": 0.10532457924339651,
+            "train_pairs": 1495697,
+            "train_global_mean_level": 1.0786857231110312,
+            "test_mean_level": 1.1475385745775166,
+            "rmse": {
+              "als_clipped_1_5": 0.6844514915103993,
+              "als_raw": 1.1294506343957746,
+              "baseline_global_mean": 0.6817158450737683,
+              "baseline_item_mean": 0.6906287153262576
+            }
+          }
+        ],
+        "mean_als_clipped_rmse": 0.6995360523370155
+      }
+    ],
+    "selected": {
+      "rank": 8,
+      "reg_param": 0.3
+    },
+    "heldout_test": {
+      "status": "evaluated",
+      "rank": 8,
+      "reg_param": 0.3,
+      "max_iter": 5,
+      "novel_test_pairs": 326433,
+      "scored_pairs": 35898,
+      "coverage": 0.10997049930613632,
+      "train_pairs": 1818746,
+      "train_global_mean_level": 1.0794316523582732,
+      "test_mean_level": 1.1395620925956877,
+      "rmse": {
+        "als_clipped_1_5": 0.6685593021478409,
+        "als_raw": 1.0975118267141484,
+        "baseline_global_mean": 0.6644886681063562,
+        "baseline_item_mean": 0.6696961580568804
+      }
+    }
+  },
+  "serving_model": {
+    "model_version": "p5-full-quick:als-serving-v1",
+    "parameters": {
+      "rank": 8,
+      "reg_param": 0.05,
+      "alpha": 20.0
+    },
+    "fit_iterations": 5,
+    "fit_seconds": 18.5,
+    "trained_users": 1407580,
+    "catalog_size": 235061,
+    "interaction_pairs": 2145179,
+    "sample_users_exported": 5000,
+    "note": "Gợi ý xuất cho mẫu user (hash cố định). Chạy toàn bộ user: dùng pipeline/train.py trên cụm/Docker của nhóm."
+  },
+  "timings_seconds": {
+    "1_load_clean_gold": 33.1,
+    "3_cross_validation": 630.4,
+    "4_heldout_test": 184.4,
+    "4b_rmse": 102.0,
+    "5_serving_model": 76.6,
+    "total": 1033.1
+  }
+}
